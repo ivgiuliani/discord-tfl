@@ -20,7 +20,6 @@ module Bot
         end
       else
         on_item_status(event, args[0])
-
       end
 
       nil

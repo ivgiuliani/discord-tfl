@@ -8,5 +8,6 @@ gem 'songkick-transport', '~> 1.11.0'
 gem 'discordrb', '~> 3.0.2'
 
 group :development do
+  gem 'rspec', '~> 3.4.0'
   gem 'rubocop', '~> 0.43.0'
 end
