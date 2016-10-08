@@ -6,8 +6,11 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     ast (2.3.0)
     concurrent-ruby (1.0.2)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     curb (0.9.3)
     diff-lcs (1.2.5)
     discordrb (3.0.2)
@@ -20,6 +23,7 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     event_emitter (0.2.5)
     ffi (1.9.14)
+    hashdiff (0.3.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (0.7.0)
@@ -62,6 +66,7 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
+    safe_yaml (1.0.4)
     songkick-transport (1.11.0)
       multipart-post (>= 1.1.0)
       yajl-ruby (>= 1.1.0)
@@ -72,6 +77,10 @@ GEM
       unf_ext
     unf_ext (0.0.7.2)
     unicode-display_width (1.1.1)
+    webmock (2.1.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
     websocket (1.2.3)
     websocket-client-simple (0.3.0)
       event_emitter
@@ -88,6 +97,7 @@ DEPENDENCIES
   rspec (~> 3.4.0)
   rubocop (~> 0.43.0)
   songkick-transport (~> 1.11.0)
+  webmock (~> 2.1.0)
 
 BUNDLED WITH
    1.12.5

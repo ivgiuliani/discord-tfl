@@ -5,15 +5,6 @@ AllCops:
   DisplayCopNames: true
   Include:
     - Rakefile
-    - config.ru
-  Exclude:
-    - .*/**/*
-    - db/**/*
-    - config/deploy/**/*
-    - script/**/*
-    - vendor/**/*
-    - bin/**/*
-    - node_modules/**/*
 
 GlobalVars:
   AllowedVariables: [$statsd]

@@ -10,4 +10,5 @@ gem 'discordrb', '~> 3.0.2'
 group :development do
   gem 'rspec', '~> 3.4.0'
   gem 'rubocop', '~> 0.43.0'
+  gem 'webmock', '~> 2.1.0'
 end
