@@ -28,6 +28,7 @@ RSpec.describe Tfl::Api::Client do
           it "has good service" do
             expect(api_call.good_service?).to be true
             expect(api_call.disruptions).to be_empty
+            expect(api_call.current_status).to match(/Good Service/i)
           end
         end
 
@@ -51,6 +52,7 @@ RSpec.describe Tfl::Api::Client do
             expect(api_call.good_service?).to be false
             expect(api_call.disruptions).to_not be_empty
             expect(api_call.disruptions.first).to match(/no service/i)
+            expect(api_call.current_status).to match(/Planned Closure/i)
           end
         end
 
@@ -74,6 +76,7 @@ RSpec.describe Tfl::Api::Client do
             expect(api_call.good_service?).to be false
             expect(api_call.disruptions).to_not be_empty
             expect(api_call.disruptions.first).to match(/no service/i)
+            expect(api_call.current_status).to match(/Part Closure/i)
           end
         end
       end
