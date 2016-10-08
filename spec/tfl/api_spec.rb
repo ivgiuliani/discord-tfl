@@ -90,6 +90,16 @@ RSpec.describe Tfl::Api::Client do
           expect { api_call }.to raise_error(Tfl::InvalidLineException)
         end
       end
+
+      context "when tfl returns an empty response" do
+        # Happens sometimes :(
+        let(:id) { "empty" }
+        before { stub_tfl_response("/line/empty/status", "tfl/status_empty_list") }
+
+        it "returns nil" do
+          expect(api_call).to be_nil
+        end
+      end
     end
   end
 end

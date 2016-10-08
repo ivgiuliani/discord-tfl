@@ -101,7 +101,13 @@ module Tfl
       end
 
       def status_by_id(id)
-        Tfl::Line.from_json(@client.get("/line/#{id}/status").data.first)
+        json = @client.get("/line/#{id}/status").data
+        if json.empty?
+          # TfL might return an empty list sometimes for uncommon ids such as
+          # 'cycle-hire' or 'walking'.
+          return nil
+        end
+        Tfl::Line.from_json(json.first)
       rescue Songkick::Transport::HttpError => exception
         if exception.status == 404
           raise Tfl::InvalidLineException
