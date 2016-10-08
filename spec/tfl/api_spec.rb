@@ -8,7 +8,7 @@ RSpec.describe Tfl::Api::Client do
     describe "by id" do
       subject(:api_call) { instance.status_by_id(id) }
 
-      context "for the tube" do
+      context "for a valid id" do
         context "when there is good service" do
           let(:id) { Tfl::Api::Tube::CENTRAL }
 
@@ -108,6 +108,59 @@ RSpec.describe Tfl::Api::Client do
 
         it "returns nil" do
           expect(api_call).to be_nil
+        end
+      end
+    end
+
+    describe "by mode" do
+      subject(:api_call) { instance.status_by_mode(mode) }
+
+      context "for a valid mode" do
+        let(:mode) { Tfl::Api::Mode::TUBE }
+
+        before do
+          stub_tfl_response("/line/mode/tube/status",
+                            "tfl/status_mode_tube_list")
+        end
+
+        it "returns all the data" do
+          expect(api_call.count).to eq(11)
+        end
+
+        it "returns a list of lines" do
+          api_call.each do |item|
+            expect(item).to be_instance_of Tfl::Line
+          end
+        end
+      end
+
+      context "with an invalid mode" do
+        let(:mode) { "invalid" }
+
+        context "that returns a not found error" do
+          before { stub_tfl_not_found("/line/mode/invalid/status") }
+
+          it "raises an exception" do
+            expect { api_call }.to raise_error(Tfl::InvalidLineException)
+          end
+        end
+
+        context "that returns an invalid-request response " do
+          before { stub_tfl_invalid("/line/mode/invalid/status") }
+
+          it "raises an exception" do
+            expect { api_call }.to raise_error(Tfl::InvalidLineException)
+          end
+        end
+      end
+
+      context "when tfl returns an empty response" do
+        # Happens sometimes :(
+        let(:mode) { "empty" }
+        before { stub_tfl_response("/line/mode/empty/status", "tfl/status_empty_list") }
+
+        it "returns nil" do
+          expect(api_call).to be_empty
         end
       end
     end
