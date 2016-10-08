@@ -1,4 +1,4 @@
-# Tflbot
+# TfL discord bot
 
-TODO
+Discord bot for TfL.
 
