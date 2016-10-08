@@ -68,6 +68,9 @@ Style/IndentArray:
 Style/IndentHash:
   EnforcedStyle: consistent
 
+Style/FrozenStringLiteralComment:
+  Enabled: always
+
 Style/Lambda:
   EnforcedStyle: literal
 
