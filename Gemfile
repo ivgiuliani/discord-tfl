@@ -12,3 +12,9 @@ group :development do
   gem 'rubocop', '~> 0.43.0'
   gem 'webmock', '~> 2.1.0'
 end
+
+group :test do
+  # Used by CircleCI to collect test data
+  gem 'rspec_junit_formatter', '0.2.2'
+end
+
