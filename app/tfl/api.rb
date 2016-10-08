@@ -88,11 +88,13 @@ module Tfl
       end
 
       def status_by_mode(mode = Mode::METROPOLITAN_TRAINS)
-        @client.get("/line/mode/#{mode}/status").data
+        @client.get("/line/mode/#{mode}/status").data.map do |line|
+          Tfl::Line.from_json(line)
+        end
       end
 
       def status_by_id(id)
-        @client.get("/line/#{id}/status").data
+        Tfl::Line.from_json(@client.get("/line/#{id}/status").data.first)
       end
 
       private
