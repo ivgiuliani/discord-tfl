@@ -44,7 +44,7 @@ module Tfl
 
       METROPOLITAN_TRAINS = [
         DLR, OVERGROUND, TUBE
-      ].freeze
+      ].join(",")
 
       ALL = [
         BUS,
@@ -87,7 +87,7 @@ module Tfl
         end
       end
 
-      def status_by_mode(mode = Mode::METROPOLITAN_TRAINS)
+      def status_by_mode(mode)
         @client.get("/line/mode/#{mode}/status").data.map do |line|
           Tfl::Line.from_json(line)
         end
