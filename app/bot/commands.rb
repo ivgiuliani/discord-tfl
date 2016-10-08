@@ -33,7 +33,7 @@ module Bot
         entity = Tfl::Api::Mode::METROPOLITAN_TRAINS
         type = :by_mode
       else
-        entity = args[0].downcase
+        entity = Tfl::Aliases.resolve(args[0].downcase)
         type = :by_id
         type = :by_mode if Tfl::Api::Mode.valid? entity
       end
@@ -52,15 +52,14 @@ module Bot
     end
 
     def status_single_item(event, line)
-      case
-        when line.nil?
-          event << "#{entity}: TfL did not return any data :("
-        when line.good_service?
-          event << "#{line.display_name}: #{line.current_status}"
-        else
-          line.disruptions.each do |disruption|
-            event << "#{line.display_name}: #{disruption}"
-          end
+      if line.nil?
+        event << "#{entity}: TfL did not return any data :("
+      elsif line.good_service?
+        event << "#{line.display_name}: #{line.current_status}"
+      else
+        line.disruptions.each do |disruption|
+          event << "#{line.display_name}: #{disruption}"
+        end
       end
     end
   end
