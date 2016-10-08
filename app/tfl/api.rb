@@ -27,16 +27,46 @@ module Tfl
 
     module Mode
       BUS = "bus"
+      CABLE_CAR = "cable-car"
+      CYCLE = "cycle"
+      CYCLE_HIRE = "cycle-hire"
+      COACH = "coach"
       DLR = "dlr"
       OVERGROUND = "overground"
       TFLRAIL = "tflrail"
+      TRAM = "tram"
       TUBE = "tube"
+      NATIONAL_RAIL = "national_rail"
+      REPLACEMENT_BUS = "replacement-bus"
+      RIVER_BUS = "river-bus"
+      RIVER_TOUR = "river-tour"
+      WALKING = "walking"
 
       METROPOLITAN_TRAINS = [
         DLR, OVERGROUND, TUBE
       ].freeze
 
-      ALL = [BUS, DLR, OVERGROUND, TFLRAIL, TUBE].freeze
+      ALL = [
+        BUS,
+        CABLE_CAR,
+        CYCLE,
+        CYCLE_HIRE,
+        COACH,
+        DLR,
+        NATIONAL_RAIL,
+        OVERGROUND,
+        TRAM,
+        TFLRAIL,
+        TUBE,
+        REPLACEMENT_BUS,
+        RIVER_BUS,
+        RIVER_TOUR,
+        WALKING
+      ].freeze
+
+      def self.valid?(mode)
+        ALL.include?(mode)
+      end
     end
 
     class Client
