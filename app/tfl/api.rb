@@ -76,31 +76,26 @@ module Tfl
                                 timeout: Config::NETWORK_TIMEOUT)
       end
 
-      def status(type, *args)
+      def status(type, entity)
         case type
         when :by_id
-          status_by_id(*args)
+          status_by_id(entity)
         when :by_mode
-          status_by_mode(*args)
+          status_by_mode(entity)
         else
           raise ArgumentError, "Invalid status type"
         end
       end
 
       def status_by_mode(mode = Mode::METROPOLITAN_TRAINS)
-        @client.get("/line/mode/#{join(mode)}/status").data
+        @client.get("/line/mode/#{mode}/status").data
       end
 
-      def status_by_id(ids)
-        @client.get("/line/#{join(ids)}/status").data
+      def status_by_id(id)
+        @client.get("/line/#{id}/status").data
       end
 
       private
-
-      def join(item)
-        return item.join(",") if item.respond_to? :each
-        item
-      end
 
       def transport
         Songkick::Transport::Curb
