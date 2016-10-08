@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 module Tfl
+  class InvalidLineException < StandardError; end
+
   class Line
     attr_reader :id, :display_name, :mode, :disruptions, :current_status
 

@@ -11,9 +11,25 @@ module Bot
 
     def on_status(event, *args)
       if args.empty?
-        status_list(event, @tfl.status(:by_mode, Tfl::Api::Mode::METROPOLITAN_TRAINS))
+        entity = Tfl::Api::Mode::METROPOLITAN_TRAINS
+        type = :by_mode
       else
-        line_state(event, @tfl.status(:by_id, args[0]))
+        entity = args[0].downcase
+        type = :by_id
+        type = :by_mode if Tfl::Api::Mode.valid? entity
+      end
+
+      begin
+        response = @tfl.status(type, entity)
+      rescue Tfl::InvalidLineException
+        event << "#{entity}: invalid line"
+        return nil
+      end
+
+      if response.respond_to?(:each)
+        status_list(event, response)
+      else
+        status_single_item(event, response)
       end
 
       nil
@@ -25,7 +41,7 @@ module Bot
       end
     end
 
-    def line_state(event, line)
+    def status_single_item(event, line)
       if line.good_service?
         event << "#{line.display_name}: #{line.current_status}"
       else

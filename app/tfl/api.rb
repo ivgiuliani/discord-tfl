@@ -42,6 +42,7 @@ module Tfl
       RIVER_TOUR = "river-tour"
       WALKING = "walking"
 
+      # Special mode that includes the common means of transportation.
       METROPOLITAN_TRAINS = [
         DLR, OVERGROUND, TUBE
       ].join(",")
@@ -91,10 +92,22 @@ module Tfl
         @client.get("/line/mode/#{mode}/status").data.map do |line|
           Tfl::Line.from_json(line)
         end
+      rescue Songkick::Transport::HttpError => exception
+        if exception.status == 404
+          raise Tfl::InvalidLineException
+        else
+          raise
+        end
       end
 
       def status_by_id(id)
         Tfl::Line.from_json(@client.get("/line/#{id}/status").data.first)
+      rescue Songkick::Transport::HttpError => exception
+        if exception.status == 404
+          raise Tfl::InvalidLineException
+        else
+          raise
+        end
       end
 
       private
