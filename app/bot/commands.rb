@@ -10,32 +10,28 @@ module Bot
     private
 
     def on_status(event, *args)
-      frmt = -> (item) do
-        "#{item['name']}: #{item['lineStatuses'].first['statusSeverityDescription']}"
-      end
-
       if args.empty?
-        @tfl.status(:by_mode).map do |item|
-          event << frmt.call(item)
-        end
+        status_list(event, @tfl.status(:by_mode, Tfl::Api::Mode::METROPOLITAN_TRAINS))
       else
-        on_item_status(event, args[0])
+        line_state(event, @tfl.status(:by_id, args[0]))
       end
 
       nil
     end
 
-    def on_item_status(event, id)
-      frmt = -> (item) do
-        "#{item['name']}: #{item['lineStatuses'].first['statusSeverityDescription']}"
+    def status_list(event, line_statuses)
+      line_statuses.each do |line|
+        event << "#{line.display_name}: #{line.current_status}"
       end
+    end
 
-      if Tfl::Api::Mode.valid? id
-        @tfl.status(:by_mode, id).map do |item|
-          event << frmt.call(item)
-        end
+    def line_state(event, line)
+      if line.good_service?
+        event << "#{line.display_name}: #{line.current_status}"
       else
-        event << frmt.call(@tfl.status(:by_id, id).first)
+        line.disruptions.each do |disruption|
+          event << "#{line.display_name}: #{disruption}"
+        end
       end
     end
   end
