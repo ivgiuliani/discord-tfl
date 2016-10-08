@@ -84,10 +84,20 @@ RSpec.describe Tfl::Api::Client do
       context "with an invalid id" do
         let(:id) { "invalid" }
 
-        before { stub_tfl_not_found("/line/invalid/status") }
+        context "that returns a not found error" do
+          before { stub_tfl_not_found("/line/invalid/status") }
 
-        it "raises an exception" do
-          expect { api_call }.to raise_error(Tfl::InvalidLineException)
+          it "raises an exception" do
+            expect { api_call }.to raise_error(Tfl::InvalidLineException)
+          end
+        end
+
+        context "that returns an invalid-request response " do
+          before { stub_tfl_invalid("/line/invalid/status") }
+
+          it "raises an exception" do
+            expect { api_call }.to raise_error(Tfl::InvalidLineException)
+          end
         end
       end
 

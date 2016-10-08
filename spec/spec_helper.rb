@@ -27,6 +27,10 @@ def stub_tfl_not_found(path)
   stub_request(:get, "https://api.tfl.gov.uk#{path}").to_return(status: 404)
 end
 
+def stub_tfl_invalid(path)
+  stub_request(:get, "https://api.tfl.gov.uk#{path}").to_return(status: 400)
+end
+
 RSpec.configure do |config|
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true

@@ -36,7 +36,7 @@ module Tfl
       TFLRAIL = "tflrail"
       TRAM = "tram"
       TUBE = "tube"
-      NATIONAL_RAIL = "national_rail"
+      NATIONAL_RAIL = "national-rail"
       REPLACEMENT_BUS = "replacement-bus"
       RIVER_BUS = "river-bus"
       RIVER_TOUR = "river-tour"
@@ -93,7 +93,7 @@ module Tfl
           Tfl::Line.from_json(line)
         end
       rescue Songkick::Transport::HttpError => exception
-        if exception.status == 404
+        if [400, 404].include? exception.status
           raise Tfl::InvalidLineException
         else
           raise
@@ -109,7 +109,7 @@ module Tfl
         end
         Tfl::Line.from_json(json.first)
       rescue Songkick::Transport::HttpError => exception
-        if exception.status == 404
+        if [400, 404].include? exception.status
           raise Tfl::InvalidLineException
         else
           raise
