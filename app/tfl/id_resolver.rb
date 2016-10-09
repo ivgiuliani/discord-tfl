@@ -13,12 +13,14 @@ module Tfl
       "district line" => Tfl::Const::Tube::DISTRICT,
       "dangleway" => Tfl::Const::Mode::CABLE_CAR,
       "hammersmith" => Tfl::Const::Tube::HAMMERSMITH,
+      "hammersmith and city" => Tfl::Const::Tube::HAMMERSMITH,
       "h&c" => Tfl::Const::Tube::HAMMERSMITH,
       "jubilee line" => Tfl::Const::Tube::JUBILEE,
       "northern line" => Tfl::Const::Tube::NORTHERN,
       "piccadilly line" => Tfl::Const::Tube::PICCADILLY,
       "victoria line" => Tfl::Const::Tube::VICTORIA,
       "waterloo" => Tfl::Const::Tube::WATERLOO,
+      "waterloo and city" => Tfl::Const::Tube::WATERLOO,
       "w&c" => Tfl::Const::Tube::WATERLOO
     }.freeze
 
