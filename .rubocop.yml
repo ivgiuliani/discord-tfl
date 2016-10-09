@@ -101,7 +101,4 @@ Style/VariableNumber:
   Enabled: false
 
 Rails:
-  Enabled: true
-
-Rails/UniqBeforePluck:
   Enabled: false
