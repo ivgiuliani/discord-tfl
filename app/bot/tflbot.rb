@@ -2,16 +2,13 @@
 require "discordrb"
 require "prius"
 
+require_relative "config"
 require_relative "commands"
 
 Prius.load(:discord_client_id)
 Prius.load(:discord_token)
 
 module Bot
-  module Config
-    PREFIX = "!"
-  end
-
   class LondonBot
     include Bot::Commands
 
