@@ -48,14 +48,14 @@ module Bot
       end
 
       line_statuses.each do |line|
-        status_single_item(event, line)
+        status_single_item(event, line, detailed: false)
       end
     end
 
-    def status_single_item(event, line)
+    def status_single_item(event, line, detailed: true)
       if line.nil?
         event << "#{entity}: TfL did not return any data :("
-      elsif line.good_service?
+      elsif line.good_service? || !detailed
         event << "#{line.display_name}: #{line.current_status}"
       else
         line.disruptions.each do |disruption|
