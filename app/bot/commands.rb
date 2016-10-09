@@ -1,31 +1,27 @@
 # frozen_string_literal: true
 module Bot
   module Commands
-    include Loggy
+    extend Discordrb::EventContainer
+    extend Discordrb::Commands::CommandContainer
+    extend Loggy
 
     MAX_LIST_RESPONSE_COUNT = 30
     MAX_QUERY_LENGTH = 35
 
-    def configure_commands(bot, tfl_client)
-      @tfl = tfl_client
-
-      bot.mention do |event|
-        unless event.from_bot?
-          args = event.message.text.split.reject do |word|
-            # Terrible hack to work around the fact that there's no way to
-            # exclude mentions directly from a message.
-            mentions = event.message.mentions.map { |mention| "<@#{mention.id}>" }
-            mentions.include? word
-          end
-          on_status(event, *args)
+    mention do |event|
+      unless event.from_bot?
+        args = event.message.text.split.reject do |word|
+          # Terrible hack to work around the fact that there's no way to
+          # exclude mentions directly from a message.
+          mentions = event.message.mentions.map { |mention| "<@#{mention.id}>" }
+          mentions.include? word
         end
+        on_status(event, *args)
       end
-      bot.command(:status) { |event, *args| on_status(event, *args) }
     end
+    command(:status) { |event, *args| on_status(event, *args) }
 
-    private
-
-    def on_status(event, *args)
+    def self.on_status(event, *args)
       return if event.from_bot?
 
       type, entity = status_decode(args)
@@ -34,7 +30,7 @@ module Bot
         "\"#{args.join(' ')}\" (resolved to #{entity})"
 
       begin
-        response = @tfl.status(type, entity)
+        response = TFL.status(type, entity)
       rescue Tfl::InvalidLineException
         event << "#{entity}: invalid line"
         return nil
@@ -49,7 +45,7 @@ module Bot
       nil
     end
 
-    def status_decode(args)
+    def self.status_decode(args)
       if args.empty?
         entity = Tfl::Const::Mode::METROPOLITAN_TRAINS
         type = :by_mode
@@ -65,7 +61,7 @@ module Bot
       [type, entity]
     end
 
-    def status_list(event, original_query, line_statuses)
+    def self.status_list(event, original_query, line_statuses)
       if line_statuses.empty?
         event << "TfL did not return any data for #{original_query}"
         return
@@ -81,7 +77,7 @@ module Bot
       end
     end
 
-    def status_single_item(event, line, detailed: true)
+    def self.status_single_item(event, line, detailed: true)
       if line.nil?
         event << "#{entity}: TfL did not return any data :("
       elsif line.good_service? || !detailed
