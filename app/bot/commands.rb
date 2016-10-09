@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 module Bot
   module Commands
+    include Loggy
+
     MAX_LIST_RESPONSE_COUNT = 30
     MAX_QUERY_LENGTH = 35
 
@@ -24,7 +26,12 @@ module Bot
     private
 
     def on_status(event, *args)
+      return if event.from_bot?
+
       type, entity = status_decode(args)
+
+      log "[command/status(from:#{event.user.name})] " \
+        "\"#{args.join(' ')}\" (resolved to #{entity})"
 
       begin
         response = @tfl.status(type, entity)
