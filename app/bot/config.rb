@@ -3,19 +3,19 @@
 require "yaml"
 
 module Bot
-  module Config
-    module Default
-      PREFIX = "!"
-      USERNAME = "TfLBot"
-    end
+  module DefaultConfig
+    PREFIX = "!"
+    USERNAME = "TfLBot"
+  end
 
+  class Config
     def load_config(config_file)
       return if config_loaded
 
       cfg = YAML.load_file(config_file)
 
-      @cfg_prefix = config(cfg, "command_prefix", cfg_prefix)
-      @cfg_username = config(cfg, "username", cfg_username)
+      @prefix = config(cfg, "command_prefix", prefix)
+      @username = config(cfg, "username", username)
 
       @config_loaded = true
     end
@@ -24,12 +24,12 @@ module Bot
       @config_loaded ||= false
     end
 
-    def cfg_prefix
-      @cfg_prefix ||= Default::PREFIX
+    def prefix
+      @prefix ||= DefaultConfig::PREFIX
     end
 
-    def cfg_username
-      @cfg_username ||= Default::USERNAME
+    def username
+      @username ||= DefaultConfig::USERNAME
     end
 
     private

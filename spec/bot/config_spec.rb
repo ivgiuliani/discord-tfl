@@ -3,11 +3,7 @@ require "spec_helper"
 
 RSpec.describe Bot::Config do
   context "when loading a config file" do
-    let(:instance) do
-      klass = Class.new
-      klass.extend(Bot::Config)
-      klass
-    end
+    let(:instance) { described_class.new }
 
     subject(:config_load) do
       instance.load_config(fixture_path("sample_config", type: "yml"))
@@ -16,8 +12,8 @@ RSpec.describe Bot::Config do
     describe "override the default settings" do
       mappings = {
         # method => [default, expected]
-        cfg_prefix: [Bot::Config::Default::PREFIX, "@"],
-        cfg_username: [Bot::Config::Default::USERNAME, "username123"]
+        prefix: [Bot::DefaultConfig::PREFIX, "@"],
+        username: [Bot::DefaultConfig::USERNAME, "username123"]
       }
 
       mappings.each do |method, values|
@@ -31,6 +27,12 @@ RSpec.describe Bot::Config do
           end
         end
       end
+    end
+
+    it "marks the configuration as loaded after loading it" do
+      expect(instance.config_loaded).to be false
+      config_load
+      expect(instance.config_loaded).to be true
     end
   end
 end
