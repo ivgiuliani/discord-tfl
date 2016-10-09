@@ -7,7 +7,7 @@ RSpec.describe Tfl::Line do
     let(:api_obj) { load_fixture_obj("tfl/status_central_good_service").first }
 
     it "creates a new valid object" do
-      expect(line.id).to eq("central")
+      expect(line.id).to eq(:central)
       expect(line.mode).to eq("tube")
       expect(line.current_status).to eq("Good Service")
       expect(line.display_name).to eq("Central")

@@ -29,7 +29,7 @@ module Tfl
       current_status = api_obj["lineStatuses"].first["statusSeverityDescription"]
 
       new(
-        id: api_obj["id"],
+        id: api_obj["id"].to_sym,
         display_name: api_obj["name"],
         mode: api_obj["modeName"],
         current_status: current_status,

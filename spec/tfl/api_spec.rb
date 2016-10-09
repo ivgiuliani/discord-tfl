@@ -41,7 +41,7 @@ RSpec.describe Tfl::Api::Client do
           end
 
           it "has the central line" do
-            expect(api_call.id).to eq("central")
+            expect(api_call.id).to eq(:central)
           end
 
           it "has good service" do
@@ -64,7 +64,7 @@ RSpec.describe Tfl::Api::Client do
           end
 
           it "has the circle line" do
-            expect(api_call.id).to eq("circle")
+            expect(api_call.id).to eq(:circle)
           end
 
           it "has disruptions" do
@@ -88,7 +88,7 @@ RSpec.describe Tfl::Api::Client do
           end
 
           it "has the dlr" do
-            expect(api_call.id).to eq("dlr")
+            expect(api_call.id).to eq(:dlr)
           end
 
           it "has disruptions" do
