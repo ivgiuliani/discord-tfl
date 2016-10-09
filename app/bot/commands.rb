@@ -56,7 +56,7 @@ module Bot
       end
 
       line_statuses.each do |line|
-        status_single_item(event, line, detailed: false)
+        status_single_item(event, line, detailed: line_statuses.count == 1)
       end
     end
 
