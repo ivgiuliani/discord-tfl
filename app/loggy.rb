@@ -4,6 +4,7 @@ require "logger"
 module Loggy
   def logger
     if @logger.nil?
+      $stdout.sync = true
       @logger = Logger.new(STDOUT)
       @logger.level = Logger::INFO
 
