@@ -6,6 +6,10 @@ module Loggy
     if @logger.nil?
       @logger = Logger.new(STDOUT)
       @logger.level = Logger::INFO
+
+      @logger.formatter = proc do |severity, datetime, _progname, msg|
+        "#{severity} | #{datetime}: #{msg}"
+      end
     end
 
     @logger
