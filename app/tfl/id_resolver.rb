@@ -31,9 +31,12 @@ module Tfl
     def self.similar(string)
       return string if Tfl::Const::Mode.valid? string
       return string if Tfl::Const::Tube.valid? string
+      return string if Tfl::Const::Bus.valid? string
       return string if Tfl::Const::NationalRail.valid? string
       return string if ALIASES.include? string
 
+      # Buses are intentionally excluded from the similarities as we only
+      # want exact matches for them.
       similarities =
         similarity_list(string, Tfl::Const::Mode::ALL) +
         similarity_list(string, Tfl::Const::Tube::ALL) +
