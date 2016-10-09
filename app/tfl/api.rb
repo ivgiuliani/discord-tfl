@@ -110,7 +110,7 @@ module Tfl
 
       def status_by_mode(mode)
         @client.get("/line/mode/#{mode}/status").data.map do |line|
-          Tfl::Line.from_json(line)
+          Tfl::Line.from_api(line)
         end
       rescue Songkick::Transport::HttpError => exception
         if [400, 404].include? exception.status
@@ -127,7 +127,7 @@ module Tfl
           # 'cycle-hire' or 'walking'.
           return nil
         end
-        Tfl::Line.from_json(json.first)
+        Tfl::Line.from_api(json.first)
       rescue Songkick::Transport::HttpError => exception
         if [400, 404].include? exception.status
           raise Tfl::InvalidLineException
