@@ -109,6 +109,14 @@ module Tfl
       end
     end
 
+    module RiverBus
+      ALL = Const.inject_from_json("river_bus_lines")
+
+      def self.valid?(rail)
+        ALL.include? rail
+      end
+    end
+
     module RiverTour
       ALL = Const.inject_from_json("river_tour_lines")
 
