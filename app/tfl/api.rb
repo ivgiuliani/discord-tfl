@@ -23,6 +23,26 @@ module Tfl
       PICCADILLY = "piccadilly"
       VICTORIA = "victoria"
       WATERLOO = "waterloo-city"
+
+      ALL = [
+        BAKERLOO,
+        CENTRAL,
+        CIRCLE,
+        DISTRICT,
+        DLR,
+        HAMMERSMITH,
+        JUBILEE,
+        OVERGROUND,
+        METROPOLITAN,
+        NORTHERN,
+        PICCADILLY,
+        VICTORIA,
+        WATERLOO
+      ].freeze
+
+      def self.valid?(line)
+        ALL.include? line
+      end
     end
 
     module Mode
