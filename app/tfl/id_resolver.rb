@@ -29,15 +29,24 @@ module Tfl
     end
 
     def self.similar(string)
-      return string if Tfl::Const::Mode.valid? string
-      return string if Tfl::Const::Tube.valid? string
-      return string if Tfl::Const::NationalRail.valid? string
-      return string if ALIASES.include? string
+      # Give priority to exact matches.
+      [Tfl::Const::Mode,
+       Tfl::Const::Tube,
+       Tfl::Const::Bus,
+       Tfl::Const::NationalRail,
+       Tfl::Const::RiverBus,
+       Tfl::Const::RiverTour].each do |mode|
+        return string if mode.valid? string
+      end
 
+      # Buses are intentionally excluded from the similarities as we only
+      # want exact matches for them.
       similarities =
         similarity_list(string, Tfl::Const::Mode::ALL) +
         similarity_list(string, Tfl::Const::Tube::ALL) +
         similarity_list(string, Tfl::Const::NationalRail::ALL) +
+        similarity_list(string, Tfl::Const::RiverBus::ALL) +
+        similarity_list(string, Tfl::Const::RiverTour::ALL) +
         similarity_list(string, ALIASES.keys)
 
       similarities.

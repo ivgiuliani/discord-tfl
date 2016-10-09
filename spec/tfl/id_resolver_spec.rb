@@ -42,6 +42,28 @@ RSpec.describe Tfl::IdResolver do
     end
   end
 
+  context "with an exact match" do
+    shared_examples_for "exact match" do |mode, all|
+      context "for #{mode}" do
+        all.each do |match|
+          context "that is #{match}" do
+            let(:string) { match }
+
+            it "resolves it to itself" do
+              is_expected.to eq(match)
+            end
+          end
+        end
+      end
+    end
+
+    include_examples "exact match", "tube", Tfl::Const::Tube::ALL
+    include_examples "exact match", "bus", Tfl::Const::Bus::ALL
+    include_examples "exact match", "national rail", Tfl::Const::NationalRail::ALL
+    include_examples "exact match", "river bus", Tfl::Const::RiverBus::ALL
+    include_examples "exact match", "river tour", Tfl::Const::RiverTour::ALL
+  end
+
   context "with an invalid alias" do
     let(:string) { "invalid" }
 

@@ -1,39 +1,14 @@
 # frozen_string_literal: true
+
+require "json"
+
 module Tfl
   module Const
-    module Tube
-      BAKERLOO = "bakerloo"
-      CENTRAL = "central"
-      CIRCLE = "circle"
-      DISTRICT = "district"
-      DLR = "dlr"
-      HAMMERSMITH = "hammersmith-city"
-      JUBILEE = "jubilee"
-      OVERGROUND = "london-overground"
-      METROPOLITAN = "metropolitan"
-      NORTHERN = "northern"
-      PICCADILLY = "piccadilly"
-      VICTORIA = "victoria"
-      WATERLOO = "waterloo-city"
-
-      ALL = [
-        BAKERLOO,
-        CENTRAL,
-        CIRCLE,
-        DISTRICT,
-        DLR,
-        HAMMERSMITH,
-        JUBILEE,
-        OVERGROUND,
-        METROPOLITAN,
-        NORTHERN,
-        PICCADILLY,
-        VICTORIA,
-        WATERLOO
-      ].freeze
-
-      def self.valid?(line)
-        ALL.include? line
+    def self.inject_from_json(json_path)
+      path = "#{File.dirname(__FILE__)}/data"
+      content = File.read(File.join(path, "#{json_path}.json"))
+      JSON.parse(content).map do |item|
+        item["id"]
       end
     end
 
@@ -82,64 +57,68 @@ module Tfl
       end
     end
 
-    module NationalRail
-      ABELLIO_GREATER_ANGLIA = "abellio-greater-anglia"
-      ARRIVA_TRAIN_WALES = "arriva-trains-wales"
-      C2C = "c2c"
-      CALEDONIAN_SLEEPER = "caledonian-sleeper"
-      CHILTERN_RAILWAYS = "chiltern-railways"
-      CROSS_COUNTRY = "cross-country"
-      EAST_MIDLANDS_TRAINS = "east-midlands-trains"
-      FIRST_HULL_TRAINS = "first-hull-trains"
-      FIRST_TRANSPENNINE_EXPRESS = "first-transpennine-express"
-      GATWICK_EXPRESS = "gatwick-express"
-      GRAND_CENTRAL = "grand-central"
-      GREAT_NORTHERN = "great-northern"
-      GREAT_WESTERN_RAILWAY = "great-western-railway"
-      HEATHROW_CONNECT = "heathrow-connect"
-      HEATHROW_EXPRESS = "heathrow-express"
-      ISLAND_LINE = "island-line"
-      LOCAL_EXPRESS_TRAINS = "local-express-trains"
-      LONDON_MIDLAND = "london-midland"
-      MERSEYRAIL = "merseyrail"
-      NORTHERN_RAIL = "northern-rail"
-      SCOTRAIL = "scotrail"
-      SOUTHEASTERN = "southeastern"
-      SOUTHERN = "southern"
-      SOUTH_WEST_TRAINS = "south-west-trains"
-      THAMESLINK = "thameslink"
-      VIRGIN_TRAINS = "virgin-trains"
-      VIRGIN_TRAINS_EAST_COAST = "virgin-trains-east-coast"
+    module Tube
+      BAKERLOO = "bakerloo"
+      CENTRAL = "central"
+      CIRCLE = "circle"
+      DISTRICT = "district"
+      DLR = "dlr"
+      HAMMERSMITH = "hammersmith-city"
+      JUBILEE = "jubilee"
+      OVERGROUND = "london-overground"
+      METROPOLITAN = "metropolitan"
+      NORTHERN = "northern"
+      PICCADILLY = "piccadilly"
+      VICTORIA = "victoria"
+      WATERLOO = "waterloo-city"
 
       ALL = [
-        ABELLIO_GREATER_ANGLIA,
-        ARRIVA_TRAIN_WALES,
-        C2C,
-        CALEDONIAN_SLEEPER,
-        CHILTERN_RAILWAYS,
-        CROSS_COUNTRY,
-        EAST_MIDLANDS_TRAINS,
-        FIRST_HULL_TRAINS,
-        FIRST_TRANSPENNINE_EXPRESS,
-        GATWICK_EXPRESS,
-        GRAND_CENTRAL,
-        GREAT_NORTHERN,
-        GREAT_WESTERN_RAILWAY,
-        HEATHROW_CONNECT,
-        HEATHROW_EXPRESS,
-        ISLAND_LINE,
-        LOCAL_EXPRESS_TRAINS,
-        LONDON_MIDLAND,
-        MERSEYRAIL,
-        NORTHERN_RAIL,
-        SCOTRAIL,
-        SOUTHEASTERN,
-        SOUTHERN,
-        SOUTH_WEST_TRAINS,
-        THAMESLINK,
-        VIRGIN_TRAINS,
-        VIRGIN_TRAINS_EAST_COAST
+        BAKERLOO,
+        CENTRAL,
+        CIRCLE,
+        DISTRICT,
+        DLR,
+        HAMMERSMITH,
+        JUBILEE,
+        OVERGROUND,
+        METROPOLITAN,
+        NORTHERN,
+        PICCADILLY,
+        VICTORIA,
+        WATERLOO
       ].freeze
+
+      def self.valid?(line)
+        ALL.include? line
+      end
+    end
+
+    module Bus
+      ALL = Const.inject_from_json("bus_lines")
+
+      def self.valid?(line)
+        ALL.include? line
+      end
+    end
+
+    module NationalRail
+      ALL = Const.inject_from_json("national_rail_lines")
+
+      def self.valid?(rail)
+        ALL.include? rail
+      end
+    end
+
+    module RiverBus
+      ALL = Const.inject_from_json("river_bus_lines")
+
+      def self.valid?(rail)
+        ALL.include? rail
+      end
+    end
+
+    module RiverTour
+      ALL = Const.inject_from_json("river_tour_lines")
 
       def self.valid?(rail)
         ALL.include? rail
