@@ -12,6 +12,9 @@ GlobalVars:
 Lint/UnneededDisable:
   Severity: error
 
+Metrics/AbcSize:
+  Max: 25
+
 Metrics/ClassLength:
   Enabled: false
 
