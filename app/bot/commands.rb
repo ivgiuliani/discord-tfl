@@ -7,6 +7,17 @@ module Bot
     def configure_commands(bot, tfl_client)
       @tfl = tfl_client
 
+      bot.mention do |event|
+        unless event.from_bot?
+          args = event.message.text.split.reject do |word|
+            # Terrible hack to work around the fact that there's no way to
+            # exclude mentions directly from a message.
+            mentions = event.message.mentions.map { |mention| "<@#{mention.id}>" }
+            mentions.include? word
+          end
+          on_status(event, *args)
+        end
+      end
       bot.command(:status) { |event, *args| on_status(event, *args) }
     end
 
@@ -54,7 +65,7 @@ module Bot
       end
 
       if line_statuses.count > MAX_LIST_RESPONSE_COUNT
-        event << "Wow. Much data. No show."
+        event << "Wow. Much data. Not show."
         return
       end
 
