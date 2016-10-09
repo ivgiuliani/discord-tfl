@@ -33,6 +33,7 @@ module Tfl
       return string if Tfl::Const::Tube.valid? string
       return string if Tfl::Const::Bus.valid? string
       return string if Tfl::Const::NationalRail.valid? string
+      return string if Tfl::Const::RiverTour.valid? string
       return string if ALIASES.include? string
 
       # Buses are intentionally excluded from the similarities as we only
@@ -41,6 +42,7 @@ module Tfl
         similarity_list(string, Tfl::Const::Mode::ALL) +
         similarity_list(string, Tfl::Const::Tube::ALL) +
         similarity_list(string, Tfl::Const::NationalRail::ALL) +
+        similarity_list(string, Tfl::Const::RiverTour::ALL) +
         similarity_list(string, ALIASES.keys)
 
       similarities.

@@ -108,5 +108,13 @@ module Tfl
         ALL.include? rail
       end
     end
+
+    module RiverTour
+      ALL = Const.inject_from_json("river_tour_lines")
+
+      def self.valid?(rail)
+        ALL.include? rail
+      end
+    end
   end
 end
