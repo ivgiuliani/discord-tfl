@@ -31,11 +31,13 @@ module Tfl
     def self.similar(string)
       return string if Tfl::Api::Mode.valid? string
       return string if Tfl::Api::Tube.valid? string
+      return string if Tfl::Api::NationalRail.valid? string
       return string if ALIASES.include? string
 
       similarities =
         similarity_list(string, Tfl::Api::Mode::ALL) +
         similarity_list(string, Tfl::Api::Tube::ALL) +
+        similarity_list(string, Tfl::Api::NationalRail::ALL) +
         similarity_list(string, ALIASES.keys)
 
       similarities.
