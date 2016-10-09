@@ -29,7 +29,7 @@ RSpec.describe Tfl::Api::Client do
 
       context "for a valid id" do
         context "when there is good service" do
-          let(:id) { Tfl::Api::Tube::CENTRAL }
+          let(:id) { Tfl::Const::Tube::CENTRAL }
 
           before do
             stub_tfl_response("/line/central/status",
@@ -52,7 +52,7 @@ RSpec.describe Tfl::Api::Client do
         end
 
         context "when there is a planned closure" do
-          let(:id) { Tfl::Api::Tube::CIRCLE }
+          let(:id) { Tfl::Const::Tube::CIRCLE }
 
           before do
             stub_tfl_response("/line/circle/status",
@@ -76,7 +76,7 @@ RSpec.describe Tfl::Api::Client do
         end
 
         context "when there is a part closure" do
-          let(:id) { Tfl::Api::Tube::DLR }
+          let(:id) { Tfl::Const::Tube::DLR }
 
           before do
             stub_tfl_response("/line/dlr/status",
@@ -135,7 +135,7 @@ RSpec.describe Tfl::Api::Client do
       subject(:api_call) { instance.status_by_mode(mode) }
 
       context "for a valid mode" do
-        let(:mode) { Tfl::Api::Mode::TUBE }
+        let(:mode) { Tfl::Const::Mode::TUBE }
 
         before do
           stub_tfl_response("/line/mode/tube/status",
@@ -153,7 +153,7 @@ RSpec.describe Tfl::Api::Client do
         end
 
         context "for a large response" do
-          let(:mode) { Tfl::Api::Mode::BUS }
+          let(:mode) { Tfl::Const::Mode::BUS }
 
           before do
             stub_tfl_response("/line/mode/bus/status",

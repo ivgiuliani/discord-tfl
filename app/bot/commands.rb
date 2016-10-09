@@ -33,7 +33,7 @@ module Bot
 
     def status_decode(args)
       if args.empty?
-        entity = Tfl::Api::Mode::METROPOLITAN_TRAINS
+        entity = Tfl::Const::Mode::METROPOLITAN_TRAINS
         type = :by_mode
       else
         entity = Tfl::IdResolver.resolve(args.join(" ").
@@ -41,7 +41,7 @@ module Bot
             downcase)
 
         type = :by_id
-        type = :by_mode if Tfl::Api::Mode.valid? entity
+        type = :by_mode if Tfl::Const::Mode.valid? entity
       end
 
       [type, entity]
