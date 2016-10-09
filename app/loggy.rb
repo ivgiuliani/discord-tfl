@@ -9,7 +9,7 @@ module Loggy
       @logger.level = Logger::INFO
 
       @logger.formatter = proc do |severity, datetime, _progname, msg|
-        "#{severity} | #{datetime}: #{msg}"
+        "#{severity} | #{datetime}: #{msg}\n"
       end
     end
 
