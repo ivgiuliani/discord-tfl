@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require "./app/tfl/api"
 require "./app/tflbot"
 
 bot = Bot::LondonBot.new

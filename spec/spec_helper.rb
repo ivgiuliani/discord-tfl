@@ -9,6 +9,8 @@ ENV["TFL_APPLICATION_KEY"] = "tfl-application-key"
 require "webmock/rspec"
 WebMock.disable_net_connect!(allow_localhost: true)
 
+require "tflbot"
+
 def load_fixture(fixture_name)
   fixture_path = "#{File.dirname(__FILE__)}/fixtures"
   File.read(File.join(fixture_path, "#{fixture_name}.json"))
@@ -23,5 +25,3 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 end
-
-require "tflbot"
