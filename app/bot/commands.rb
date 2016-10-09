@@ -33,7 +33,8 @@ module Bot
         entity = Tfl::Api::Mode::METROPOLITAN_TRAINS
         type = :by_mode
       else
-        entity = Tfl::Aliases.resolve(args[0].downcase)
+        entity = Tfl::IdResolver.resolve(args[0].downcase)
+
         type = :by_id
         type = :by_mode if Tfl::Api::Mode.valid? entity
       end
