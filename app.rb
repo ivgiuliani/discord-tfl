@@ -8,5 +8,5 @@ begin
   bot.run
 rescue SignalException
   $stdout.puts "So long and thanks for all the fish."
-  exit!
+  exit! true
 end
