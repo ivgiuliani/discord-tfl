@@ -24,6 +24,8 @@ module Bot
     private
 
     def on_status(event, *args)
+      return if event.from_bot?
+
       type, entity = status_decode(args)
 
       begin
