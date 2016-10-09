@@ -50,6 +50,12 @@ module Tfl
       @disruptions = disruptions
     end
 
+    def ==(other)
+      @id == other.id
+    end
+
+    alias_method :eql?, :==
+
     def good_service?
       disruptions.empty?
     end

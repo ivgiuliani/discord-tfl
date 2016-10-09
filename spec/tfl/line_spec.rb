@@ -23,4 +23,20 @@ RSpec.describe Tfl::Line do
       end
     end
   end
+
+  describe "#==" do
+    let(:line1) { FactoryGirl.build(:line, :central) }
+    let(:line2) { FactoryGirl.build(:line, :northern) }
+    let(:line3) { FactoryGirl.build(:line, :central) }
+
+    it "returns true for the same line" do
+      expect(line1 == line3).to be true
+      expect(line3 == line1).to be true
+    end
+
+    it "returns false for different lines" do
+      expect(line1 == line2).to be false
+      expect(line2 == line1).to be false
+    end
+  end
 end
