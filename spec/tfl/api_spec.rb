@@ -151,6 +151,25 @@ RSpec.describe Tfl::Api::Client do
             expect(item).to be_instance_of Tfl::Line
           end
         end
+
+        context "for a large response" do
+          let(:mode) { Tfl::Api::Mode::BUS }
+
+          before do
+            stub_tfl_response("/line/mode/bus/status",
+                              "tfl/status_mode_bus_list")
+          end
+
+          it "returns all the data" do
+            expect(api_call.count).to eq(665)
+          end
+
+          it "returns a list of lines" do
+            api_call.each do |item|
+              expect(item).to be_instance_of Tfl::Line
+            end
+          end
+        end
       end
 
       context "with an invalid mode" do

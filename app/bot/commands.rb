@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 module Bot
   module Commands
+    MAX_LIST_RESPONSE_COUNT = 30
+
     def configure_commands(bot, tfl_client)
       @tfl = tfl_client
 
@@ -45,6 +47,12 @@ module Bot
     def status_list(event, original_query, line_statuses)
       if line_statuses.empty?
         event << "TfL did not return any data for #{original_query}"
+        return
+      end
+
+      if line_statuses.count > MAX_LIST_RESPONSE_COUNT
+        event << "Wow. Much data. No show."
+        return
       end
 
       line_statuses.each do |line|
