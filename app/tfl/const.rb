@@ -12,50 +12,6 @@ module Tfl
       end
     end
 
-    module Tube
-      BAKERLOO = "bakerloo"
-      CENTRAL = "central"
-      CIRCLE = "circle"
-      DISTRICT = "district"
-      DLR = "dlr"
-      HAMMERSMITH = "hammersmith-city"
-      JUBILEE = "jubilee"
-      OVERGROUND = "london-overground"
-      METROPOLITAN = "metropolitan"
-      NORTHERN = "northern"
-      PICCADILLY = "piccadilly"
-      VICTORIA = "victoria"
-      WATERLOO = "waterloo-city"
-
-      ALL = [
-        BAKERLOO,
-        CENTRAL,
-        CIRCLE,
-        DISTRICT,
-        DLR,
-        HAMMERSMITH,
-        JUBILEE,
-        OVERGROUND,
-        METROPOLITAN,
-        NORTHERN,
-        PICCADILLY,
-        VICTORIA,
-        WATERLOO
-      ].freeze
-
-      def self.valid?(line)
-        ALL.include? line
-      end
-    end
-
-    module Bus
-      ALL = Const.inject_from_json("bus_lines")
-
-      def self.valid?(line)
-        ALL.include? line
-      end
-    end
-
     module Mode
       BUS = "bus"
       CABLE_CAR = "cable-car"
@@ -98,6 +54,50 @@ module Tfl
 
       def self.valid?(mode)
         ALL.include?(mode)
+      end
+    end
+
+    module Tube
+      BAKERLOO = "bakerloo"
+      CENTRAL = "central"
+      CIRCLE = "circle"
+      DISTRICT = "district"
+      DLR = "dlr"
+      HAMMERSMITH = "hammersmith-city"
+      JUBILEE = "jubilee"
+      OVERGROUND = "london-overground"
+      METROPOLITAN = "metropolitan"
+      NORTHERN = "northern"
+      PICCADILLY = "piccadilly"
+      VICTORIA = "victoria"
+      WATERLOO = "waterloo-city"
+
+      ALL = [
+        BAKERLOO,
+        CENTRAL,
+        CIRCLE,
+        DISTRICT,
+        DLR,
+        HAMMERSMITH,
+        JUBILEE,
+        OVERGROUND,
+        METROPOLITAN,
+        NORTHERN,
+        PICCADILLY,
+        VICTORIA,
+        WATERLOO
+      ].freeze
+
+      def self.valid?(line)
+        ALL.include? line
+      end
+    end
+
+    module Bus
+      ALL = Const.inject_from_json("bus_lines")
+
+      def self.valid?(line)
+        ALL.include? line
       end
     end
 
