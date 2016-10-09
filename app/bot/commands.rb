@@ -2,6 +2,7 @@
 module Bot
   module Commands
     MAX_LIST_RESPONSE_COUNT = 30
+    MAX_QUERY_LENGTH = 35
 
     def configure_commands(bot, tfl_client)
       @tfl = tfl_client
@@ -35,7 +36,9 @@ module Bot
         entity = Tfl::Api::Mode::METROPOLITAN_TRAINS
         type = :by_mode
       else
-        entity = Tfl::IdResolver.resolve(args[0].downcase)
+        entity = Tfl::IdResolver.resolve(args.join(" ").
+            truncate(MAX_QUERY_LENGTH).
+            downcase)
 
         type = :by_id
         type = :by_mode if Tfl::Api::Mode.valid? entity
