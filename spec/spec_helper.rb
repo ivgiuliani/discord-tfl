@@ -3,6 +3,8 @@ $LOAD_PATH.unshift File.expand_path("../../app", __FILE__)
 
 ENV["DISCORD_CLIENT_ID"] = "12345678901234567"
 ENV["DISCORD_TOKEN"] = "t0k3nt0k3nt0k3nt0k3nt0k3n.1234hrx0rz1234token"
+ENV["TFL_APPLICATION_ID"] = "tfl-application-id"
+ENV["TFL_APPLICATION_KEY"] = "tfl-application-key"
 
 require "webmock/rspec"
 WebMock.disable_net_connect!(allow_localhost: true)
@@ -14,21 +16,6 @@ end
 
 def load_fixture_obj(fixture_name)
   JSON.parse(load_fixture(fixture_name))
-end
-
-def stub_tfl_response(path, fixture, status = 200)
-  stub_request(:get, "https://api.tfl.gov.uk#{path}").
-    to_return(status: status, body: load_fixture(fixture), headers: {
-      "Content-Type": "application/json; charset=utf-8"
-    })
-end
-
-def stub_tfl_not_found(path)
-  stub_request(:get, "https://api.tfl.gov.uk#{path}").to_return(status: 404)
-end
-
-def stub_tfl_invalid(path)
-  stub_request(:get, "https://api.tfl.gov.uk#{path}").to_return(status: 400)
 end
 
 RSpec.configure do |config|
