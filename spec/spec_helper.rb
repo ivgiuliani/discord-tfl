@@ -11,9 +11,13 @@ WebMock.disable_net_connect!(allow_localhost: true)
 
 require "tflbot"
 
-def load_fixture(fixture_name)
-  fixture_path = "#{File.dirname(__FILE__)}/fixtures"
-  File.read(File.join(fixture_path, "#{fixture_name}.json"))
+def fixture_path(fixture_name, type: "json")
+  dir = "#{File.dirname(__FILE__)}/fixtures"
+  File.join(dir, "#{fixture_name}.#{type}")
+end
+
+def load_fixture(fixture_name, type: "json")
+  File.read(fixture_path(fixture_name, type: type))
 end
 
 def load_fixture_obj(fixture_name)
