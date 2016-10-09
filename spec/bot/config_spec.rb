@@ -28,5 +28,11 @@ RSpec.describe Bot::Config do
         end
       end
     end
+
+    it "marks the configuration as loaded after loading it" do
+      expect(instance.config_loaded).to be false
+      config_load
+      expect(instance.config_loaded).to be true
+    end
   end
 end
