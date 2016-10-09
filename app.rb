@@ -2,7 +2,6 @@
 require "./app/tflbot"
 
 bot = Bot::LondonBot.new
-$stdout.puts "Bot invite URL: #{bot.invite_url}"
 
 begin
   bot.run
