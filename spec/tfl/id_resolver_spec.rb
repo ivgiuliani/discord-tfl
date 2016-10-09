@@ -31,10 +31,14 @@ RSpec.describe Tfl::IdResolver do
   end
 
   context "with an existing alias" do
-    let(:string) { "dangleway" }
+    Tfl::IdResolver::ALIASES.each do |given_alias, expected|
+      context "that is #{given_alias}" do
+        let(:string) { given_alias }
 
-    it "resolves it to a valid name" do
-      is_expected.to eq("cable-car")
+        it "resolves it to #{expected}" do
+          is_expected.to eq(expected)
+        end
+      end
     end
   end
 
