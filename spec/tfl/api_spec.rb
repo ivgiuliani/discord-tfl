@@ -1,6 +1,25 @@
 # frozen_string_literal: true
 require "spec_helper"
 
+def tfl_api_path(path)
+  %r{^https:\/\/api.tfl.gov.uk#{path}\?app_id=[\S]+app_key=[\S]+}
+end
+
+def stub_tfl_response(path, fixture, status = 200)
+  stub_request(:get, tfl_api_path(path)).
+    to_return(status: status, body: load_fixture(fixture), headers: {
+      "Content-Type": "application/json; charset=utf-8"
+    })
+end
+
+def stub_tfl_not_found(path)
+  stub_request(:get, tfl_api_path(path)).to_return(status: 404)
+end
+
+def stub_tfl_invalid(path)
+  stub_request(:get, tfl_api_path(path)).to_return(status: 400)
+end
+
 RSpec.describe Tfl::Api::Client do
   let(:instance) { described_class.new }
 

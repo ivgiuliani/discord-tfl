@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 require "songkick/transport"
+require "prius"
+
+Prius.load(:tfl_application_id)
+Prius.load(:tfl_application_key)
 
 module Tfl
   module Api
@@ -109,7 +113,7 @@ module Tfl
       end
 
       def status_by_mode(mode)
-        @client.get("/line/mode/#{mode}/status").data.map do |line|
+        @client.get("/line/mode/#{mode}/status", app_key_args).data.map do |line|
           Tfl::Line.from_api(line)
         end
       rescue Songkick::Transport::HttpError => exception
@@ -121,7 +125,7 @@ module Tfl
       end
 
       def status_by_id(id)
-        json = @client.get("/line/#{id}/status").data
+        json = @client.get("/line/#{id}/status", app_key_args).data
         if json.empty?
           # TfL might return an empty list sometimes for uncommon ids such as
           # 'cycle-hire' or 'walking'.
@@ -137,6 +141,13 @@ module Tfl
       end
 
       private
+
+      def app_key_args
+        {
+          app_id: Prius.get(:tfl_application_id),
+          app_key: Prius.get(:tfl_application_key)
+        }
+      end
 
       def transport
         Songkick::Transport::Curb
