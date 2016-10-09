@@ -7,19 +7,19 @@ module Tfl
     MAX_LEVENSHTEIN_DISTANCE = 2
 
     ALIASES = {
-      "bakerloo line" => Tfl::Api::Tube::BAKERLOO,
-      "circle line" => Tfl::Api::Tube::CIRCLE,
-      "central line" => Tfl::Api::Tube::CENTRAL,
-      "district line" => Tfl::Api::Tube::DISTRICT,
-      "dangleway" => Tfl::Api::Mode::CABLE_CAR,
-      "hammersmith" => Tfl::Api::Tube::HAMMERSMITH,
-      "h&c" => Tfl::Api::Tube::HAMMERSMITH,
-      "jubilee line" => Tfl::Api::Tube::JUBILEE,
-      "northern line" => Tfl::Api::Tube::NORTHERN,
-      "piccadilly line" => Tfl::Api::Tube::PICCADILLY,
-      "victoria line" => Tfl::Api::Tube::VICTORIA,
-      "waterloo" => Tfl::Api::Tube::WATERLOO,
-      "w&c" => Tfl::Api::Tube::WATERLOO
+      "bakerloo line" => Tfl::Const::Tube::BAKERLOO,
+      "circle line" => Tfl::Const::Tube::CIRCLE,
+      "central line" => Tfl::Const::Tube::CENTRAL,
+      "district line" => Tfl::Const::Tube::DISTRICT,
+      "dangleway" => Tfl::Const::Mode::CABLE_CAR,
+      "hammersmith" => Tfl::Const::Tube::HAMMERSMITH,
+      "h&c" => Tfl::Const::Tube::HAMMERSMITH,
+      "jubilee line" => Tfl::Const::Tube::JUBILEE,
+      "northern line" => Tfl::Const::Tube::NORTHERN,
+      "piccadilly line" => Tfl::Const::Tube::PICCADILLY,
+      "victoria line" => Tfl::Const::Tube::VICTORIA,
+      "waterloo" => Tfl::Const::Tube::WATERLOO,
+      "w&c" => Tfl::Const::Tube::WATERLOO
     }.freeze
 
     def self.similarity_list(string, list)
@@ -29,15 +29,15 @@ module Tfl
     end
 
     def self.similar(string)
-      return string if Tfl::Api::Mode.valid? string
-      return string if Tfl::Api::Tube.valid? string
-      return string if Tfl::Api::NationalRail.valid? string
+      return string if Tfl::Const::Mode.valid? string
+      return string if Tfl::Const::Tube.valid? string
+      return string if Tfl::Const::NationalRail.valid? string
       return string if ALIASES.include? string
 
       similarities =
-        similarity_list(string, Tfl::Api::Mode::ALL) +
-        similarity_list(string, Tfl::Api::Tube::ALL) +
-        similarity_list(string, Tfl::Api::NationalRail::ALL) +
+        similarity_list(string, Tfl::Const::Mode::ALL) +
+        similarity_list(string, Tfl::Const::Tube::ALL) +
+        similarity_list(string, Tfl::Const::NationalRail::ALL) +
         similarity_list(string, ALIASES.keys)
 
       similarities.
