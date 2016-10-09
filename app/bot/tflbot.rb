@@ -2,6 +2,7 @@
 require "discordrb"
 require "prius"
 
+require_relative "init"
 require_relative "config"
 require_relative "commands"
 
@@ -14,6 +15,7 @@ module Bot
 
     include Bot::Config
     include Bot::Commands
+    include Loggy
 
     delegate :invite_url, :run, to: :@bot
 

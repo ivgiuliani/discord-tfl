@@ -10,10 +10,18 @@ module Bot
     end
 
     def load_config(config_file)
+      return if config_loaded
+
       cfg = YAML.load_file(config_file)
 
       @cfg_prefix = config(cfg, "command_prefix", cfg_prefix)
       @cfg_username = config(cfg, "username", cfg_username)
+
+      @config_loaded = true
+    end
+
+    def config_loaded
+      @config_loaded ||= false
     end
 
     def cfg_prefix
