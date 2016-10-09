@@ -7,9 +7,17 @@ module Tfl
     MAX_LEVENSHTEIN_DISTANCE = 2
 
     ALIASES = {
+      "bakerloo line" => Tfl::Api::Tube::BAKERLOO,
+      "circle line" => Tfl::Api::Tube::CIRCLE,
+      "central line" => Tfl::Api::Tube::CENTRAL,
+      "district line" => Tfl::Api::Tube::DISTRICT,
       "dangleway" => Tfl::Api::Mode::CABLE_CAR,
       "hammersmith" => Tfl::Api::Tube::HAMMERSMITH,
       "h&c" => Tfl::Api::Tube::HAMMERSMITH,
+      "jubilee line" => Tfl::Api::Tube::JUBILEE,
+      "northern line" => Tfl::Api::Tube::NORTHERN,
+      "piccadilly line" => Tfl::Api::Tube::PICCADILLY,
+      "victoria line" => Tfl::Api::Tube::VICTORIA,
       "waterloo" => Tfl::Api::Tube::WATERLOO,
       "w&c" => Tfl::Api::Tube::WATERLOO
     }.freeze
