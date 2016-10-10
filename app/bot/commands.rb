@@ -11,7 +11,10 @@ module Bot
     mention do |event|
       on_status(event, *event.message.text.split)
     end
-    command(:status) { |event, *args| on_status(event, *args) }
+    command(:status,
+            description: "Returns the status of the given tube line") do |event, *args|
+      on_status(event, *args)
+    end
 
     def self.on_status(event, *args)
       return if event.from_bot?
