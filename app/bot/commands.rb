@@ -9,21 +9,14 @@ module Bot
     MAX_QUERY_LENGTH = 35
 
     mention do |event|
-      unless event.from_bot?
-        args = event.message.text.split.reject do |word|
-          # Terrible hack to work around the fact that there's no way to
-          # exclude mentions directly from a message.
-          mentions = event.message.mentions.map { |mention| "<@#{mention.id}>" }
-          mentions.include? word
-        end
-        on_status(event, *args)
-      end
+      on_status(event, *event.message.text.split)
     end
     command(:status) { |event, *args| on_status(event, *args) }
 
     def self.on_status(event, *args)
       return if event.from_bot?
 
+      args = filter_mentions(*args, mentions: event.message.mentions)
       type, entity = status_decode(args)
 
       log "[command/status(from:#{event.user.name})] " \
@@ -88,5 +81,23 @@ module Bot
         end
       end
     end
+
+    def self.filter_mentions(*args, mentions:)
+      # Mentions are encoded within something that looks like an HTML tag and
+      # there's no 100% reliable way to filter them out. See:
+      # https://discordapp.com/developers/docs/resources/channel#message-formatting
+      encoded_mentions = mentions.flat_map do |mention|
+        [
+          "<@#{mention.id}>", # User
+          "<!@#{mention.id}>", # User (Nickname)
+          "<\##{mention.id}>", # Channel
+          "<@&#{mention.id}>", # Role
+        ].freeze
+      end
+
+      args.reject { |word| encoded_mentions.include? word }
+    end
+
+    private_class_method :filter_mentions
   end
 end
