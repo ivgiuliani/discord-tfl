@@ -48,9 +48,9 @@ module Tfl
         if json.empty?
           # TfL might return an empty list sometimes for uncommon ids such as
           # 'cycle-hire' or 'walking'.
-          return nil
+          return []
         end
-        Tfl::Line.from_api(json.first)
+        [Tfl::Line.from_api(json.first)]
       rescue Songkick::Transport::HttpError => exception
         if [400, 404].include? exception.status
           raise Tfl::InvalidLineException
