@@ -76,11 +76,11 @@ RSpec.describe Tfl::Api::Client do
         end
 
         context "when there is a part closure" do
-          let(:id) { Tfl::Const::Tube::DLR }
+          let(:id) { Tfl::Const::Tube::PICCADILLY }
 
           before do
-            stub_tfl_response("/line/dlr/status",
-                              "tfl/status_dlr_part_closure")
+            stub_tfl_response("/line/piccadilly/status",
+                              "tfl/status_piccadilly_minor_delays")
           end
 
           it "is a line object" do
@@ -88,14 +88,14 @@ RSpec.describe Tfl::Api::Client do
           end
 
           it "has the dlr" do
-            expect(api_call.id).to eq(:dlr)
+            expect(api_call.id).to eq(:piccadilly)
           end
 
           it "has disruptions" do
             expect(api_call.good_service?).to be false
             expect(api_call.disruptions).to_not be_empty
-            expect(api_call.disruptions.first).to match(/no service/i)
-            expect(api_call.current_status).to match(/Part Closure/i)
+            expect(api_call.disruptions.first).to match(/minor delays/i)
+            expect(api_call.current_status).to match(/Minor Delays/i)
           end
         end
       end

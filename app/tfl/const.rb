@@ -58,14 +58,14 @@ module Tfl
     end
 
     module Tube
+      # "dlr" and "london-overground" are both ids and modes, but we only consider
+      # them as the latter to avoid confusion.
       BAKERLOO = "bakerloo"
       CENTRAL = "central"
       CIRCLE = "circle"
       DISTRICT = "district"
-      DLR = "dlr"
       HAMMERSMITH = "hammersmith-city"
       JUBILEE = "jubilee"
-      OVERGROUND = "london-overground"
       METROPOLITAN = "metropolitan"
       NORTHERN = "northern"
       PICCADILLY = "piccadilly"
@@ -77,10 +77,8 @@ module Tfl
         CENTRAL,
         CIRCLE,
         DISTRICT,
-        DLR,
         HAMMERSMITH,
         JUBILEE,
-        OVERGROUND,
         METROPOLITAN,
         NORTHERN,
         PICCADILLY,

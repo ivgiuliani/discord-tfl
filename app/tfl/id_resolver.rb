@@ -16,6 +16,7 @@ module Tfl
       "hammersmith and city" => Tfl::Const::Tube::HAMMERSMITH,
       "h&c" => Tfl::Const::Tube::HAMMERSMITH,
       "jubilee line" => Tfl::Const::Tube::JUBILEE,
+      "london-overground" => Tfl::Const::Mode::OVERGROUND,
       "northern line" => Tfl::Const::Tube::NORTHERN,
       "piccadilly line" => Tfl::Const::Tube::PICCADILLY,
       "victoria line" => Tfl::Const::Tube::VICTORIA,
