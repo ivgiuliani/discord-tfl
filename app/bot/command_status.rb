@@ -12,14 +12,17 @@ module Bot
       MAX_LIST_RESPONSE_COUNT = 30
       MAX_QUERY_LENGTH = 35
 
-      def self.execute(event)
-        StatusCommand.new.execute(event)
+      def self.execute(event, mention: false)
+        StatusCommand.new.execute(event, mention: mention)
       end
 
-      def execute(event)
+      def execute(event, mention:)
         return if event.from_bot?
 
         args = Commands.split_args(COMMAND, event)
+
+        # Only respond to mentions whey we are the 1st mention of the bunch.
+        return if mention && !DiscordUtils.mentions_of_self?(event, args.first)
 
         args = DiscordUtils.filter_mentions(*args, mentions: event.message.mentions)
         type, entity = status_decode(args)
@@ -27,11 +30,17 @@ module Bot
         log "[command/status(from:#{event.user.name})] " \
           "\"#{args.join(' ')}\" (resolved to #{entity})"
 
+        evaluate_and_respond(event, type, entity)
+
+        nil
+      end
+
+      def evaluate_and_respond(event, type, entity)
         begin
           response = TFL.status(type, entity)
         rescue Tfl::InvalidLineException
           event << "#{entity}: invalid line"
-          return nil
+          return
         end
 
         if response.respond_to?(:each)
@@ -39,8 +48,6 @@ module Bot
         else
           status_single_item(event, response)
         end
-
-        nil
       end
 
       def status_decode(args)

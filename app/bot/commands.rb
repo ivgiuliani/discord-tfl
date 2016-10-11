@@ -8,7 +8,7 @@ module Bot
     extend Discordrb::Commands::CommandContainer
 
     mention do |event|
-      Commands::StatusCommand.execute(event)
+      Commands::StatusCommand.execute(event, mention: true)
     end
 
     command(Commands::StatusCommand::COMMAND,
