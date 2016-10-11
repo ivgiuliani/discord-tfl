@@ -19,6 +19,7 @@ module Tfl
       "london-overground" => Tfl::Const::Mode::OVERGROUND,
       "northern line" => Tfl::Const::Tube::NORTHERN,
       "piccadilly line" => Tfl::Const::Tube::PICCADILLY,
+      "southwestern" => "south-west-trains",
       "victoria line" => Tfl::Const::Tube::VICTORIA,
       "waterloo" => Tfl::Const::Tube::WATERLOO,
       "waterloo and city" => Tfl::Const::Tube::WATERLOO,
