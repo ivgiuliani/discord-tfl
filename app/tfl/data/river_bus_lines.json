@@ -1,1 +1,146 @@
-[{"$type":"Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities","id":"rb1","name":"RB1","modeName":"river-bus","disruptions":[],"created":"2016-10-07T10:27:43.967Z","modified":"2016-10-07T10:27:43.967Z","lineStatuses":[],"routeSections":[],"serviceTypes":[{"$type":"Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities","name":"Regular","uri":"/Line/Route?ids=RB1&serviceTypes=Regular"}]},{"$type":"Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities","id":"rb2","name":"RB2","modeName":"river-bus","disruptions":[],"created":"2016-10-07T10:27:43.967Z","modified":"2016-10-07T10:27:43.967Z","lineStatuses":[],"routeSections":[],"serviceTypes":[{"$type":"Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities","name":"Regular","uri":"/Line/Route?ids=RB2&serviceTypes=Regular"}]},{"$type":"Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities","id":"rb4","name":"RB4","modeName":"river-bus","disruptions":[],"created":"2016-10-07T10:27:44.107Z","modified":"2016-10-07T10:27:44.107Z","lineStatuses":[],"routeSections":[],"serviceTypes":[{"$type":"Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities","name":"Regular","uri":"/Line/Route?ids=RB4&serviceTypes=Regular"}]},{"$type":"Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities","id":"rb5","name":"RB5","modeName":"river-bus","disruptions":[],"created":"2016-10-07T10:27:44.157Z","modified":"2016-10-07T10:27:44.157Z","lineStatuses":[],"routeSections":[],"serviceTypes":[{"$type":"Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities","name":"Regular","uri":"/Line/Route?ids=RB5&serviceTypes=Regular"}]},{"$type":"Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities","id":"rb6","name":"RB6","modeName":"river-bus","disruptions":[],"created":"2016-10-07T10:27:44.03Z","modified":"2016-10-07T10:27:44.03Z","lineStatuses":[],"routeSections":[],"serviceTypes":[{"$type":"Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities","name":"Regular","uri":"/Line/Route?ids=RB6&serviceTypes=Regular"}]},{"$type":"Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities","id":"woolwich-ferry","name":"Woolwich Ferry","modeName":"river-bus","disruptions":[],"created":"2016-10-07T10:27:44.14Z","modified":"2016-10-07T10:27:44.14Z","lineStatuses":[],"routeSections":[],"serviceTypes":[{"$type":"Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities","name":"Regular","uri":"/Line/Route?ids=Woolwich Ferry&serviceTypes=Regular"}]}]
+[
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "rb1",
+    "name": "RB1",
+    "modeName": "river-bus",
+    "disruptions": [
+
+    ],
+    "created": "2016-10-13T15:09:08.097Z",
+    "modified": "2016-10-13T15:09:08.097Z",
+    "lineStatuses": [
+
+    ],
+    "routeSections": [
+
+    ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=RB1&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "rb2",
+    "name": "RB2",
+    "modeName": "river-bus",
+    "disruptions": [
+
+    ],
+    "created": "2016-10-13T15:09:08.097Z",
+    "modified": "2016-10-13T15:09:08.097Z",
+    "lineStatuses": [
+
+    ],
+    "routeSections": [
+
+    ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=RB2&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "rb4",
+    "name": "RB4",
+    "modeName": "river-bus",
+    "disruptions": [
+
+    ],
+    "created": "2016-10-13T15:09:08.24Z",
+    "modified": "2016-10-13T15:09:08.24Z",
+    "lineStatuses": [
+
+    ],
+    "routeSections": [
+
+    ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=RB4&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "rb5",
+    "name": "RB5",
+    "modeName": "river-bus",
+    "disruptions": [
+
+    ],
+    "created": "2016-10-13T15:09:08.287Z",
+    "modified": "2016-10-13T15:09:08.287Z",
+    "lineStatuses": [
+
+    ],
+    "routeSections": [
+
+    ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=RB5&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "rb6",
+    "name": "RB6",
+    "modeName": "river-bus",
+    "disruptions": [
+
+    ],
+    "created": "2016-10-13T15:09:08.16Z",
+    "modified": "2016-10-13T15:09:08.16Z",
+    "lineStatuses": [
+
+    ],
+    "routeSections": [
+
+    ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=RB6&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "woolwich-ferry",
+    "name": "Woolwich Ferry",
+    "modeName": "river-bus",
+    "disruptions": [
+
+    ],
+    "created": "2016-10-13T15:09:08.27Z",
+    "modified": "2016-10-13T15:09:08.27Z",
+    "lineStatuses": [
+
+    ],
+    "routeSections": [
+
+    ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Woolwich Ferry&serviceTypes=Regular"
+      }
+    ]
+  }
+]
