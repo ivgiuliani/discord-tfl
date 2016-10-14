@@ -3,6 +3,7 @@
 require "open-uri"
 require "json"
 
+# rubocop:disable Metrics/LineLength
 DOWNLOADS = [
   # [url, output, type]
 
@@ -10,8 +11,12 @@ DOWNLOADS = [
   ["https://api.tfl.gov.uk/Line/Mode/bus", "bus_lines.json", :json],
   ["https://api.tfl.gov.uk/Line/Mode/national-rail", "national_rail_lines.json", :json],
   ["https://api.tfl.gov.uk/Line/Mode/river-bus", "river_bus_lines.json", :json],
-  ["https://api.tfl.gov.uk/Line/Mode/river-tour", "river_tour_lines.json", :json]
+  ["https://api.tfl.gov.uk/Line/Mode/river-tour", "river_tour_lines.json", :json],
+
+  # Stations data
+  ["https://data.tfl.gov.uk/tfl/syndication/feeds/stations-facilities.xml", "stations-facilities.xml", :xml]
 ].freeze
+# rubocop:enable Metrics/LineLength
 
 DOWNLOADS.each do |download|
   url, output, type = *download
