@@ -36,18 +36,19 @@ RSpec.describe Tfl::Api::Client do
                               "tfl/status_central_good_service")
           end
 
-          it "is a line object" do
-            is_expected.to be_instance_of Tfl::Line
+          it "is a list of one line object" do
+            expect(api_call.count).to eq(1)
+            expect(api_call.first).to be_instance_of Tfl::Line
           end
 
           it "has the central line" do
-            expect(api_call.id).to eq(:central)
+            expect(api_call.first.id).to eq(:central)
           end
 
           it "has good service" do
-            expect(api_call.good_service?).to be true
-            expect(api_call.disruptions).to be_empty
-            expect(api_call.current_status).to match(/Good Service/i)
+            expect(api_call.first.good_service?).to be true
+            expect(api_call.first.disruptions).to be_empty
+            expect(api_call.first.current_status).to match(/Good Service/i)
           end
         end
 
@@ -60,18 +61,18 @@ RSpec.describe Tfl::Api::Client do
           end
 
           it "is a line object" do
-            is_expected.to be_instance_of Tfl::Line
+            expect(api_call.first).to be_instance_of Tfl::Line
           end
 
           it "has the circle line" do
-            expect(api_call.id).to eq(:circle)
+            expect(api_call.first.id).to eq(:circle)
           end
 
           it "has disruptions" do
-            expect(api_call.good_service?).to be false
-            expect(api_call.disruptions).to_not be_empty
-            expect(api_call.disruptions.first).to match(/no service/i)
-            expect(api_call.current_status).to match(/Planned Closure/i)
+            expect(api_call.first.good_service?).to be false
+            expect(api_call.first.disruptions).to_not be_empty
+            expect(api_call.first.disruptions.first).to match(/no service/i)
+            expect(api_call.first.current_status).to match(/Planned Closure/i)
           end
         end
 
@@ -84,18 +85,18 @@ RSpec.describe Tfl::Api::Client do
           end
 
           it "is a line object" do
-            is_expected.to be_instance_of Tfl::Line
+            expect(api_call.first).to be_instance_of Tfl::Line
           end
 
-          it "has the dlr" do
-            expect(api_call.id).to eq(:piccadilly)
+          it "has the piccadilly" do
+            expect(api_call.first.id).to eq(:piccadilly)
           end
 
           it "has disruptions" do
-            expect(api_call.good_service?).to be false
-            expect(api_call.disruptions).to_not be_empty
-            expect(api_call.disruptions.first).to match(/minor delays/i)
-            expect(api_call.current_status).to match(/Minor Delays/i)
+            expect(api_call.first.good_service?).to be false
+            expect(api_call.first.disruptions).to_not be_empty
+            expect(api_call.first.disruptions.first).to match(/minor delays/i)
+            expect(api_call.first.current_status).to match(/Minor Delays/i)
           end
         end
       end
@@ -125,8 +126,8 @@ RSpec.describe Tfl::Api::Client do
         let(:id) { "empty" }
         before { stub_tfl_response("/line/empty/status", "tfl/status_empty_list") }
 
-        it "returns nil" do
-          expect(api_call).to be_nil
+        it "returns an empty list" do
+          expect(api_call).to be_empty
         end
       end
     end
