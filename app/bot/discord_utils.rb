@@ -8,6 +8,7 @@ module Bot
       args.reject { |word| encoded_mentions.include? word }
     end
 
+    # Is the given mention (passed as a String) about ourselves?
     def self.mentions_of_self?(event, mention)
       possible_mentions(event.bot.profile.id).include? mention
     end
