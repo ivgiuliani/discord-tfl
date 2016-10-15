@@ -2,15 +2,11 @@
 
 require "json"
 
+require "tfl/data_loader"
+
 module Tfl
   module Const
-    def self.inject_from_json(json_path)
-      path = "#{File.dirname(__FILE__)}/data"
-      content = File.read(File.join(path, "#{json_path}.json"))
-      JSON.parse(content).map do |item|
-        item["id"]
-      end
-    end
+    extend Tfl::DataLoader
 
     module Mode
       BUS = "bus"
