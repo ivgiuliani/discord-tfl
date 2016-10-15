@@ -41,6 +41,9 @@ module Bot
         rescue Tfl::InvalidLineException
           event << "#{entity}: invalid line"
           return
+        rescue Songkick::Transport::TimeoutError
+          event << "#{DiscordUtils::Emoji::SCREAM} Request timed out (blame TfL)"
+          return
         end
 
         format_status_list!(event, entity, response)
