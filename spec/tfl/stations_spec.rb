@@ -22,10 +22,10 @@ RSpec.describe Tfl::Stations do
     end
 
     describe "when given an alias" do
-      let(:arg) { "tcr" }
+      let(:arg) { "king's cross" }
 
       it "returns the expected station" do
-        expect(find.display_name).to eq("Tottenham Court Road")
+        expect(find.display_name).to eq("King's Cross St. Pancras")
       end
 
       context "and the station has multiple aliases defined" do
@@ -46,10 +46,21 @@ RSpec.describe Tfl::Stations do
     end
 
     describe "when given an invalid name" do
-      let(:arg) { "this station does not exist" }
+      INVALID = [
+        "a",
+        "aaa",
+        "dlr",
+        "zzz",
+        "this station does not exist"
+      ].freeze
+      INVALID.each do |invalid|
+        context "that is #{invalid}" do
+          let(:arg) { invalid }
 
-      it "returns nil" do
-        expect(find).to be_nil
+          it "returns nil" do
+            expect(find).to be_nil
+          end
+        end
       end
     end
   end
