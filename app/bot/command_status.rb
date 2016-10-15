@@ -96,12 +96,37 @@ module Bot
 
       def format_status_line(event, line, detailed:)
         if line.good_service? || !detailed
-          event << "#{line.display_name}: #{line.current_status}"
+          event << "**#{line.display_name}**: #{line.current_status}"
         else
           line.disruptions.each do |disruption|
-            event << "#{line.display_name}: #{disruption}"
+            # TfL sometimes repeats the line's name in the disruption messages.
+            # Since it looks slightly ugly, we attempt to drop that repetion on a
+            # best effort basis.
+            disruption = chop_repetition_on_disruption(disruption, line)
+
+            event << "**#{line.display_name}**: #{disruption}"
           end
         end
+      end
+
+      def chop_repetition_on_disruption(disruption, line)
+        return disruption unless disruption.
+            downcase.start_with?(line.display_name.downcase)
+
+        disruption = disruption[line.display_name.length..-1].strip
+
+        # The line could be followed by a "line" word.
+        if disruption.downcase.start_with?("line")
+          disruption = disruption[4.length..-1]
+        end
+
+        # Advance to the first char in a..z skipping any colons or semi colons
+        # the string might have.
+        while disruption != "" && !("a".."z").cover?(disruption[0].downcase)
+          disruption = disruption[1..-1]
+        end
+
+        disruption
       end
     end
   end
