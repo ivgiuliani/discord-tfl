@@ -57,7 +57,7 @@ module Bot
 
         invalid_checks = [
           # Contains valid characters?
-          -> { args.map { |arg| (/^[A-Za-z0-9\- ]+$/ =~ arg).nil? }.all? },
+          -> { args.map { |arg| (/^[A-Za-z0-9&\- ]+$/ =~ arg).nil? }.all? },
 
           # Contains emojis?
           -> { args.map { |arg| DiscordUtils::Emoji.emoji?(arg) }.any? }

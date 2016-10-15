@@ -128,6 +128,18 @@ RSpec.describe Bot::Commands::StatusCommand do
           end
         end
       end
+
+      context "when an alias is given" do
+        Tfl::IdResolver::ALIASES.keys.each do |line_alias|
+          context "that is #{line_alias}" do
+            let(:args) { [line_alias] }
+
+            it "returns true" do
+              expect(instance.valid_query?(args)).to be true
+            end
+          end
+        end
+      end
     end
 
     describe "that has an emoji" do
