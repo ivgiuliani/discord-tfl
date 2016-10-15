@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "command_status"
+require_relative "command_station"
 
 module Bot
   module Commands
@@ -12,8 +13,13 @@ module Bot
     end
 
     command(Commands::StatusCommand::COMMAND,
-            description: "Returns the status of the given tube line") do |event|
+            description: "How well is the tube doing?") do |event|
       Commands::StatusCommand.execute(event)
+    end
+
+    command(Commands::StationCommand::COMMAND,
+            description: "What do we know about a given station?") do |event|
+      Commands::StationCommand.execute(event)
     end
 
     def self.split_args(command, event)

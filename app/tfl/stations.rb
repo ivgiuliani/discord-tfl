@@ -50,6 +50,7 @@ module Tfl
     STATION_ALIAS = {
       # IDs are defined in `station-facilities.xml`.
       # Station ID => [Aliases, ...]
+      "1000013" => ["hell"],
       "1002025" => ["crossharbour"],
       "1000073" => ["elephant castle"],
       "1000129" => ["king's cross"],
