@@ -15,6 +15,7 @@ module Bot
       SCREAM = ":scream:"
       SMILE = ":smile:"
       SMILEY = ":smiley:"
+      TOILET = ":toilet:"
 
       def self.emoji?(word)
         !(/:[a-z0-9\-\+_]+:/ =~ word).nil?
