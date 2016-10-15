@@ -2,7 +2,7 @@
 
 require "json"
 
-require "tfl/data_loader"
+require_relative "data_loader"
 
 module Tfl
   module Const

@@ -13,7 +13,7 @@ Lint/UnneededDisable:
   Severity: error
 
 Metrics/AbcSize:
-  Max: 25
+  Max: 30
 
 Metrics/ClassLength:
   Enabled: false
