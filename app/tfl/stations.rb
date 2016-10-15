@@ -92,8 +92,6 @@ module Tfl
         reject! { |item| item[0] > MAX_LEVENSHTEIN_DISTANCE }.
         sort_by! { |x| x[0] }
 
-      puts "sim=#{similarities}"
-      puts "NAME_MAP.keys=#{NAME_MAP.keys}"
       return nil if similarities.empty?
 
       # Found a match!
