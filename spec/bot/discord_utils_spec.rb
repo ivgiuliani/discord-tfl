@@ -62,4 +62,48 @@ RSpec.describe Bot::DiscordUtils do
       end
     end
   end
+
+  describe "emoji" do
+    describe "#emoji?" do
+      context "with a valid emoji" do
+        it "returns true" do
+          expect(described_class::Emoji.emoji?(":scream:")).to be true
+        end
+
+        context "that is uppercase" do
+          it "returns false" do
+            expect(described_class::Emoji.emoji?(":SCREAM:")).to be false
+          end
+        end
+      end
+
+      context "with a normal word" do
+        it "returns false" do
+          expect(described_class::Emoji.emoji?("-1")).to be false
+          expect(described_class::Emoji.emoji?("+1")).to be false
+          expect(described_class::Emoji.emoji?("scream")).to be false
+          expect(described_class::Emoji.emoji?(":scream")).to be false
+          expect(described_class::Emoji.emoji?("scream:")).to be false
+        end
+      end
+
+      context "with an empty string" do
+        it "returns false" do
+          expect(described_class::Emoji.emoji?("")).to be false
+        end
+      end
+
+      context "with the preset emojis" do
+        described_class::Emoji.constants.each do |emoji_c|
+          emoji = described_class::Emoji.const_get(emoji_c)
+
+          context "that is #{emoji}" do
+            it "retuns true" do
+              expect(described_class::Emoji.emoji?(emoji)).to be true
+            end
+          end
+        end
+      end
+    end
+  end
 end
