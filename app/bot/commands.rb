@@ -23,6 +23,8 @@ module Bot
       args.tap do
         args.shift if !args.empty? && args.first.downcase == full_command_string
       end
+
+      args.reject { |arg| arg.nil? || arg == "" }
     end
   end
 end
