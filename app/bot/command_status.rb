@@ -25,6 +25,8 @@ module Bot
         return if mention && !DiscordUtils.mentions_of_self?(event, args.first)
 
         args = DiscordUtils.filter_mentions(*args, mentions: event.message.mentions)
+        return unless valid_query?(args)
+
         type, entity = status_decode(args)
 
         log "[command/status(from:#{event.user.name})] " \
@@ -47,6 +49,21 @@ module Bot
         end
 
         format_status_list!(event, entity, response)
+      end
+
+      def valid_query?(args)
+        return true if args.empty?
+        return true if args.size == 1 && args.first == ""
+
+        invalid_checks = [
+          # Contains valid characters?
+          -> { args.map { |arg| (/^[A-Za-z0-9\- ]+$/ =~ arg).nil? }.all? },
+
+          # Contains emojis?
+          -> { args.map { |arg| DiscordUtils::Emoji.emoji?(arg) }.any? }
+        ]
+
+        !invalid_checks.map(&:call).any?
       end
 
       def status_decode(args)

@@ -89,4 +89,59 @@ RSpec.describe Bot::Commands::StatusCommand do
       end
     end
   end
+
+  describe "#valid_query?" do
+    describe "when given valid a query" do
+      describe "that is an empty string" do
+        it "returns true" do
+          expect(instance.valid_query?([""])).to be true
+        end
+      end
+
+      context "when a mode is given" do
+        Tfl::Const::Mode::ALL.each do |mode|
+          context "that is #{mode}" do
+            let(:args) { [mode] }
+
+            it "returns true" do
+              expect(instance.valid_query?(args)).to be true
+            end
+          end
+        end
+      end
+
+      context "when a line id is given" do
+        modes = [Tfl::Const::Tube,
+                 Tfl::Const::Bus,
+                 Tfl::Const::NationalRail,
+                 Tfl::Const::RiverBus,
+                 Tfl::Const::RiverTour]
+        modes.each do |mode|
+          mode::ALL.each do |line|
+            context "that is #{line}" do
+              let(:args) { [line] }
+
+              it "returns true" do
+                expect(instance.valid_query?(args)).to be true
+              end
+            end
+          end
+        end
+      end
+    end
+
+    describe "that has an emoji" do
+      it "returns false" do
+        expect(instance.valid_query?(%w(:scream:))).to be false
+        expect(instance.valid_query?(%w(:scream: valid))).to be false
+        expect(instance.valid_query?(%w(valid :scream:))).to be false
+      end
+
+      context "that is a unicode char" do
+        it "returns false" do
+          expect(instance.valid_query?(%w(\u{1F631}))).to be false
+        end
+      end
+    end
+  end
 end
