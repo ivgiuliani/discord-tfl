@@ -9,7 +9,7 @@ module Tfl
   module Stations
     extend Tfl::DataLoader
 
-    MAX_LEVENSHTEIN_DISTANCE = 3
+    MAX_LEVENSHTEIN_DISTANCE = 2
 
     def self.parse_station(xml)
       station_id = xml.attr("id")
@@ -56,8 +56,7 @@ module Tfl
       "1000129" => ["king's cross"],
       "1000191" => ["regents park"],
       "1000203" => ["shepherd bush", "shepherd's bush", "shebu"],
-      "1000221" => ["st james park"],
-      "1000235" => ["tcr"]
+      "1000221" => ["st james park"]
     }.freeze
 
     ALL = load
