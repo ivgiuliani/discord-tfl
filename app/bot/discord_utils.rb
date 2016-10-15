@@ -2,6 +2,25 @@
 
 module Bot
   module DiscordUtils
+    module Emoji
+      # Incomplete list, only includes common emojis.
+      # A full list of emojis can be seen on http://www.webpagefx.com/tools/emoji-cheat-sheet/.
+      BOWTIE = ":bowtie:"
+      HANKEY = ":hankey:"
+      MINUS_1 = ":-1:"
+      PLUS_1 = ":+1:"
+      POOP = ":poop:"
+      SHIT = ":shit:"
+      SIMPLE_SMILE = ":simple_smile:"
+      SCREAM = ":scream:"
+      SMILE = ":smile:"
+      SMILEY = ":smiley:"
+
+      def self.emoji?(word)
+        !(/:[a-z0-9\-\+_]+:/ =~ word).nil?
+      end
+    end
+
     # Filter mentions out of list of words.
     def self.filter_mentions(*args, mentions:)
       encoded_mentions = mentions.flat_map { |mention| possible_mentions(mention.id) }
