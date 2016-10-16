@@ -31,8 +31,14 @@ module Bot
       @bot.include! Bot::Commands
     end
 
-    def run
+    def run!
       @bot.run
+    end
+
+    def stop!
+      @bot.stop
+
+      raise "Bot didn't disconnect itself after stop!" if @bot.connected?
     end
   end
 end

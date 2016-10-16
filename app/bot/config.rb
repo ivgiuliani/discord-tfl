@@ -6,6 +6,7 @@ module Bot
   module DefaultConfig
     PREFIX = "!"
     USERNAME = "TfLBot"
+    GAME = nil
   end
 
   class Config
@@ -16,6 +17,7 @@ module Bot
 
       @prefix = config(cfg, "command_prefix", prefix)
       @username = config(cfg, "username", username)
+      @game = config(cfg, "game", game)
 
       @config_loaded = true
     end
@@ -30,6 +32,10 @@ module Bot
 
     def username
       @username ||= DefaultConfig::USERNAME
+    end
+
+    def game
+      @game ||= DefaultConfig::GAME
     end
 
     private
