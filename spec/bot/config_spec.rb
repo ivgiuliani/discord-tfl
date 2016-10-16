@@ -2,9 +2,9 @@
 require "spec_helper"
 
 RSpec.describe Bot::Config do
-  context "when loading a config file" do
-    let(:instance) { described_class.new }
+  let(:instance) { described_class.new }
 
+  describe "when loading a config file" do
     subject(:config_load) do
       instance.load_config(fixture_path("sample_config", type: "yml"))
     end
@@ -13,7 +13,8 @@ RSpec.describe Bot::Config do
       mappings = {
         # method => [default, expected]
         prefix: [Bot::DefaultConfig::PREFIX, "@"],
-        username: [Bot::DefaultConfig::USERNAME, "username123"]
+        username: [Bot::DefaultConfig::USERNAME, "username123"],
+        game: [Bot::DefaultConfig::GAME, "The Game"]
       }
 
       mappings.each do |method, values|
@@ -33,6 +34,23 @@ RSpec.describe Bot::Config do
       expect(instance.config_loaded).to be false
       config_load
       expect(instance.config_loaded).to be true
+    end
+  end
+
+  describe "when not loading a config file" do
+    mappings = {
+      # method => default,
+      prefix: Bot::DefaultConfig::PREFIX,
+      username: Bot::DefaultConfig::USERNAME,
+      game: Bot::DefaultConfig::GAME
+    }
+
+    mappings.each do |method, default|
+      context "for #{method}" do
+        it "returns the default value" do
+          expect(instance.method(method.to_sym).call).to eq(default)
+        end
+      end
     end
   end
 end
