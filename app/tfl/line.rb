@@ -16,8 +16,9 @@ module Tfl
 
       disruptions = []
       api_obj["lineStatuses"].each do |status|
-        if status.key?("disruption")
-          disruptions << status["disruption"]["description"]
+        message = status.fetch("disruption", {}).fetch("description", nil)
+        if !message.nil? && !disruptions.include?(message)
+          disruptions << message
         end
       end
 
