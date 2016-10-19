@@ -22,6 +22,15 @@ RSpec.describe Tfl::Line do
         expect { subject }.to raise_error(Tfl::InvalidLineException)
       end
     end
+
+    context "when given multiple identical disruptions" do
+      # TfL does that from time to time.
+      let(:api_obj) { load_fixture_obj("tfl/status_mode_tube_multiple_failures").first }
+
+      it "removes the duplicates" do
+        expect(subject.disruptions.count).to eq(1)
+      end
+    end
   end
 
   describe "#==" do
