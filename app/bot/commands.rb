@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative "command_situation"
 require_relative "command_status"
 require_relative "command_station"
 require_relative "command_toilet"
@@ -16,6 +17,11 @@ module Bot
     command(Commands::StatusCommand::COMMAND,
             description: "How well is the tube doing?") do |event|
       Commands::StatusCommand.execute(event)
+    end
+
+    command(Commands::SituationCommand::COMMAND,
+            description: "How are we doing today?") do |event|
+      Commands::SituationCommand.execute(event)
     end
 
     command(Commands::StationCommand::COMMAND,
