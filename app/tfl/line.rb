@@ -16,6 +16,7 @@ module Tfl
 
       disruptions = []
       api_obj["lineStatuses"].each do |status|
+        # TfL sometimes returns the same disruption multiple times :/
         message = status.fetch("disruption", {}).fetch("description", nil)
         if !message.nil? && !disruptions.include?(message)
           disruptions << message
