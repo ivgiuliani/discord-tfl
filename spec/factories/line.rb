@@ -41,6 +41,25 @@ FactoryGirl.define do
       disruptions ["Saturday 8 and Sunday 9 October, no service throughout the line."]
     end
 
+    trait :severe_delays do
+      current_status "Severe Delays"
+      disruptions ["Severe delays due to an earlier customer incident. "\
+        "Tickets are being accepted on local buses"]
+    end
+
+    trait :minor_delays do
+      current_status "Minor Delays"
+      disruptions ["Minor delays between Harrow on the Hill and Uxbridge only due to " \
+        "an earlier customer incident. GOOD SERVICE on the rest of the line."]
+    end
+
+    trait :part_suspended do
+      current_status "Part Suspended"
+      disruptions ["No service between West Ham and Stratford due to faulty fire "\
+        "equipment at Stratford. Tickets are being accepted on local buses. "\
+        "GOOD SERVICE on the rest of the line."]
+    end
+
     trait :part_closure do
       current_status "Part Closure"
       disruptions ["Saturday 8 and Sunday 9 October, " \
@@ -59,6 +78,11 @@ FactoryGirl.define do
         "may terminate early due to the planned closure of Tower Bridge. Allow extra " \
         "time for your journey and follow @TfLBusAlerts on Twitter for " \
         "realtime information."]
+    end
+
+    trait :suspended do
+      current_status "Suspended"
+      disruptions ["Service is currently suspended"]
     end
   end
 end
