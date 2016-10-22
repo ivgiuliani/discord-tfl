@@ -2,7 +2,7 @@
 require "spec_helper"
 
 RSpec.describe Tfl::Line do
-  describe "#from_api" do
+  describe ".from_api" do
     subject(:line) { described_class.from_api(api_obj) }
     let(:api_obj) { load_fixture_obj("tfl/status_central_good_service").first }
 
@@ -46,6 +46,55 @@ RSpec.describe Tfl::Line do
     it "returns false for different lines" do
       expect(line1 == line2).to be false
       expect(line2 == line1).to be false
+    end
+  end
+
+  describe ".severity_value" do
+    let(:good_service) { FactoryGirl.build(:line, :good_service) }
+    let(:minor_delays) { FactoryGirl.build(:line, :minor_delays) }
+    let(:severe_delays) { FactoryGirl.build(:line, :severe_delays) }
+    let(:part_closure) { FactoryGirl.build(:line, :part_closure) }
+    let(:part_suspended) { FactoryGirl.build(:line, :part_suspended) }
+    let(:suspended) { FactoryGirl.build(:line, :suspended) }
+
+    context "when everything's good" do
+      it "returns 1.0" do
+        expect(Tfl.severity_value([good_service])).to eq(1.0)
+        expect(Tfl.severity_value([good_service, good_service])).to eq(1.0)
+        expect(Tfl.severity_value([good_service, good_service, good_service])).to eq(1.0)
+      end
+    end
+
+    context "when it's almost good" do
+      it "returns a value close to 1.0" do
+        expect(Tfl.severity_value([good_service,
+                                   good_service,
+                                   good_service,
+                                   minor_delays])).to be >= 0.90
+      end
+    end
+
+    context "when everything is broken" do
+      it "returns 0.0" do
+        expect(Tfl.severity_value([suspended])).to eq(0.0)
+        expect(Tfl.severity_value([suspended, suspended, suspended])).to eq(0.0)
+      end
+    end
+
+    context "when trains are kind of running" do
+      it "returns a value >= 0.5" do
+        expect(Tfl.severity_value([good_service,
+                                   minor_delays,
+                                   minor_delays])).to be >= 0.5
+      end
+    end
+
+    context "when it's better to pretend this is not happening" do
+      it "returns a value <= 0.5" do
+        expect(Tfl.severity_value([severe_delays,
+                                   part_suspended,
+                                   minor_delays])).to be <= 0.5
+      end
     end
   end
 end

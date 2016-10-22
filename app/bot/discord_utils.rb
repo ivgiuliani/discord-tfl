@@ -5,11 +5,15 @@ module Bot
     module Emoji
       # Incomplete list, only includes common emojis.
       # A full list of emojis can be seen on http://www.webpagefx.com/tools/emoji-cheat-sheet/.
+      BEERS = ":beers:"
       BOWTIE = ":bowtie:"
+      COLD_SWEAT = ":cold_sweat:"
+      CRY = ":cry:"
       HANKEY = ":hankey:"
       MINUS_1 = ":-1:"
       PLUS_1 = ":+1:"
       POOP = ":poop:"
+      RAGE = ":rage:"
       SHIT = ":shit:"
       SIMPLE_SMILE = ":simple_smile:"
       SCREAM = ":scream:"
