@@ -7,7 +7,7 @@ gem 'nokogiri', '~> 1.6.8.1'
 # Transport
 gem 'curb', '~> 0.9.3' # HTTP transport library
 gem 'songkick-transport', '~> 1.11.0'
-gem 'discordrb', '~> 3.0.2'
+gem 'discordrb', '~> 3.1.1'
 
 group :development do
   gem 'rspec', '~> 3.4.0'
