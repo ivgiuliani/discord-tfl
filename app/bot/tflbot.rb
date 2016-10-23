@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 require "discordrb"
 require "prius"
+require "rufus-scheduler"
 
 require_relative "init"
 require_relative "config"
@@ -24,6 +25,8 @@ module Bot
         CONFIG.load_config(DEFAULT_CONFIG_PATH)
       end
 
+      @scheduler = Rufus::Scheduler.new
+
       @bot = Discordrb::Commands::CommandBot.new token: Prius.get(:discord_token),
                                                  client_id: Prius.get(:discord_client_id),
                                                  prefix: CONFIG.prefix
@@ -32,13 +35,38 @@ module Bot
     end
 
     def run!
-      @bot.run
+      @bot.run :async
+      setup_scheduled_tasks
+
+      loop do
+        sleep 1
+      end
     end
 
     def stop!
       @bot.stop
 
       raise "Bot didn't disconnect itself after stop!" if @bot.connected?
+    end
+
+    private
+
+    def setup_scheduled_tasks
+      @scheduler.every "30s" do
+        task "check disruptions" do
+          # TODO
+        end
+      end
+    end
+
+    def task(name)
+      unless @bot.connected?
+        warn "aborting #{name}, bot is not connected"
+        return
+      end
+
+      info "running task: #{name}"
+      yield
     end
   end
 end
