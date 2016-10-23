@@ -14,7 +14,7 @@ GEM
       safe_yaml (~> 1.0.0)
     curb (0.9.3)
     diff-lcs (1.2.5)
-    discordrb (3.0.2)
+    discordrb (3.1.1)
       activesupport
       opus-ruby
       rbnacl
@@ -103,7 +103,7 @@ PLATFORMS
 
 DEPENDENCIES
   curb (~> 0.9.3)
-  discordrb (~> 3.0.2)
+  discordrb (~> 3.1.1)
   factory_girl (~> 4.7.0)
   levenshtein-ffi (~> 1.1.0)
   nokogiri (~> 1.6.8.1)
@@ -115,4 +115,4 @@ DEPENDENCIES
   webmock (~> 2.1.0)
 
 BUNDLED WITH
-   1.13.1
+   1.13.6
