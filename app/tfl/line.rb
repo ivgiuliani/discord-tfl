@@ -3,7 +3,7 @@ module Tfl
   class InvalidLineException < StandardError; end
 
   module CommonDisruptionSeverities
-    BUS_SERVICE = "Bus Servive"
+    BUS_SERVICE = "Bus Service"
     GOOD_SERVICE = "Good Service"
     MINOR_DELAYS = "Minor Delays"
     PART_CLOSURE = "Part Closure"
