@@ -26,7 +26,7 @@ module Bot
 
         station = Tfl::Stations.find(query)
         if station.nil?
-          event << "Cannot find #{query}"
+          event << "No toilet by that name #{Bot::DiscordUtils::Emoji::TOILET}"
         else
           format_station(event, station)
         end

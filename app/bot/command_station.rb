@@ -26,7 +26,7 @@ module Bot
 
         station = Tfl::Stations.find(query)
         if station.nil?
-          event << "Cannot find #{query}"
+          event << "No station by that name"
         else
           format_station(event, station)
         end
