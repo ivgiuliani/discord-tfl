@@ -55,7 +55,7 @@ module Bot
       private
 
       def format_station(event, station)
-        or_na = -> (item) do
+        or_na = ->(item) do
           if item.nil? || item.empty?
             "n/a"
           else
