@@ -7,8 +7,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.193Z",
-    "modified": "2016-10-13T15:09:08.193Z",
+    "created": "2016-12-28T10:14:18.797Z",
+    "modified": "2016-12-28T10:14:18.797Z",
     "lineStatuses": [
 
     ],
@@ -31,8 +31,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.193Z",
-    "modified": "2016-10-13T15:09:08.193Z",
+    "created": "2016-12-28T10:14:18.81Z",
+    "modified": "2016-12-28T10:14:18.81Z",
     "lineStatuses": [
 
     ],
@@ -55,8 +55,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.193Z",
-    "modified": "2016-10-13T15:09:08.193Z",
+    "created": "2016-12-28T10:14:18.873Z",
+    "modified": "2016-12-28T10:14:18.873Z",
     "lineStatuses": [
 
     ],
@@ -73,38 +73,14 @@
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "caledonian-sleeper",
-    "name": "Caledonian Sleeper",
-    "modeName": "national-rail",
-    "disruptions": [
-
-    ],
-    "created": "2016-10-13T15:09:08.223Z",
-    "modified": "2016-10-13T15:09:08.223Z",
-    "lineStatuses": [
-
-    ],
-    "routeSections": [
-
-    ],
-    "serviceTypes": [
-      {
-        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
-        "name": "Regular",
-        "uri": "/Line/Route?ids=Caledonian Sleeper&serviceTypes=Regular"
-      }
-    ]
-  },
-  {
-    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
     "id": "chiltern-railways",
     "name": "Chiltern Railways",
     "modeName": "national-rail",
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.193Z",
-    "modified": "2016-10-13T15:09:08.193Z",
+    "created": "2016-12-28T10:14:18.81Z",
+    "modified": "2016-12-28T10:14:18.81Z",
     "lineStatuses": [
 
     ],
@@ -127,8 +103,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.207Z",
-    "modified": "2016-10-13T15:09:08.207Z",
+    "created": "2016-12-28T10:14:18.797Z",
+    "modified": "2016-12-28T10:14:18.797Z",
     "lineStatuses": [
 
     ],
@@ -151,8 +127,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.193Z",
-    "modified": "2016-10-13T15:09:08.193Z",
+    "created": "2016-12-28T10:14:18.797Z",
+    "modified": "2016-12-28T10:14:18.797Z",
     "lineStatuses": [
 
     ],
@@ -175,8 +151,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.207Z",
-    "modified": "2016-10-13T15:09:08.207Z",
+    "created": "2016-12-28T10:14:18.81Z",
+    "modified": "2016-12-28T10:14:18.81Z",
     "lineStatuses": [
 
     ],
@@ -199,8 +175,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.207Z",
-    "modified": "2016-10-13T15:09:08.207Z",
+    "created": "2016-12-28T10:14:18.81Z",
+    "modified": "2016-12-28T10:14:18.81Z",
     "lineStatuses": [
 
     ],
@@ -223,8 +199,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.207Z",
-    "modified": "2016-10-13T15:09:08.207Z",
+    "created": "2016-12-28T10:14:18.89Z",
+    "modified": "2016-12-28T10:14:18.89Z",
     "lineStatuses": [
 
     ],
@@ -247,8 +223,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.207Z",
-    "modified": "2016-10-13T15:09:08.207Z",
+    "created": "2016-12-28T10:14:18.797Z",
+    "modified": "2016-12-28T10:14:18.797Z",
     "lineStatuses": [
 
     ],
@@ -271,8 +247,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.193Z",
-    "modified": "2016-10-13T15:09:08.193Z",
+    "created": "2016-12-28T10:14:18.81Z",
+    "modified": "2016-12-28T10:14:18.81Z",
     "lineStatuses": [
 
     ],
@@ -295,8 +271,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.193Z",
-    "modified": "2016-10-13T15:09:08.193Z",
+    "created": "2016-12-28T10:14:18.797Z",
+    "modified": "2016-12-28T10:14:18.797Z",
     "lineStatuses": [
 
     ],
@@ -319,8 +295,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.193Z",
-    "modified": "2016-10-13T15:09:08.193Z",
+    "created": "2016-12-28T10:14:18.89Z",
+    "modified": "2016-12-28T10:14:18.89Z",
     "lineStatuses": [
 
     ],
@@ -343,8 +319,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.193Z",
-    "modified": "2016-10-13T15:09:08.193Z",
+    "created": "2016-12-28T10:14:18.843Z",
+    "modified": "2016-12-28T10:14:18.843Z",
     "lineStatuses": [
 
     ],
@@ -367,8 +343,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.193Z",
-    "modified": "2016-10-13T15:09:08.193Z",
+    "created": "2016-12-28T10:14:18.827Z",
+    "modified": "2016-12-28T10:14:18.827Z",
     "lineStatuses": [
 
     ],
@@ -385,38 +361,14 @@
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "local-express-trains",
-    "name": "Local/Express trains",
-    "modeName": "national-rail",
-    "disruptions": [
-
-    ],
-    "created": "2016-10-13T15:09:08.193Z",
-    "modified": "2016-10-13T15:09:08.193Z",
-    "lineStatuses": [
-
-    ],
-    "routeSections": [
-
-    ],
-    "serviceTypes": [
-      {
-        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
-        "name": "Regular",
-        "uri": "/Line/Route?ids=Local/Express trains&serviceTypes=Regular"
-      }
-    ]
-  },
-  {
-    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
     "id": "london-midland",
     "name": "London Midland",
     "modeName": "national-rail",
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.207Z",
-    "modified": "2016-10-13T15:09:08.207Z",
+    "created": "2016-12-28T10:14:18.797Z",
+    "modified": "2016-12-28T10:14:18.797Z",
     "lineStatuses": [
 
     ],
@@ -439,8 +391,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.193Z",
-    "modified": "2016-10-13T15:09:08.193Z",
+    "created": "2016-12-28T10:14:18.843Z",
+    "modified": "2016-12-28T10:14:18.843Z",
     "lineStatuses": [
 
     ],
@@ -463,8 +415,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.193Z",
-    "modified": "2016-10-13T15:09:08.193Z",
+    "created": "2016-12-28T10:14:18.797Z",
+    "modified": "2016-12-28T10:14:18.797Z",
     "lineStatuses": [
 
     ],
@@ -487,8 +439,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.207Z",
-    "modified": "2016-10-13T15:09:08.207Z",
+    "created": "2016-12-28T10:14:18.797Z",
+    "modified": "2016-12-28T10:14:18.797Z",
     "lineStatuses": [
 
     ],
@@ -511,8 +463,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.207Z",
-    "modified": "2016-10-13T15:09:08.207Z",
+    "created": "2016-12-28T10:14:18.797Z",
+    "modified": "2016-12-28T10:14:18.797Z",
     "lineStatuses": [
 
     ],
@@ -535,8 +487,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.193Z",
-    "modified": "2016-10-13T15:09:08.193Z",
+    "created": "2016-12-28T10:14:18.797Z",
+    "modified": "2016-12-28T10:14:18.797Z",
     "lineStatuses": [
 
     ],
@@ -559,8 +511,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.193Z",
-    "modified": "2016-10-13T15:09:08.193Z",
+    "created": "2016-12-28T10:14:18.797Z",
+    "modified": "2016-12-28T10:14:18.797Z",
     "lineStatuses": [
 
     ],
@@ -583,8 +535,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.207Z",
-    "modified": "2016-10-13T15:09:08.207Z",
+    "created": "2016-12-28T10:14:18.797Z",
+    "modified": "2016-12-28T10:14:18.797Z",
     "lineStatuses": [
 
     ],
@@ -607,8 +559,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.207Z",
-    "modified": "2016-10-13T15:09:08.207Z",
+    "created": "2016-12-28T10:14:18.92Z",
+    "modified": "2016-12-28T10:14:18.92Z",
     "lineStatuses": [
 
     ],
@@ -631,8 +583,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-10-13T15:09:08.207Z",
-    "modified": "2016-10-13T15:09:08.207Z",
+    "created": "2016-12-28T10:14:18.81Z",
+    "modified": "2016-12-28T10:14:18.81Z",
     "lineStatuses": [
 
     ],
