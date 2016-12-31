@@ -28,5 +28,5 @@ Bug reports and pull requests are welcome on GitHub.
 
 ## License
 
-The gem is available as open source under the terms of the
+The application is available as open source under the terms of the
 [GPLv3 licence](http://opensource.org/licenses/GPL-3.0).
