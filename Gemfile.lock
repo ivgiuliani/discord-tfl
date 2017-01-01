@@ -24,7 +24,7 @@ GEM
     domain_name (0.5.20160826)
       unf (>= 0.0.5, < 1.0.0)
     event_emitter (0.2.5)
-    factory_girl (4.7.0)
+    factory_girl (4.8.0)
       activesupport (>= 3.0.0)
     ffi (1.9.14)
     hashdiff (0.3.2)
@@ -106,7 +106,7 @@ PLATFORMS
 DEPENDENCIES
   curb (~> 0.9.3)
   discordrb (~> 3.1.1)
-  factory_girl (~> 4.7.0)
+  factory_girl (~> 4.8.0)
   levenshtein-ffi (~> 1.1.0)
   nokogiri (~> 1.7.0)
   prius (~> 1.0)
