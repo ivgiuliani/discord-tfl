@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'prius', '~> 1.0'
 gem 'levenshtein-ffi', '~> 1.1.0', :require => 'levenshtein'
-gem 'nokogiri', '~> 1.6.8.1'
+gem 'nokogiri', '~> 1.7.0'
 
 # Transport
 gem 'curb', '~> 0.9.3' # HTTP transport library
