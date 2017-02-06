@@ -10,6 +10,8 @@ gem 'songkick-transport', '~> 1.11.0'
 gem 'discordrb', '~> 3.1.1'
 
 group :development do
+  gem 'rake'
+
   gem 'rspec', '~> 3.4.0'
   gem 'factory_girl', '~> 4.8.0'
   gem 'rubocop', '~> 0.47.1'
