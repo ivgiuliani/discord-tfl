@@ -26,6 +26,9 @@ Metrics/MethodLength:
   CountComments: false  # count full line comments?
   Max: 87
 
+Metrics/BlockLength:
+  Enabled: false
+
 Metrics/ModuleLength:
   Enabled: false
 
