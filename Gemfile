@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'prius', '~> 1.0'
 gem 'levenshtein-ffi', '~> 1.1.0', :require => 'levenshtein'
-gem 'nokogiri', '~> 1.7.0'
+gem 'nokogiri', '~> 1.7.0.1'
 
 # Transport
 gem 'curb', '~> 0.9.3' # HTTP transport library
@@ -12,10 +12,10 @@ gem 'discordrb', '~> 3.1.1'
 group :development do
   gem 'rake'
 
-  gem 'rspec', '~> 3.4.0'
+  gem 'rspec', '~> 3.5.0'
   gem 'factory_girl', '~> 4.8.0'
   gem 'rubocop', '~> 0.47.1'
-  gem 'webmock', '~> 2.3.1'
+  gem 'webmock', '~> 2.3.2'
 end
 
 group :test do
