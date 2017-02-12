@@ -1,6 +1,6 @@
 # TfL Discord bot
 
-A Discord bot too fetch TfL (Transport for London) data through their
+A Discord bot to fetch TfL (Transport for London) data through their
 public API (https://api.tfl.gov.uk).
 
 This program is not affiliated in any way with TfL.
