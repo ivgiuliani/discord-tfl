@@ -10,10 +10,6 @@ module Bot
     extend Discordrb::EventContainer
     extend Discordrb::Commands::CommandContainer
 
-    mention do |event|
-      Commands::StatusCommand.execute(event, mention: true)
-    end
-
     command(Commands::StatusCommand::COMMAND,
             description: "How well is the tube doing?") do |event|
       Commands::StatusCommand.execute(event)
