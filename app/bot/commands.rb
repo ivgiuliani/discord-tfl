@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "command_situation"
-require_relative "command_status"
-require_relative "command_station"
-require_relative "command_toilet"
+require_relative "commands/situation"
+require_relative "commands/status"
+require_relative "commands/station"
+require_relative "commands/toilet"
 
 module Bot
   module Commands

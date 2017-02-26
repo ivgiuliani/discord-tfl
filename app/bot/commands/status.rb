@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "discord_utils"
+require_relative "../discord_utils"
 
 module Bot
   module Commands
