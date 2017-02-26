@@ -7,8 +7,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-12-28T10:14:18.843Z",
-    "modified": "2016-12-28T10:14:18.843Z",
+    "created": "2017-02-24T10:53:21.647Z",
+    "modified": "2017-02-24T10:53:21.647Z",
     "lineStatuses": [
 
     ],
@@ -21,7 +21,10 @@
         "name": "Regular",
         "uri": "/Line/Route?ids=Circular Cruise Westminster&serviceTypes=Regular"
       }
-    ]
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
@@ -31,8 +34,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-12-28T10:14:18.843Z",
-    "modified": "2016-12-28T10:14:18.843Z",
+    "created": "2017-02-24T10:53:21.613Z",
+    "modified": "2017-02-24T10:53:21.613Z",
     "lineStatuses": [
 
     ],
@@ -45,7 +48,10 @@
         "name": "Regular",
         "uri": "/Line/Route?ids=City Cruises&serviceTypes=Regular"
       }
-    ]
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
@@ -55,8 +61,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-12-28T10:14:18.797Z",
-    "modified": "2016-12-28T10:14:18.797Z",
+    "created": "2017-02-24T10:53:21.66Z",
+    "modified": "2017-02-24T10:53:21.66Z",
     "lineStatuses": [
 
     ],
@@ -69,6 +75,9 @@
         "name": "Regular",
         "uri": "/Line/Route?ids=Thames River Services&serviceTypes=Regular"
       }
-    ]
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
   }
 ]

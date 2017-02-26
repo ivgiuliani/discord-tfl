@@ -7,8 +7,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-12-28T10:14:18.81Z",
-    "modified": "2016-12-28T10:14:18.81Z",
+    "created": "2017-02-24T10:53:21.693Z",
+    "modified": "2017-02-24T10:53:21.693Z",
     "lineStatuses": [
 
     ],
@@ -21,7 +21,37 @@
         "name": "Regular",
         "uri": "/Line/Route?ids=RB1&serviceTypes=Regular"
       }
-    ]
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "rb1x",
+    "name": "RB1X",
+    "modeName": "river-bus",
+    "disruptions": [
+
+    ],
+    "created": "2017-02-24T10:53:21.693Z",
+    "modified": "2017-02-24T10:53:21.693Z",
+    "lineStatuses": [
+
+    ],
+    "routeSections": [
+
+    ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=RB1X&serviceTypes=Regular"
+      }
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
@@ -31,8 +61,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-12-28T10:14:18.797Z",
-    "modified": "2016-12-28T10:14:18.797Z",
+    "created": "2017-02-24T10:53:21.647Z",
+    "modified": "2017-02-24T10:53:21.647Z",
     "lineStatuses": [
 
     ],
@@ -45,7 +75,10 @@
         "name": "Regular",
         "uri": "/Line/Route?ids=RB2&serviceTypes=Regular"
       }
-    ]
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
@@ -55,8 +88,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-12-28T10:14:18.857Z",
-    "modified": "2016-12-28T10:14:18.857Z",
+    "created": "2017-02-24T10:53:21.77Z",
+    "modified": "2017-02-24T10:53:21.77Z",
     "lineStatuses": [
 
     ],
@@ -69,7 +102,10 @@
         "name": "Regular",
         "uri": "/Line/Route?ids=RB4&serviceTypes=Regular"
       }
-    ]
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
@@ -79,8 +115,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-12-28T10:14:18.903Z",
-    "modified": "2016-12-28T10:14:18.903Z",
+    "created": "2017-02-24T10:53:21.707Z",
+    "modified": "2017-02-24T10:53:21.707Z",
     "lineStatuses": [
 
     ],
@@ -93,7 +129,10 @@
         "name": "Regular",
         "uri": "/Line/Route?ids=RB5&serviceTypes=Regular"
       }
-    ]
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
@@ -103,8 +142,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-12-28T10:14:18.903Z",
-    "modified": "2016-12-28T10:14:18.903Z",
+    "created": "2017-02-24T10:53:21.613Z",
+    "modified": "2017-02-24T10:53:21.613Z",
     "lineStatuses": [
 
     ],
@@ -117,7 +156,10 @@
         "name": "Regular",
         "uri": "/Line/Route?ids=RB6&serviceTypes=Regular"
       }
-    ]
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
@@ -127,8 +169,8 @@
     "disruptions": [
 
     ],
-    "created": "2016-12-28T10:14:18.797Z",
-    "modified": "2016-12-28T10:14:18.797Z",
+    "created": "2017-02-24T10:53:21.707Z",
+    "modified": "2017-02-24T10:53:21.707Z",
     "lineStatuses": [
 
     ],
@@ -141,6 +183,9 @@
         "name": "Regular",
         "uri": "/Line/Route?ids=Woolwich Ferry&serviceTypes=Regular"
       }
-    ]
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
   }
 ]
