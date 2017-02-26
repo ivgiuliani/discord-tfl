@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-require_relative "discord_utils"
+require_relative "../discord_utils"
 
 module Bot
   module Commands
-    class ToiletCommand
+    class StationCommand
       include Loggy
 
-      COMMAND = :toilet
+      COMMAND = :station
 
       def self.execute(event)
-        ToiletCommand.new.execute(event)
+        StationCommand.new.execute(event)
       end
 
       def execute(event)
@@ -22,11 +22,11 @@ module Bot
 
         query = args.join(" ")
 
-        log "[command/toilet(from:#{event.user.name})] #{query}"
+        log "[command/station(from:#{event.user.name})] #{query}"
 
         station = Tfl::Stations.find(query)
         if station.nil?
-          event << "No toilet by that name #{Bot::DiscordUtils::Emoji::TOILET}"
+          event << "No station by that name"
         else
           format_station(event, station)
         end
@@ -55,14 +55,20 @@ module Bot
       private
 
       def format_station(event, station)
-        toilet = station.facilities.fetch(Tfl::Station::Facility::TOILETS, nil)
-        if toilet.nil?
-          toilet = "TfL doesn't know. " \
-            "May I suggest a trip to #{station.display_name} " \
-            "to find out later today? And please, report back."
+        or_na = ->(item) do
+          if item.nil? || item.empty?
+            "n/a"
+          else
+            item
+          end
         end
 
-        event << "**#{station.display_name}** #{DiscordUtils::Emoji::TOILET}: #{toilet}"
+        event <<
+          "**#{station.display_name}**: " \
+          "zone #{or_na.call(station.zone)}, " \
+          "served by #{or_na.call(station.serving_lines.join(', '))}"
+
+        event << station.facilities.map { |k, v| "#{k}: #{v} " }.join(" — ")
       end
     end
   end
