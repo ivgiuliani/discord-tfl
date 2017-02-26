@@ -26,6 +26,7 @@ module Bot
       end
 
       @scheduler = Rufus::Scheduler.new
+      @task_handlers = {}
 
       @bot = Discordrb::Commands::CommandBot.new token: Prius.get(:discord_token),
                                                  client_id: Prius.get(:discord_client_id),
@@ -59,14 +60,19 @@ module Bot
       end
     end
 
-    def task(name)
+    def task(name, klass = nil)
       unless @bot.connected?
         warn "aborting #{name}, bot is not connected"
         return
       end
 
       info "running task: #{name}"
-      yield
+
+      unless klass.nil?
+        @task_handlers[name] = klass.new unless @task_handlers.key?(name)
+      end
+
+      yield(@task_handlers.fetch(name, nil))
     end
   end
 end
