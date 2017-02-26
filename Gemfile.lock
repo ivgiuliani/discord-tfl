@@ -82,6 +82,8 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
+    rufus-scheduler (3.3.4)
+      tzinfo
     safe_yaml (1.0.4)
     songkick-transport (1.11.0)
       multipart-post (>= 1.1.0)
@@ -117,6 +119,7 @@ DEPENDENCIES
   rspec (~> 3.5.0)
   rspec_junit_formatter (= 0.2.3)
   rubocop (~> 0.47.1)
+  rufus-scheduler (~> 3.3.4)
   songkick-transport (~> 1.11.0)
   webmock (~> 2.3.2)
 

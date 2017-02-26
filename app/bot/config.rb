@@ -7,6 +7,7 @@ module Bot
     PREFIX = "!"
     USERNAME = "TfLBot"
     GAME = nil
+    PR_ANNOUNCE_CHANNELS_IDS = [].freeze
   end
 
   class Config
@@ -18,6 +19,7 @@ module Bot
       @prefix = config(cfg, "command_prefix", prefix)
       @username = config(cfg, "username", username)
       @game = config(cfg, "game", game)
+      @pr_announce_channels_ids = config(cfg, "pr_announce_channels_ids", [])
 
       @config_loaded = true
     end
@@ -36,6 +38,10 @@ module Bot
 
     def game
       @game ||= DefaultConfig::GAME
+    end
+
+    def pr_announce_channels_ids
+      @pr_announce_channels_ids ||= DefaultConfig::PR_ANNOUNCE_CHANNELS_IDS
     end
 
     private

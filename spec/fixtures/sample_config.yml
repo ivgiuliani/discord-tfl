@@ -1,3 +1,6 @@
 command_prefix: "@"
 username: "username123"
 game: "The Game"
+pr_announce_channels_ids:
+- 1
+- 2

@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 require "discordrb"
 require "prius"
+require "rufus-scheduler"
 
 require_relative "init"
 require_relative "config"
 require_relative "commands"
+require_relative "tasks"
 
 Prius.load(:discord_client_id)
 Prius.load(:discord_token)
@@ -24,6 +26,9 @@ module Bot
         CONFIG.load_config(DEFAULT_CONFIG_PATH)
       end
 
+      @scheduler = Rufus::Scheduler.new
+      @task_handlers = {}
+
       @bot = Discordrb::Commands::CommandBot.new token: Prius.get(:discord_token),
                                                  client_id: Prius.get(:discord_client_id),
                                                  prefix: CONFIG.prefix
@@ -32,13 +37,53 @@ module Bot
     end
 
     def run!
-      @bot.run
+      @bot.run :async
+      setup_scheduled_tasks
+
+      loop do
+        sleep 1
+      end
     end
 
     def stop!
       @bot.stop
 
       raise "Bot didn't disconnect itself after stop!" if @bot.connected?
+    end
+
+    private
+
+    def setup_scheduled_tasks
+      @scheduler.every "1h", first: :now do
+        task "check if there are new press releases",
+             Task::CheckPressReleases do |instance|
+          new_press_release = instance.new_press_release
+          unless new_press_release.nil?
+            CONFIG.pr_announce_channels_ids.each do |channel_id|
+              @bot.send_message(
+                channel_id,
+                "New press release from TfL: #{new_press_release.title}. " \
+                "Read more at #{new_press_release.url}"
+              )
+            end
+          end
+        end
+      end
+    end
+
+    def task(name, klass = nil)
+      unless @bot.connected?
+        warn "aborting #{name}, bot is not connected"
+        return
+      end
+
+      info "running task: #{name}"
+
+      unless klass.nil?
+        @task_handlers[name] = klass.new unless @task_handlers.key?(name)
+      end
+
+      yield(@task_handlers.fetch(name, nil))
     end
   end
 end
