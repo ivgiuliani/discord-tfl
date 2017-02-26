@@ -6,6 +6,7 @@ require "rufus-scheduler"
 require_relative "init"
 require_relative "config"
 require_relative "commands"
+require_relative "tasks"
 
 Prius.load(:discord_client_id)
 Prius.load(:discord_token)
@@ -53,9 +54,19 @@ module Bot
     private
 
     def setup_scheduled_tasks
-      @scheduler.every "30s" do
-        task "check disruptions" do
-          # TODO
+      @scheduler.every "1h", first: :now do
+        task "check if there are new press releases",
+             Task::CheckPressReleases do |instance|
+          new_press_release = instance.new_press_release
+          unless new_press_release.nil?
+            CONFIG.pr_announce_channels_ids.each do |channel_id|
+              @bot.send_message(
+                channel_id,
+                "New press release from TfL: #{new_press_release.title}. " \
+                "Read more at #{new_press_release.url}"
+              )
+            end
+          end
         end
       end
     end
