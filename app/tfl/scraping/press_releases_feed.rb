@@ -14,7 +14,7 @@ module Tfl
       end
 
       def strikes
-        @releases.select { |story| story.title =~ /strike/i }
+        @releases.select { |story| story.title =~ /(strike|industrial action)/i }
       end
 
       attr_reader :releases
