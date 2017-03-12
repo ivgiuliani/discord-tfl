@@ -13,7 +13,7 @@ module Bot
 
       def run(bot)
         strike = fetch_press_releases
-        if strike.present?
+        unless strike.nil?
           log "[new strike detected] #{strike.first.title}"
           announce(bot, strike)
         end
