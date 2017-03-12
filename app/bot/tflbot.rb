@@ -55,18 +55,8 @@ module Bot
 
     def setup_scheduled_tasks
       @scheduler.every "1h", first: :now do
-        task "check if there are new press releases",
-             Task::CheckPressReleases do |instance|
-          new_press_release = instance.new_press_release
-          unless new_press_release.nil?
-            CONFIG.pr_announce_channels_ids.each do |channel_id|
-              @bot.send_message(
-                channel_id,
-                "New press release from TfL: #{new_press_release.title}. " \
-                "Read more at #{new_press_release.url}"
-              )
-            end
-          end
+        task "announce new strikes", Task::AnnounceNewStrikes do |instance|
+          instance.run(@bot)
         end
       end
     end

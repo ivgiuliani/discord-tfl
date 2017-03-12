@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-require_relative "tasks/check_press_releases"
+require_relative "tasks/announce_new_strikes"
