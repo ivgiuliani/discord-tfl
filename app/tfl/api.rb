@@ -50,6 +50,16 @@ module Tfl
           # 'cycle-hire' or 'walking'.
           return []
         end
+
+        # At some point in March 2017, TfL started returning the status of *all* the lines
+        # when given an invalid one in input. However given that we don't support fetching
+        # multiple line ids at the same time, so we can recognize that this has happened
+        # if we get back more than just one item.
+        # This is a temporary workaround: we should prevent these requests to be made in
+        # the first place. The response that TfL sends back is really big in this case and
+        # we can potentially/unintentionally DDoS them.
+        raise Tfl::InvalidLineException if json.length > 1
+
         [Tfl::Line.from_api(json.first)]
       rescue Songkick::Transport::HttpError => exception
         if [400, 404].include? exception.status
