@@ -46,7 +46,7 @@ GEM
     minitest (5.10.1)
     multipart-post (2.0.0)
     netrc (0.11.0)
-    nokogiri (1.7.0.1)
+    nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     opus-ruby (1.0.1)
       ffi
@@ -119,7 +119,7 @@ DEPENDENCIES
   discordrb (~> 3.2.0.1)
   factory_girl (~> 4.8.0)
   levenshtein-ffi (~> 1.1.0)
-  nokogiri (~> 1.7.0.1)
+  nokogiri (~> 1.7.2)
   prius (~> 1.0)
   rake
   rspec (~> 3.5.0)
