@@ -14,7 +14,7 @@ gem 'discordrb', '~> 3.2.0.1'
 group :development do
   gem 'rake'
 
-  gem 'rspec', '~> 3.5.0'
+  gem 'rspec', '~> 3.6.0'
   gem 'factory_girl', '~> 4.8.0'
   gem 'rubocop', '~> 0.47.1'
   gem 'webmock', '~> 2.3.2'
