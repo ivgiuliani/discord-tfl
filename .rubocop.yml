@@ -65,6 +65,10 @@ Style/IndentArray:
 Style/IndentHash:
   EnforcedStyle: consistent
 
+Style/FileName:
+  Exclude:
+    - Gemfile
+
 Style/FrozenStringLiteralComment:
   Enabled: always
 

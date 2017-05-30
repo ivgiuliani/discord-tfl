@@ -63,7 +63,7 @@ module Bot
           -> { args.map { |arg| DiscordUtils::Emoji.emoji?(arg) }.any? }
         ]
 
-        !invalid_checks.map(&:call).any?
+        invalid_checks.map(&:call).none?
       end
 
       def status_decode(args)

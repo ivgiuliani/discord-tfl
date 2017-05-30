@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "discordrb"
 require "prius"
 require "rufus-scheduler"

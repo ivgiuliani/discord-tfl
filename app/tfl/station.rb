@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Tfl
   class Station
     # Beware the stations might not have all the listed facilities and

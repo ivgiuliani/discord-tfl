@@ -1,11 +1,12 @@
 # frozen_string_literal: true
+
 require "spec_helper"
 
 RSpec.describe Tfl::Station do
   let(:id) { "123456" }
   let(:display_name) { "The Station" }
   let(:zone) { "1" }
-  let(:serving_lines) { %w(Circle District) }
+  let(:serving_lines) { %w[Circle District] }
   let(:facilities) do
     {
       Tfl::Station::Facility::TOILETS => "yes"

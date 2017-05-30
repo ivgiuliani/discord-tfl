@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 $LOAD_PATH.unshift File.expand_path("../../app", __FILE__)
 
 ENV["DISCORD_CLIENT_ID"] = "12345678901234567"
