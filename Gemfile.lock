@@ -25,7 +25,7 @@ GEM
       rest-client
     domain_name (0.5.20161129)
       unf (>= 0.0.5, < 1.0.0)
-    et-orbi (1.0.2)
+    et-orbi (1.0.4)
       tzinfo
     event_emitter (0.2.5)
     factory_girl (4.8.0)
@@ -89,7 +89,7 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
-    rufus-scheduler (3.4.0)
+    rufus-scheduler (3.4.2)
       et-orbi (~> 1.0)
     safe_yaml (1.0.4)
     sentry-raven (2.5.1)
@@ -97,8 +97,8 @@ GEM
     songkick-transport (1.11.0)
       multipart-post (>= 1.1.0)
       yajl-ruby (>= 1.1.0)
-    thread_safe (0.3.5)
-    tzinfo (1.2.2)
+    thread_safe (0.3.6)
+    tzinfo (1.2.3)
       thread_safe (~> 0.1)
     unf (0.1.4)
       unf_ext
@@ -128,7 +128,7 @@ DEPENDENCIES
   rspec (~> 3.6.0)
   rspec_junit_formatter (= 0.2.3)
   rubocop (~> 0.49.1)
-  rufus-scheduler (~> 3.4.0)
+  rufus-scheduler (~> 3.4.2)
   sentry-raven (~> 2.5.1)
   songkick-transport (~> 1.11.0)
   webmock (~> 2.3.2)
