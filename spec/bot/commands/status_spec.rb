@@ -145,14 +145,14 @@ RSpec.describe Bot::Commands::StatusCommand do
 
     describe "that has an emoji" do
       it "returns false" do
-        expect(instance.valid_query?(%w(:scream:))).to be false
-        expect(instance.valid_query?(%w(:scream: valid))).to be false
-        expect(instance.valid_query?(%w(valid :scream:))).to be false
+        expect(instance.valid_query?(%w[:scream:])).to be false
+        expect(instance.valid_query?(%w[:scream: valid])).to be false
+        expect(instance.valid_query?(%w[valid :scream:])).to be false
       end
 
       context "that is a unicode char" do
         it "returns false" do
-          expect(instance.valid_query?(%w(\u{1F631}))).to be false
+          expect(instance.valid_query?(%w[\u{1F631}])).to be false
         end
       end
     end
