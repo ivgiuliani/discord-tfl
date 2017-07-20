@@ -6,7 +6,7 @@ gem "levenshtein-ffi", "~> 1.1.0", require: "levenshtein"
 gem "nokogiri", "~> 1.7.2"
 gem "prius", "~> 1.0"
 gem "rufus-scheduler", "~> 3.4.2"
-gem "sentry-raven", "~> 2.5.3", require: "sentry-raven-without-integrations"
+gem "sentry-raven", "~> 2.6.0", require: "sentry-raven-without-integrations"
 
 # Transport
 gem "curb", "~> 0.9.3" # HTTP transport library
