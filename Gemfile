@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 gem "levenshtein-ffi", "~> 1.1.0", require: "levenshtein"
 gem "nokogiri", "~> 1.8.0"
-gem "prius", "~> 1.0"
+gem "prius", "~> 2.0"
 gem "rufus-scheduler", "~> 3.4.2"
 gem "sentry-raven", "~> 2.6.3", require: "sentry-raven-without-integrations"
 
