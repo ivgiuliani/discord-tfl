@@ -9,7 +9,7 @@ gem "rufus-scheduler", "~> 3.4.2"
 gem "sentry-raven", "~> 2.6.3", require: "sentry-raven-without-integrations"
 
 # Transport
-gem "curb", "~> 0.9.3" # HTTP transport library
+gem "curb", "~> 0.9.4" # HTTP transport library
 gem "discordrb", "~> 3.2.1"
 gem "songkick-transport", "~> 1.11.0"
 
