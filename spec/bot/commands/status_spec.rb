@@ -131,7 +131,7 @@ RSpec.describe Bot::Commands::StatusCommand do
       end
 
       context "when an alias is given" do
-        Tfl::IdResolver::ALIASES.keys.each do |line_alias|
+        Tfl::IdResolver::ALIASES.each_key do |line_alias|
           context "that is #{line_alias}" do
             let(:args) { [line_alias] }
 
