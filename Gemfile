@@ -16,7 +16,7 @@ gem "songkick-transport", "~> 1.11.0"
 group :development do
   gem "rake"
 
-  gem "factory_girl", "~> 4.8.0"
+  gem "factory_girl", "~> 4.8.1"
   gem "rspec", "~> 3.6.0"
   gem "rubocop", "~> 0.49.1"
   gem "webmock", "~> 3.0.1"
