@@ -44,7 +44,7 @@ Style/Alias:
   EnforcedStyle: prefer_alias_method
 
 # Use trailing rather than leading dots on multi-line call chains
-Style/DotPosition:
+Layout/DotPosition:
   EnforcedStyle: trailing
 
 Style/Documentation:
@@ -59,13 +59,13 @@ Style/FormatString:
 Style/GuardClause:
   Enabled: false
 
-Style/IndentArray:
+Layout/IndentArray:
   EnforcedStyle: consistent
 
-Style/IndentHash:
+Layout/IndentHash:
   EnforcedStyle: consistent
 
-Style/FileName:
+Naming/FileName:
   Exclude:
     - Gemfile
 
@@ -75,10 +75,10 @@ Style/FrozenStringLiteralComment:
 Style/Lambda:
   EnforcedStyle: literal
 
-Style/MultilineMethodCallIndentation:
+Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
 Style/NumericPredicate:
@@ -104,7 +104,7 @@ Style/SingleLineBlockParams:
 Style/StringLiterals:
   EnforcedStyle: 'double_quotes'
 
-Style/VariableNumber:
+Naming/VariableNumber:
   Enabled: false
 
 Rails:
