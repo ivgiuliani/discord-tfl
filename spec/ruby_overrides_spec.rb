@@ -12,4 +12,10 @@ RSpec.describe String do
       expect("123".truncate(5)).to eq("123")
     end
   end
+
+  describe "#title" do
+    it { expect("oneword".title).to eq("Oneword") }
+    it { expect("two words".title).to eq("Two Words") }
+    it { expect("Don't Change".title).to eq("Don't Change") }
+  end
 end
