@@ -19,7 +19,7 @@ group :development do
   gem "factory_girl", "~> 4.8.1"
   gem "rspec", "~> 3.6.0"
   gem "rubocop", "~> 0.50.0"
-  gem "webmock", "~> 3.0.1"
+  gem "webmock", "~> 3.1.0"
 end
 
 group :test do
