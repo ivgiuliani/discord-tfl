@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :line, class: Tfl::Line do
     id :central
     display_name "Central"

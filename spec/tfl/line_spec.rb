@@ -35,9 +35,9 @@ RSpec.describe Tfl::Line do
   end
 
   describe "#==" do
-    let(:line1) { FactoryGirl.build(:line, :central) }
-    let(:line2) { FactoryGirl.build(:line, :northern) }
-    let(:line3) { FactoryGirl.build(:line, :central) }
+    let(:line1) { FactoryBot.build(:line, :central) }
+    let(:line2) { FactoryBot.build(:line, :northern) }
+    let(:line3) { FactoryBot.build(:line, :central) }
 
     it "returns true for the same line" do
       expect(line1 == line3).to be true
@@ -51,12 +51,12 @@ RSpec.describe Tfl::Line do
   end
 
   describe ".severity_value" do
-    let(:good_service) { FactoryGirl.build(:line, :good_service) }
-    let(:minor_delays) { FactoryGirl.build(:line, :minor_delays) }
-    let(:severe_delays) { FactoryGirl.build(:line, :severe_delays) }
-    let(:part_closure) { FactoryGirl.build(:line, :part_closure) }
-    let(:part_suspended) { FactoryGirl.build(:line, :part_suspended) }
-    let(:suspended) { FactoryGirl.build(:line, :suspended) }
+    let(:good_service) { FactoryBot.build(:line, :good_service) }
+    let(:minor_delays) { FactoryBot.build(:line, :minor_delays) }
+    let(:severe_delays) { FactoryBot.build(:line, :severe_delays) }
+    let(:part_closure) { FactoryBot.build(:line, :part_closure) }
+    let(:part_suspended) { FactoryBot.build(:line, :part_suspended) }
+    let(:suspended) { FactoryBot.build(:line, :suspended) }
 
     context "when everything's good" do
       it "returns 1.0" do

@@ -7,7 +7,7 @@ ENV["DISCORD_TOKEN"] = "t0k3nt0k3nt0k3nt0k3nt0k3n.1234hrx0rz1234token"
 ENV["TFL_APPLICATION_ID"] = "tfl-application-id"
 ENV["TFL_APPLICATION_KEY"] = "tfl-application-key"
 
-require "factory_girl"
+require "factory_bot"
 
 require "webmock/rspec"
 WebMock.disable_net_connect!(allow_localhost: true)
@@ -28,9 +28,9 @@ def load_fixture_obj(fixture_name)
 end
 
 RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 
-  config.before(:suite) { FactoryGirl.find_definitions }
+  config.before(:suite) { FactoryBot.find_definitions }
 
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
