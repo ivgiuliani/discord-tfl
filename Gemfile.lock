@@ -27,7 +27,7 @@ GEM
     et-orbi (1.0.4)
       tzinfo
     event_emitter (0.2.5)
-    factory_girl (4.8.1)
+    factory_bot (4.8.2)
       activesupport (>= 3.0.0)
     faraday (0.13.1)
       multipart-post (>= 1.2, < 3)
@@ -35,7 +35,8 @@ GEM
     hashdiff (0.3.7)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (0.8.6)
+    i18n (0.9.0)
+      concurrent-ruby (~> 1.0)
     levenshtein-ffi (1.1.0)
       ffi (~> 1.9)
     mime-types (3.1)
@@ -118,7 +119,7 @@ PLATFORMS
 DEPENDENCIES
   curb (~> 0.9.4)
   discordrb (~> 3.2.1)
-  factory_girl (~> 4.8.1)
+  factory_bot (~> 4.8.2)
   levenshtein-ffi (~> 1.1.0)
   nokogiri (~> 1.8.1)
   prius (~> 2.0)
