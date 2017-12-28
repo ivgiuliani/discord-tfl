@@ -116,9 +116,7 @@ module Bot
         disruption = disruption[line.display_name.length..-1].strip
 
         # The line could be followed by a "line" word.
-        if disruption.downcase.start_with?("line")
-          disruption = disruption[4..-1]
-        end
+        disruption = disruption[4..-1] if disruption.downcase.start_with?("line")
 
         # Advance to the first char in a..z skipping any colons or semi colons
         # the string might have.
