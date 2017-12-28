@@ -31,9 +31,7 @@ module Tfl
       api_obj["lineStatuses"].each do |status|
         # TfL sometimes returns the same disruption multiple times :/
         message = status.fetch("disruption", {}).fetch("description", nil)
-        if !message.nil? && !disruptions.include?(message)
-          disruptions << message
-        end
+        disruptions << message if !message.nil? && !disruptions.include?(message)
       end
 
       # If there are multiple different disruptions, only the first one
