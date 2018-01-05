@@ -19,7 +19,7 @@ group :development do
   gem "factory_bot", "~> 4.8.2"
   gem "rspec", "~> 3.7.0"
   gem "rubocop", "~> 0.52.1"
-  gem "webmock", "~> 3.1.1"
+  gem "webmock", "~> 3.2.1"
 end
 
 group :test do
