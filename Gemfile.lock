@@ -57,7 +57,7 @@ GEM
     prius (2.0.0)
     public_suffix (3.0.1)
     rainbow (3.0.0)
-    rake (12.3.0)
+    rake (12.3.1)
     rbnacl (3.4.0)
       ffi
     rest-client (2.0.2)
