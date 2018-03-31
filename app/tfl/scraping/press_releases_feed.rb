@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "open-uri"
+require "net/http"
 require "nokogiri"
 
 module Tfl
@@ -31,7 +31,7 @@ module Tfl
       private
 
       def download_content
-        open(PRESS_RELEASES_URL).read
+        Net::HTTP.get(URI(PRESS_RELEASES_URL))
       end
 
       def parse_content(content)
