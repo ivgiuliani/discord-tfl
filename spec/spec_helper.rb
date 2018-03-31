@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift File.expand_path("../../app", __FILE__)
+$LOAD_PATH.unshift File.expand_path("../app", __dir__)
 
 ENV["DISCORD_CLIENT_ID"] = "12345678901234567"
 ENV["DISCORD_TOKEN"] = "t0k3nt0k3nt0k3nt0k3nt0k3n.1234hrx0rz1234token"
