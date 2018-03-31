@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require "open-uri"
+require "net/http"
 require "json"
 
 # rubocop:disable Metrics/LineLength
@@ -19,19 +19,18 @@ DOWNLOADS = [
 ].freeze
 # rubocop:enable Metrics/LineLength
 
-DOWNLOADS.each do |download|
-  url, output, type = *download
-
+DOWNLOADS.each do |url, output, type|
   $stdout.puts "Downloading #{url} => #{output}"
 
   case type
   when :json
-    open(output, "w") do |file|
-      file << JSON.pretty_generate(JSON.parse(open(url).read)) << "\n"
+    File.open(output, "w") do |file|
+      content = Net::HTTP.get(URI(url))
+      file << JSON.pretty_generate(JSON.parse(content)) << "\n"
     end
   when :xml
-    stream = open(url)
-    IO.copy_stream(stream, output)
+    content = Net::HTTP.get(URI(url))
+    File.write(output, content)
   else
     raise ArgumentError, "Invalid type"
   end
