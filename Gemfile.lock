@@ -110,7 +110,7 @@ GEM
     websocket-client-simple (0.3.0)
       event_emitter
       websocket
-    yajl-ruby (1.3.0)
+    yajl-ruby (1.3.1)
 
 PLATFORMS
   ruby
