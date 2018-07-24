@@ -5,7 +5,7 @@ source "https://rubygems.org"
 gem "levenshtein-ffi", "~> 1.1.0", require: "levenshtein"
 gem "nokogiri", "~> 1.8.4"
 gem "prius", "~> 2.0"
-gem "rufus-scheduler", "~> 3.5.0"
+gem "rufus-scheduler", "~> 3.5.1"
 gem "sentry-raven", "~> 2.7.4", require: "sentry-raven-without-integrations"
 
 # Transport
