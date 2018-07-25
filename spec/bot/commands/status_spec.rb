@@ -83,10 +83,10 @@ RSpec.describe Bot::Commands::StatusCommand do
     end
 
     context "when a long query is given" do
-      let(:args) { ["1234567890123456789012345678901234567890"] }
+      let(:args) { ["123456789012345678901234567890123456789012345"] }
 
       it "truncates it" do
-        expect(entity).to eq("12345678901234567890123456789012345")
+        expect(entity).to eq("123456789012345678901234567890123456789012")
       end
     end
   end
