@@ -10,7 +10,7 @@ module Bot
       COMMAND = :status
 
       MAX_LIST_RESPONSE_COUNT = 30
-      MAX_QUERY_LENGTH = 35
+      MAX_QUERY_LENGTH = 42
 
       def self.execute(event, mention: false)
         StatusCommand.new.execute(event, mention: mention)
