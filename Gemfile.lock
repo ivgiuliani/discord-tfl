@@ -9,6 +9,8 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     ast (2.4.0)
+    byebug (10.0.2)
+    coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
@@ -43,6 +45,7 @@ GEM
     jaro_winkler (1.5.1)
     levenshtein-ffi (1.1.0)
       ffi (~> 1.9)
+    method_source (0.9.0)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -59,6 +62,12 @@ GEM
       ast (~> 2.4.0)
     powerpack (0.1.2)
     prius (2.0.0)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    pry-byebug (3.6.0)
+      byebug (~> 10.0)
+      pry (~> 0.10)
     public_suffix (3.0.2)
     raabro (1.1.6)
     rainbow (3.0.0)
@@ -128,6 +137,7 @@ DEPENDENCIES
   levenshtein-ffi (~> 1.1.0)
   nokogiri (~> 1.8.4)
   prius (~> 2.0)
+  pry-byebug
   rake
   rspec (~> 3.7.0)
   rspec_junit_formatter (= 0.4.1)
@@ -138,4 +148,4 @@ DEPENDENCIES
   webmock (~> 3.4.2)
 
 BUNDLED WITH
-   1.16.0.pre.2
+   1.16.2
