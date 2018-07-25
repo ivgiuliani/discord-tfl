@@ -7,8 +7,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.63Z",
-    "modified": "2017-02-24T10:53:21.63Z",
+    "created": "2018-07-19T14:04:20.417Z",
+    "modified": "2018-07-19T14:04:20.417Z",
     "lineStatuses": [
 
     ],
@@ -34,8 +34,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.77Z",
-    "modified": "2017-02-24T10:53:21.77Z",
+    "created": "2018-07-19T14:04:20.437Z",
+    "modified": "2018-07-19T14:04:20.437Z",
     "lineStatuses": [
 
     ],
@@ -61,8 +61,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.63Z",
-    "modified": "2017-02-24T10:53:21.63Z",
+    "created": "2018-07-19T14:04:20.41Z",
+    "modified": "2018-07-19T14:04:20.41Z",
     "lineStatuses": [
 
     ],
@@ -88,8 +88,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.613Z",
-    "modified": "2017-02-24T10:53:21.613Z",
+    "created": "2018-07-19T14:04:20.413Z",
+    "modified": "2018-07-19T14:04:20.413Z",
     "lineStatuses": [
 
     ],
@@ -115,8 +115,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.613Z",
-    "modified": "2017-02-24T10:53:21.613Z",
+    "created": "2018-07-19T14:04:20.41Z",
+    "modified": "2018-07-19T14:04:20.41Z",
     "lineStatuses": [
 
     ],
@@ -142,8 +142,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.63Z",
-    "modified": "2017-02-24T10:53:21.63Z",
+    "created": "2018-07-19T14:04:20.417Z",
+    "modified": "2018-07-19T14:04:20.417Z",
     "lineStatuses": [
 
     ],
@@ -169,8 +169,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.66Z",
-    "modified": "2017-02-24T10:53:21.66Z",
+    "created": "2018-07-19T14:04:20.413Z",
+    "modified": "2018-07-19T14:04:20.413Z",
     "lineStatuses": [
 
     ],
@@ -196,8 +196,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.647Z",
-    "modified": "2017-02-24T10:53:21.647Z",
+    "created": "2018-07-19T14:04:20.443Z",
+    "modified": "2018-07-19T14:04:20.443Z",
     "lineStatuses": [
 
     ],
@@ -223,8 +223,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.613Z",
-    "modified": "2017-02-24T10:53:21.613Z",
+    "created": "2018-07-19T14:04:20.413Z",
+    "modified": "2018-07-19T14:04:20.413Z",
     "lineStatuses": [
 
     ],
@@ -250,8 +250,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.613Z",
-    "modified": "2017-02-24T10:53:21.613Z",
+    "created": "2018-07-19T14:04:20.41Z",
+    "modified": "2018-07-19T14:04:20.41Z",
     "lineStatuses": [
 
     ],
@@ -277,8 +277,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.63Z",
-    "modified": "2017-02-24T10:53:21.63Z",
+    "created": "2018-07-19T14:04:20.417Z",
+    "modified": "2018-07-19T14:04:20.417Z",
     "lineStatuses": [
 
     ],
@@ -304,8 +304,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.613Z",
-    "modified": "2017-02-24T10:53:21.613Z",
+    "created": "2018-07-19T14:04:20.41Z",
+    "modified": "2018-07-19T14:04:20.41Z",
     "lineStatuses": [
 
     ],
@@ -325,41 +325,14 @@
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "heathrow-connect",
-    "name": "Heathrow Connect",
-    "modeName": "national-rail",
-    "disruptions": [
-
-    ],
-    "created": "2017-02-24T10:53:21.707Z",
-    "modified": "2017-02-24T10:53:21.707Z",
-    "lineStatuses": [
-
-    ],
-    "routeSections": [
-
-    ],
-    "serviceTypes": [
-      {
-        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
-        "name": "Regular",
-        "uri": "/Line/Route?ids=Heathrow Connect&serviceTypes=Regular"
-      }
-    ],
-    "crowding": {
-      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
-    }
-  },
-  {
-    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
     "id": "heathrow-express",
     "name": "Heathrow Express",
     "modeName": "national-rail",
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.693Z",
-    "modified": "2017-02-24T10:53:21.693Z",
+    "created": "2018-07-19T14:04:20.427Z",
+    "modified": "2018-07-19T14:04:20.427Z",
     "lineStatuses": [
 
     ],
@@ -385,8 +358,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.63Z",
-    "modified": "2017-02-24T10:53:21.63Z",
+    "created": "2018-07-19T14:04:20.443Z",
+    "modified": "2018-07-19T14:04:20.443Z",
     "lineStatuses": [
 
     ],
@@ -406,14 +379,14 @@
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "local-express-trains",
-    "name": "Local/Express trains",
+    "id": "london-north-eastern-railway",
+    "name": "London North Eastern Railway",
     "modeName": "national-rail",
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.613Z",
-    "modified": "2017-02-24T10:53:21.613Z",
+    "created": "2018-07-19T14:04:20.437Z",
+    "modified": "2018-07-19T14:04:20.437Z",
     "lineStatuses": [
 
     ],
@@ -424,34 +397,7 @@
       {
         "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
         "name": "Regular",
-        "uri": "/Line/Route?ids=Local/Express trains&serviceTypes=Regular"
-      }
-    ],
-    "crowding": {
-      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
-    }
-  },
-  {
-    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "london-midland",
-    "name": "London Midland",
-    "modeName": "national-rail",
-    "disruptions": [
-
-    ],
-    "created": "2017-02-24T10:53:21.613Z",
-    "modified": "2017-02-24T10:53:21.613Z",
-    "lineStatuses": [
-
-    ],
-    "routeSections": [
-
-    ],
-    "serviceTypes": [
-      {
-        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
-        "name": "Regular",
-        "uri": "/Line/Route?ids=London Midland&serviceTypes=Regular"
+        "uri": "/Line/Route?ids=London North Eastern Railway&serviceTypes=Regular"
       }
     ],
     "crowding": {
@@ -466,8 +412,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.677Z",
-    "modified": "2017-02-24T10:53:21.677Z",
+    "created": "2018-07-19T14:04:20.447Z",
+    "modified": "2018-07-19T14:04:20.447Z",
     "lineStatuses": [
 
     ],
@@ -493,8 +439,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.613Z",
-    "modified": "2017-02-24T10:53:21.613Z",
+    "created": "2018-07-19T14:04:20.41Z",
+    "modified": "2018-07-19T14:04:20.41Z",
     "lineStatuses": [
 
     ],
@@ -520,8 +466,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.613Z",
-    "modified": "2017-02-24T10:53:21.613Z",
+    "created": "2018-07-19T14:04:20.41Z",
+    "modified": "2018-07-19T14:04:20.41Z",
     "lineStatuses": [
 
     ],
@@ -547,8 +493,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.613Z",
-    "modified": "2017-02-24T10:53:21.613Z",
+    "created": "2018-07-19T14:04:20.413Z",
+    "modified": "2018-07-19T14:04:20.413Z",
     "lineStatuses": [
 
     ],
@@ -574,8 +520,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.613Z",
-    "modified": "2017-02-24T10:53:21.613Z",
+    "created": "2018-07-19T14:04:20.41Z",
+    "modified": "2018-07-19T14:04:20.41Z",
     "lineStatuses": [
 
     ],
@@ -595,14 +541,14 @@
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "south-west-trains",
-    "name": "South West Trains",
+    "id": "south-western-railway",
+    "name": "South Western Railway",
     "modeName": "national-rail",
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.613Z",
-    "modified": "2017-02-24T10:53:21.613Z",
+    "created": "2018-07-19T14:04:20.41Z",
+    "modified": "2018-07-19T14:04:20.41Z",
     "lineStatuses": [
 
     ],
@@ -613,7 +559,7 @@
       {
         "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
         "name": "Regular",
-        "uri": "/Line/Route?ids=South West Trains&serviceTypes=Regular"
+        "uri": "/Line/Route?ids=South Western Railway&serviceTypes=Regular"
       }
     ],
     "crowding": {
@@ -628,8 +574,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.677Z",
-    "modified": "2017-02-24T10:53:21.677Z",
+    "created": "2018-07-19T14:04:20.41Z",
+    "modified": "2018-07-19T14:04:20.41Z",
     "lineStatuses": [
 
     ],
@@ -655,8 +601,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.723Z",
-    "modified": "2017-02-24T10:53:21.723Z",
+    "created": "2018-07-19T14:04:20.413Z",
+    "modified": "2018-07-19T14:04:20.413Z",
     "lineStatuses": [
 
     ],
@@ -676,14 +622,14 @@
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "virgin-trains-east-coast",
-    "name": "Virgin Trains East Coast",
+    "id": "west-midlands-trains",
+    "name": "West Midlands Trains",
     "modeName": "national-rail",
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.693Z",
-    "modified": "2017-02-24T10:53:21.693Z",
+    "created": "2018-07-19T14:04:20.41Z",
+    "modified": "2018-07-19T14:04:20.41Z",
     "lineStatuses": [
 
     ],
@@ -694,7 +640,7 @@
       {
         "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
         "name": "Regular",
-        "uri": "/Line/Route?ids=Virgin Trains East Coast&serviceTypes=Regular"
+        "uri": "/Line/Route?ids=West Midlands Trains&serviceTypes=Regular"
       }
     ],
     "crowding": {
