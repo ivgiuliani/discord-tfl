@@ -7,8 +7,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.647Z",
-    "modified": "2017-02-24T10:53:21.647Z",
+    "created": "2018-07-19T14:04:20.41Z",
+    "modified": "2018-07-19T14:04:20.41Z",
     "lineStatuses": [
 
     ],
@@ -34,8 +34,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.613Z",
-    "modified": "2017-02-24T10:53:21.613Z",
+    "created": "2018-07-19T14:04:20.417Z",
+    "modified": "2018-07-19T14:04:20.417Z",
     "lineStatuses": [
 
     ],
@@ -61,8 +61,8 @@
     "disruptions": [
 
     ],
-    "created": "2017-02-24T10:53:21.66Z",
-    "modified": "2017-02-24T10:53:21.66Z",
+    "created": "2018-07-19T14:04:20.41Z",
+    "modified": "2018-07-19T14:04:20.41Z",
     "lineStatuses": [
 
     ],
@@ -74,6 +74,33 @@
         "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
         "name": "Regular",
         "uri": "/Line/Route?ids=Thames River Services&serviceTypes=Regular"
+      }
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "westminster-passenger-service-association",
+    "name": "Westminster Passenger Service Association",
+    "modeName": "river-tour",
+    "disruptions": [
+
+    ],
+    "created": "2018-07-19T14:04:20.407Z",
+    "modified": "2018-07-19T14:04:20.407Z",
+    "lineStatuses": [
+
+    ],
+    "routeSections": [
+
+    ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Westminster Passenger Service Association&serviceTypes=Regular"
       }
     ],
     "crowding": {
