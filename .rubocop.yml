@@ -1,7 +1,7 @@
 # For all options see https://github.com/bbatsov/rubocop/tree/master/config
 
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.5
   DisplayCopNames: true
   Include:
     - Rakefile
