@@ -3,8 +3,8 @@
 AllCops:
   TargetRubyVersion: 2.5
   DisplayCopNames: true
-  Include:
-    - Rakefile
+  DisplayStyleGuide: true
+  ExtraDetails: true
 
 GlobalVars:
   AllowedVariables: [$statsd]
