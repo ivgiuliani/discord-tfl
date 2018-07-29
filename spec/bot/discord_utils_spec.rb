@@ -8,7 +8,7 @@ RSpec.describe Bot::DiscordUtils do
       it "returns the original argument list" do
         expect(described_class.filter_mentions(
                  "hello", "world", "lorem", "ipsum", mentions: []
-        )).to eq(%w[hello world lorem ipsum])
+               )).to eq(%w[hello world lorem ipsum])
       end
 
       context "with an empty list" do
