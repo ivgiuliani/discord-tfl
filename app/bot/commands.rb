@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative "commands/bus"
 require_relative "commands/situation"
 require_relative "commands/status"
 require_relative "commands/station"
@@ -9,6 +10,11 @@ module Bot
   module Commands
     extend Discordrb::EventContainer
     extend Discordrb::Commands::CommandContainer
+
+    command(Commands::BusCommand::COMMAND,
+            description: "The bus") do |event|
+      Commands::BusCommand.execute(event)
+    end
 
     command(Commands::StatusCommand::COMMAND,
             description: "How well is the tube doing?") do |event|
