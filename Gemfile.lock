@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.0)
+    activesupport (5.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -29,7 +29,7 @@ GEM
     et-orbi (1.1.4)
       tzinfo
     event_emitter (0.2.5)
-    factory_bot (4.10.0)
+    factory_bot (4.11.0)
       activesupport (>= 3.0.0)
     faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
@@ -40,7 +40,7 @@ GEM
     hashdiff (0.3.7)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (1.0.1)
+    i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.1)
     levenshtein-ffi (1.1.0)
@@ -133,7 +133,7 @@ PLATFORMS
 DEPENDENCIES
   curb (~> 0.9.6)
   discordrb (~> 3.2.1)
-  factory_bot (~> 4.10.0)
+  factory_bot (~> 4.11.0)
   levenshtein-ffi (~> 1.1.0)
   nokogiri (~> 1.8.4)
   prius (~> 2.0)
