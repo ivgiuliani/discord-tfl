@@ -29,7 +29,7 @@ GEM
     et-orbi (1.1.4)
       tzinfo
     event_emitter (0.2.5)
-    factory_bot (4.11.0)
+    factory_bot (4.11.1)
       activesupport (>= 3.0.0)
     faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
@@ -133,7 +133,7 @@ PLATFORMS
 DEPENDENCIES
   curb (~> 0.9.6)
   discordrb (~> 3.2.1)
-  factory_bot (~> 4.11.0)
+  factory_bot (~> 4.11.1)
   levenshtein-ffi (~> 1.1.0)
   nokogiri (~> 1.8.4)
   prius (~> 2.0)
