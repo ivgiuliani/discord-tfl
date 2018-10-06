@@ -111,7 +111,7 @@ module Bot
 
       def chop_repetition_on_disruption(disruption, line)
         return disruption unless disruption.
-            downcase.start_with?(line.display_name.downcase)
+          downcase.start_with?(line.display_name.downcase)
 
         disruption = disruption[line.display_name.length..-1].strip
 
