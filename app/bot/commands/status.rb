@@ -60,7 +60,7 @@ module Bot
           -> { args.map { |arg| (/^[A-Za-z0-9&\- ]+$/ =~ arg).nil? }.all? },
 
           # Contains emojis?
-          -> { args.map { |arg| DiscordUtils::Emoji.emoji?(arg) }.any? }
+          -> { args.map { |arg| DiscordUtils::Emoji.emoji?(arg) }.any? },
         ]
 
         invalid_checks.map(&:call).none?

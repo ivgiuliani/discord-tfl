@@ -18,7 +18,7 @@ RSpec.describe Tfl::IdResolver do
       "ldr" => "dlr",
       "picadily" => "piccadilly",
       "piccdilly" => "piccadilly",
-      "tarm" => "tram"
+      "tarm" => "tram",
     }
 
     mappings.each do |given, expected|

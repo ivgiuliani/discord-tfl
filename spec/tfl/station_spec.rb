@@ -9,7 +9,7 @@ RSpec.describe Tfl::Station do
   let(:serving_lines) { %w[Circle District] }
   let(:facilities) do
     {
-      Tfl::Station::Facility::TOILETS => "yes"
+      Tfl::Station::Facility::TOILETS => "yes",
     }
   end
 

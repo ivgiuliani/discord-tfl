@@ -24,7 +24,7 @@ module Tfl
       "victoria line" => Tfl::Const::Tube::VICTORIA,
       "waterloo" => Tfl::Const::Tube::WATERLOO,
       "waterloo and city" => Tfl::Const::Tube::WATERLOO,
-      "w&c" => Tfl::Const::Tube::WATERLOO
+      "w&c" => Tfl::Const::Tube::WATERLOO,
     }.freeze
 
     def self.similarity_list(string, list)

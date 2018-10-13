@@ -26,7 +26,7 @@ module Bot
           bot.send_message(
             channel_id,
             "New press release from TfL: #{strike.title}. " \
-              "Read more at #{strike.url}"
+              "Read more at #{strike.url}",
           )
         end
       end

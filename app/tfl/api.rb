@@ -89,7 +89,7 @@ module Tfl
       def app_key_args
         {
           app_id: Prius.get(:tfl_application_id),
-          app_key: Prius.get(:tfl_application_key)
+          app_key: Prius.get(:tfl_application_key),
         }
       end
 

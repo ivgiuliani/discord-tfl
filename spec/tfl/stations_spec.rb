@@ -52,7 +52,7 @@ RSpec.describe Tfl::Stations do
         "aaa",
         "dlr",
         "zzz",
-        "this station does not exist"
+        "this station does not exist",
       ].freeze
       INVALID.each do |invalid|
         context "that is #{invalid}" do
