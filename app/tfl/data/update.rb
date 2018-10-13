@@ -15,7 +15,7 @@ DOWNLOADS = [
   ["https://api.tfl.gov.uk/Line/Mode/river-tour", "river_tour_lines.json", :json],
 
   # Stations data
-  ["https://data.tfl.gov.uk/tfl/syndication/feeds/stations-facilities.xml", "stations-facilities.xml", :xml]
+  ["https://data.tfl.gov.uk/tfl/syndication/feeds/stations-facilities.xml", "stations-facilities.xml", :xml],
 ].freeze
 # rubocop:enable Metrics/LineLength
 

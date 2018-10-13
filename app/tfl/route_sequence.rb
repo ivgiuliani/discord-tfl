@@ -15,7 +15,7 @@ module Tfl
       new(
         id: api_obj["id"],
         status: api_obj["status"],
-        name: api_obj["name"]
+        name: api_obj["name"],
       )
     end
 
@@ -49,7 +49,7 @@ module Tfl
         id: api_obj["lineId"],
         name: api_obj["lineName"],
         mode: api_obj["mode"],
-        stop_points: stop_points
+        stop_points: stop_points,
       )
     end
 

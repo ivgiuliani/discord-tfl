@@ -56,7 +56,7 @@ module Tfl
       "1000129" => ["king's cross"],
       "1000191" => ["regents park"],
       "1000203" => ["shepherd bush", "shepherd's bush", "shebu"],
-      "1000221" => ["st james park"]
+      "1000221" => ["st james park"],
     }.freeze
 
     ALL = load

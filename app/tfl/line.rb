@@ -46,7 +46,7 @@ module Tfl
         display_name: api_obj["name"],
         mode: api_obj["modeName"],
         current_status: current_status,
-        disruptions: disruptions
+        disruptions: disruptions,
       )
     end
 
@@ -89,7 +89,7 @@ module Tfl
       CommonDisruptionSeverities::REDUCED_SERVICE => 0.3,
       CommonDisruptionSeverities::SEVERE_DELAYS => 0.5,
       CommonDisruptionSeverities::SERVICE_CLOSED => 1.0,
-      CommonDisruptionSeverities::SUSPENDED => 0.0
+      CommonDisruptionSeverities::SUSPENDED => 0.0,
     }
 
     severities = lines.map do |line|

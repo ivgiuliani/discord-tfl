@@ -46,7 +46,7 @@ module Bot
           -> { args.map { |arg| (/[A-z]+/ =~ arg).nil? }.all? },
 
           # Contains emojis?
-          -> { args.map { |arg| DiscordUtils::Emoji.emoji?(arg) }.any? }
+          -> { args.map { |arg| DiscordUtils::Emoji.emoji?(arg) }.any? },
         ]
 
         invalid_checks.map(&:call).none?

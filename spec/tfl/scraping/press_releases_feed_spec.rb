@@ -37,7 +37,7 @@ RSpec.describe Tfl::Scraping::PressReleasesFeed do
         Tfl::Scraping::PressRelease.new("Bakerloo line extension to support new housing and jobs",
                                         "https://tfl.gov.uk/info-for/media/press-releases/2017/february/bakerloo-line-extension-to-support-new-housing-and-jo"),
         Tfl::Scraping::PressRelease.new("Travel advice ahead of planned RMT Tube strike",
-                                        "https://tfl.gov.uk/info-for/media/press-releases/2017/february/travel-advice-ahead-of-planned-tube-strike-action")
+                                        "https://tfl.gov.uk/info-for/media/press-releases/2017/february/travel-advice-ahead-of-planned-tube-strike-action"),
       ])
     end
     # rubocop:enable Metrics/LineLength
@@ -50,7 +50,7 @@ RSpec.describe Tfl::Scraping::PressReleasesFeed do
         Tfl::Scraping::PressRelease.new("Advice ahead of Central and Waterloo & City line strike",
                                         "https://tfl.gov.uk/info-for/media/press-releases/2017/february/advice-ahead-of-central-and-waterloo-and-city-line-strike"),
         Tfl::Scraping::PressRelease.new("Travel advice ahead of planned RMT Tube strike",
-                                        "https://tfl.gov.uk/info-for/media/press-releases/2017/february/travel-advice-ahead-of-planned-tube-strike-action")
+                                        "https://tfl.gov.uk/info-for/media/press-releases/2017/february/travel-advice-ahead-of-planned-tube-strike-action"),
       ])
     end
     # rubocop:enable Metrics/LineLength

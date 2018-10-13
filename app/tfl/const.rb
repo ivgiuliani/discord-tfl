@@ -45,7 +45,7 @@ module Tfl
         REPLACEMENT_BUS,
         RIVER_BUS,
         RIVER_TOUR,
-        WALKING
+        WALKING,
       ].freeze
 
       def self.valid?(mode)
@@ -79,7 +79,7 @@ module Tfl
         NORTHERN,
         PICCADILLY,
         VICTORIA,
-        WATERLOO
+        WATERLOO,
       ].freeze
 
       def self.valid?(line)

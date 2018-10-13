@@ -24,7 +24,7 @@ RSpec.describe Bot::DiscordUtils do
           instance_double(Discordrb::User, id: 123),
           instance_double(Discordrb::Channel, id: 456),
           instance_double(Discordrb::Role, id: 789),
-          instance_double(Discordrb::User, id: 1234)
+          instance_double(Discordrb::User, id: 1234),
         ]
       end
 

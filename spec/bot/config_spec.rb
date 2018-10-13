@@ -16,7 +16,7 @@ RSpec.describe Bot::Config do
         prefix: [Bot::DefaultConfig::PREFIX, "@"],
         username: [Bot::DefaultConfig::USERNAME, "username123"],
         game: [Bot::DefaultConfig::GAME, "The Game"],
-        pr_announce_channels_ids: [Bot::DefaultConfig::PR_ANNOUNCE_CHANNELS_IDS, [1, 2]]
+        pr_announce_channels_ids: [Bot::DefaultConfig::PR_ANNOUNCE_CHANNELS_IDS, [1, 2]],
       }
 
       mappings.each do |method, values|
@@ -45,7 +45,7 @@ RSpec.describe Bot::Config do
       prefix: Bot::DefaultConfig::PREFIX,
       username: Bot::DefaultConfig::USERNAME,
       game: Bot::DefaultConfig::GAME,
-      pr_announce_channels_ids: Bot::DefaultConfig::PR_ANNOUNCE_CHANNELS_IDS
+      pr_announce_channels_ids: Bot::DefaultConfig::PR_ANNOUNCE_CHANNELS_IDS,
     }
 
     mappings.each do |method, default|
