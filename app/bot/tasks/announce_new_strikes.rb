@@ -25,8 +25,7 @@ module Bot
         CONFIG.pr_announce_channels_ids.each do |channel_id|
           bot.send_message(
             channel_id,
-            "New press release from TfL: #{strike.title}. " \
-              "Read more at #{strike.url}",
+            "**New press release from TfL**: #{strike.title}. Read more at #{strike.url}",
           )
         end
       end
