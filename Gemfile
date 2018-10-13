@@ -10,7 +10,7 @@ gem "sentry-raven", "~> 2.7.4", require: "sentry-raven-without-integrations"
 
 # Transport
 gem "curb", "~> 0.9.6" # HTTP transport library
-gem "discordrb", "~> 3.2.1"
+gem "discordrb", github: "meew0/discordrb", ref: "012c2ff7436e81"
 gem "songkick-transport", "~> 1.11.0"
 
 group :development do
