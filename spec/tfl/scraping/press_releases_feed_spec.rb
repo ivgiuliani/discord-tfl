@@ -3,10 +3,38 @@
 require "spec_helper"
 
 RSpec.describe Tfl::Scraping::PressReleasesFeed do
-  let(:instance) { described_class.new }
+  let(:instance) { described_class.new(releases: releases) }
+  let(:releases) { [] }
   let!(:raw_html) { load_fixture("tfl/press-releases", type: "html") }
 
+  context "when it's the first update" do
+    let(:releases) { [] }
+    let(:dummy_list) do
+      [
+        Tfl::Scraping::PressRelease.new("Sample release", "https://google.com"),
+      ]
+    end
+
+    it "returns false when it gets the list for the first time" do
+      expect(instance.update_from_list(dummy_list)).to be false
+    end
+
+    context "and gets a second update that changes the list again" do
+      before { instance.update_from_list(dummy_list) }
+
+      it "returns true when updating" do
+        expect(instance.update!(raw_html: raw_html)).to be true
+      end
+    end
+  end
+
   context "when the content has changed between scans" do
+    let(:releases) do
+      [
+        Tfl::Scraping::PressRelease.new("Sample release", "https://google.com"),
+      ]
+    end
+
     it "returns true when updating" do
       expect(instance.update!(raw_html: raw_html)).to be true
     end
