@@ -10,6 +10,8 @@ module Tfl
     PressRelease = Struct.new(:title, :url)
 
     class PressReleasesFeed
+      include Loggy
+
       def initialize(releases: [])
         @releases = releases
       end
@@ -45,6 +47,9 @@ module Tfl
 
       def download_content
         Net::HTTP.get(URI(PRESS_RELEASES_URL))
+      rescue SocketError => e
+        warn("Failed to download the press releases list: #{e.message}")
+        ""
       end
 
       def parse_content(content)
