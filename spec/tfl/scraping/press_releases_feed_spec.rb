@@ -82,5 +82,12 @@ RSpec.describe Tfl::Scraping::PressReleasesFeed do
       ])
     end
     # rubocop:enable Metrics/LineLength
+
+    context "when TfL returns an empty list" do
+      it "doesn't update the current list" do
+        expect(instance.update_from_list([])).to be false
+        expect(instance.strikes).to_not be_empty
+      end
+    end
   end
 end

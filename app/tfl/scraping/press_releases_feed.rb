@@ -32,7 +32,7 @@ module Tfl
           return false
         end
 
-        has_changed = new_releases != @releases
+        has_changed = !new_releases.empty? && new_releases != @releases
         if has_changed
           @releases = new_releases
           true
