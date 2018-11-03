@@ -34,13 +34,18 @@ module Tfl
           return false
         end
 
-        has_changed = !new_releases.empty? && new_releases != @releases
-        if has_changed
-          @releases = new_releases
-          true
-        else
-          false
+        unless new_releases.empty?
+          old_titles = @releases.map { |r| r.title.downcase }
+          new_titles = new_releases.map { |r| r.title.downcase }
+          has_changed = old_titles != new_titles
+
+          if has_changed
+            @releases = new_releases
+            return true
+          end
         end
+
+        false
       end
 
       private

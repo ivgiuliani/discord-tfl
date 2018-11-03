@@ -34,12 +34,19 @@ module Bot
         @feed.update!
         new_strikes = @feed.strikes
 
-        has_new = new_strikes != @strikes
+        has_new = (
+          new_strikes.map { |r| press_release_comparable(r) } !=
+          @strikes.map { |r| press_release_comparable(r) }
+        )
         @strikes = new_strikes
 
         return @strikes.first if has_new
 
         nil
+      end
+
+      def press_release_comparable(release)
+        release.title.downcase.strip.tr("\n", " ").squeeze(" ")
       end
     end
   end
