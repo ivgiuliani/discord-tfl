@@ -20,6 +20,14 @@ Then the bot can be run with (assuming you've set it up it with `bundler`):
         TFL_APPLICATION_KEY='<your tfl app key>' \
         bundle exec ruby ./app.rb
 
+Alternatively, you can run the bot via docker:
+
+    docker run -t ivgiuliani/discord-tfl \
+        --env DISCORD_CLIENT_ID=<your client id> \
+        --env DISCORD_TOKEN=<your bot token> \
+        --env TFL_APPLICATION_ID=your tfl app id> \
+        --env TFL_APPLICATION_KEY=<your tfl app key>
+
 Once started the bot will announce its invite URL. Follow that link to invite
 the bot into channels you administer.
 
