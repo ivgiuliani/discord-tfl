@@ -1,2 +1,3 @@
 .bundle
 .tflconfig.yml
+qemu-arm-static
