@@ -38,6 +38,12 @@ module Bot
           new_strikes.map { |r| press_release_comparable(r) } !=
           @strikes.map { |r| press_release_comparable(r) }
         )
+        if has_new
+          debug("new strike detected -" \
+                " old list: " + @strikes.map(&:inspect).to_s +
+                " new list: " + new_strikes.map(&:inspect).to_s +
+                " will announce: " + new_strikes.first.inspect)
+        end
         @strikes = new_strikes
 
         return @strikes.first if has_new
