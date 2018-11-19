@@ -1,41 +1,14 @@
 [
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "arriva-trains-wales",
-    "name": "Arriva Trains Wales",
-    "modeName": "national-rail",
-    "disruptions": [
-
-    ],
-    "created": "2018-07-19T14:04:20.417Z",
-    "modified": "2018-07-19T14:04:20.417Z",
-    "lineStatuses": [
-
-    ],
-    "routeSections": [
-
-    ],
-    "serviceTypes": [
-      {
-        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
-        "name": "Regular",
-        "uri": "/Line/Route?ids=Arriva Trains Wales&serviceTypes=Regular"
-      }
-    ],
-    "crowding": {
-      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
-    }
-  },
-  {
-    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
     "id": "c2c",
     "name": "c2c",
     "modeName": "national-rail",
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.437Z",
-    "modified": "2018-07-19T14:04:20.437Z",
+    "created": "2018-11-13T15:17:59.157Z",
+    "modified": "2018-11-13T15:17:59.157Z",
     "lineStatuses": [
 
     ],
@@ -61,8 +34,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.41Z",
-    "modified": "2018-07-19T14:04:20.41Z",
+    "created": "2018-11-13T15:17:59.16Z",
+    "modified": "2018-11-13T15:17:59.16Z",
     "lineStatuses": [
 
     ],
@@ -88,8 +61,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.413Z",
-    "modified": "2018-07-19T14:04:20.413Z",
+    "created": "2018-11-13T15:17:59.15Z",
+    "modified": "2018-11-13T15:17:59.15Z",
     "lineStatuses": [
 
     ],
@@ -115,8 +88,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.41Z",
-    "modified": "2018-07-19T14:04:20.41Z",
+    "created": "2018-11-13T15:17:59.147Z",
+    "modified": "2018-11-13T15:17:59.147Z",
     "lineStatuses": [
 
     ],
@@ -142,8 +115,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.417Z",
-    "modified": "2018-07-19T14:04:20.417Z",
+    "created": "2018-11-13T15:17:59.15Z",
+    "modified": "2018-11-13T15:17:59.15Z",
     "lineStatuses": [
 
     ],
@@ -169,8 +142,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.413Z",
-    "modified": "2018-07-19T14:04:20.413Z",
+    "created": "2018-11-13T15:17:59.15Z",
+    "modified": "2018-11-13T15:17:59.15Z",
     "lineStatuses": [
 
     ],
@@ -196,8 +169,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.443Z",
-    "modified": "2018-07-19T14:04:20.443Z",
+    "created": "2018-11-13T15:17:59.173Z",
+    "modified": "2018-11-13T15:17:59.173Z",
     "lineStatuses": [
 
     ],
@@ -223,8 +196,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.413Z",
-    "modified": "2018-07-19T14:04:20.413Z",
+    "created": "2018-11-13T15:17:59.147Z",
+    "modified": "2018-11-13T15:17:59.147Z",
     "lineStatuses": [
 
     ],
@@ -250,8 +223,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.41Z",
-    "modified": "2018-07-19T14:04:20.41Z",
+    "created": "2018-11-13T15:17:59.147Z",
+    "modified": "2018-11-13T15:17:59.147Z",
     "lineStatuses": [
 
     ],
@@ -277,8 +250,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.417Z",
-    "modified": "2018-07-19T14:04:20.417Z",
+    "created": "2018-11-13T15:17:59.147Z",
+    "modified": "2018-11-13T15:17:59.147Z",
     "lineStatuses": [
 
     ],
@@ -304,8 +277,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.41Z",
-    "modified": "2018-07-19T14:04:20.41Z",
+    "created": "2018-11-13T15:17:59.15Z",
+    "modified": "2018-11-13T15:17:59.15Z",
     "lineStatuses": [
 
     ],
@@ -331,8 +304,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.427Z",
-    "modified": "2018-07-19T14:04:20.427Z",
+    "created": "2018-11-13T15:17:59.153Z",
+    "modified": "2018-11-13T15:17:59.153Z",
     "lineStatuses": [
 
     ],
@@ -358,8 +331,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.443Z",
-    "modified": "2018-07-19T14:04:20.443Z",
+    "created": "2018-11-13T15:17:59.15Z",
+    "modified": "2018-11-13T15:17:59.15Z",
     "lineStatuses": [
 
     ],
@@ -385,8 +358,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.437Z",
-    "modified": "2018-07-19T14:04:20.437Z",
+    "created": "2018-11-13T15:17:59.153Z",
+    "modified": "2018-11-13T15:17:59.153Z",
     "lineStatuses": [
 
     ],
@@ -412,8 +385,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.447Z",
-    "modified": "2018-07-19T14:04:20.447Z",
+    "created": "2018-11-13T15:17:59.153Z",
+    "modified": "2018-11-13T15:17:59.153Z",
     "lineStatuses": [
 
     ],
@@ -439,8 +412,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.41Z",
-    "modified": "2018-07-19T14:04:20.41Z",
+    "created": "2018-11-13T15:17:59.147Z",
+    "modified": "2018-11-13T15:17:59.147Z",
     "lineStatuses": [
 
     ],
@@ -466,8 +439,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.41Z",
-    "modified": "2018-07-19T14:04:20.41Z",
+    "created": "2018-11-13T15:17:59.147Z",
+    "modified": "2018-11-13T15:17:59.147Z",
     "lineStatuses": [
 
     ],
@@ -493,8 +466,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.413Z",
-    "modified": "2018-07-19T14:04:20.413Z",
+    "created": "2018-11-13T15:17:59.15Z",
+    "modified": "2018-11-13T15:17:59.15Z",
     "lineStatuses": [
 
     ],
@@ -520,8 +493,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.41Z",
-    "modified": "2018-07-19T14:04:20.41Z",
+    "created": "2018-11-13T15:17:59.147Z",
+    "modified": "2018-11-13T15:17:59.147Z",
     "lineStatuses": [
 
     ],
@@ -547,8 +520,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.41Z",
-    "modified": "2018-07-19T14:04:20.41Z",
+    "created": "2018-11-13T15:17:59.147Z",
+    "modified": "2018-11-13T15:17:59.147Z",
     "lineStatuses": [
 
     ],
@@ -574,8 +547,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.41Z",
-    "modified": "2018-07-19T14:04:20.41Z",
+    "created": "2018-11-13T15:17:59.15Z",
+    "modified": "2018-11-13T15:17:59.15Z",
     "lineStatuses": [
 
     ],
@@ -595,14 +568,41 @@
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "transport-for-wales",
+    "name": "Transport for Wales",
+    "modeName": "national-rail",
+    "disruptions": [
+
+    ],
+    "created": "2018-11-13T15:17:59.147Z",
+    "modified": "2018-11-13T15:17:59.147Z",
+    "lineStatuses": [
+
+    ],
+    "routeSections": [
+
+    ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Transport for Wales&serviceTypes=Regular"
+      }
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
     "id": "virgin-trains",
     "name": "Virgin Trains",
     "modeName": "national-rail",
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.413Z",
-    "modified": "2018-07-19T14:04:20.413Z",
+    "created": "2018-11-13T15:17:59.143Z",
+    "modified": "2018-11-13T15:17:59.143Z",
     "lineStatuses": [
 
     ],
@@ -628,8 +628,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.41Z",
-    "modified": "2018-07-19T14:04:20.41Z",
+    "created": "2018-11-13T15:17:59.15Z",
+    "modified": "2018-11-13T15:17:59.15Z",
     "lineStatuses": [
 
     ],
