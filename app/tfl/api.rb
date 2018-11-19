@@ -11,14 +11,14 @@ module Tfl
     module Config
       HOST = "https://api.tfl.gov.uk"
       USER_AGENT = "TfL Bot"
-      NETWORK_TIMEOUT = 5 # seconds
+      NETWORK_TIMEOUT_SECONDS = 10
     end
 
     class Client
       def initialize
         @client = transport.new(Config::HOST,
                                 user_agent: Config::USER_AGENT,
-                                timeout: Config::NETWORK_TIMEOUT)
+                                timeout: Config::NETWORK_TIMEOUT_SECONDS)
       end
 
       def status(type, entity)
