@@ -38,17 +38,19 @@ module Bot
       end
 
       def evaluate_and_respond(event, type, entity)
+        m = event.respond("I'm thinking #{DiscordUtils::Emoji::THINKING}")
+
         begin
           response = TFL.status(type, entity)
         rescue Tfl::InvalidLineException
-          event << "#{entity}: invalid line"
+          m.edit("**#{entity}**: invalid line")
           return
         rescue Songkick::Transport::TimeoutError
-          event << "#{DiscordUtils::Emoji::SCREAM} Request timed out (blame TfL)"
+          m.edit("#{DiscordUtils::Emoji::SCREAM} Request timed out (blame TfL)")
           return
         end
 
-        format_status_list!(event, entity, response)
+        m.edit(format_status_list!(entity, response))
       end
 
       def valid_query?(args)
@@ -82,30 +84,30 @@ module Bot
         [type, entity]
       end
 
-      def format_status_list!(event, original_query, line_statuses)
+      def format_status_list!(original_query, line_statuses)
         if line_statuses.empty?
-          event << "TfL did not return any data for #{original_query}"
+          "TfL did not return any data for #{original_query}"
         elsif line_statuses.count > MAX_LIST_RESPONSE_COUNT
-          event << "Wow. Much data. Not show."
+          "Wow. Much data. Not show."
         else
-          line_statuses.each do |line|
-            format_status_line(event, line, detailed: line_statuses.count == 1)
-          end
+          line_statuses.map do |line|
+            format_status_line(line, detailed: line_statuses.count == 1)
+          end.join("\n")
         end
       end
 
-      def format_status_line(event, line, detailed:)
+      def format_status_line(line, detailed:)
         if line.good_service? || !detailed
-          event << "**#{line.display_name}**: #{line.current_status}"
+          "**#{line.display_name}**: #{line.current_status}"
         else
-          line.disruptions.each do |disruption|
+          line.disruptions.map do |disruption|
             # TfL sometimes repeats the line's name in the disruption messages.
             # Since it looks slightly ugly, we attempt to drop that repetion on a
             # best effort basis.
             disruption = chop_repetition_on_disruption(disruption, line)
 
-            event << "**#{line.display_name}**: #{disruption}"
-          end
+            "**#{line.display_name}**: #{disruption}"
+          end.join("\n")
         end
       end
 
