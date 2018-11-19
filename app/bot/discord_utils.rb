@@ -19,6 +19,7 @@ module Bot
       SCREAM = ":scream:"
       SMILE = ":smile:"
       SMILEY = ":smiley:"
+      THINKING = ":thinking:"
       TOILET = ":toilet:"
 
       def self.emoji?(word)
