@@ -7,8 +7,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.41Z",
-    "modified": "2018-07-19T14:04:20.41Z",
+    "created": "2018-11-13T15:17:59.163Z",
+    "modified": "2018-11-13T15:17:59.163Z",
     "lineStatuses": [
 
     ],
@@ -34,8 +34,8 @@
     "disruptions": [
 
     ],
-    "created": "2018-07-19T14:04:20.417Z",
-    "modified": "2018-07-19T14:04:20.417Z",
+    "created": "2018-11-13T15:17:59.173Z",
+    "modified": "2018-11-13T15:17:59.173Z",
     "lineStatuses": [
 
     ],
@@ -47,60 +47,6 @@
         "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
         "name": "Regular",
         "uri": "/Line/Route?ids=City Cruises&serviceTypes=Regular"
-      }
-    ],
-    "crowding": {
-      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
-    }
-  },
-  {
-    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "thames-river-services",
-    "name": "Thames River Services",
-    "modeName": "river-tour",
-    "disruptions": [
-
-    ],
-    "created": "2018-07-19T14:04:20.41Z",
-    "modified": "2018-07-19T14:04:20.41Z",
-    "lineStatuses": [
-
-    ],
-    "routeSections": [
-
-    ],
-    "serviceTypes": [
-      {
-        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
-        "name": "Regular",
-        "uri": "/Line/Route?ids=Thames River Services&serviceTypes=Regular"
-      }
-    ],
-    "crowding": {
-      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
-    }
-  },
-  {
-    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "westminster-passenger-service-association",
-    "name": "Westminster Passenger Service Association",
-    "modeName": "river-tour",
-    "disruptions": [
-
-    ],
-    "created": "2018-07-19T14:04:20.407Z",
-    "modified": "2018-07-19T14:04:20.407Z",
-    "lineStatuses": [
-
-    ],
-    "routeSections": [
-
-    ],
-    "serviceTypes": [
-      {
-        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
-        "name": "Regular",
-        "uri": "/Line/Route?ids=Westminster Passenger Service Association&serviceTypes=Regular"
       }
     ],
     "crowding": {
