@@ -44,6 +44,7 @@ There's two variants for `x86` and `arm32v6`:
   root directory of the project. Afterwards run
 
   ```
+  docker run --rm --privileged multiarch/qemu-user-static:register --reset
   docker build -f Dockerfile.rpi3 -t ivgiuliani/discord-tfl-rpi3 .
   ```
 ## Contributing
