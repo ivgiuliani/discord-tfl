@@ -32,25 +32,11 @@ module Bot
         log "[command/status(from:#{event.user.name})] " \
           "\"#{args.join(' ')}\" (resolved to #{entity})"
 
-        evaluate_and_respond(event, type, entity)
-
-        nil
-      end
-
-      def evaluate_and_respond(event, type, entity)
-        m = event.respond("I'm thinking #{DiscordUtils::Emoji::THINKING}")
-
-        begin
-          response = TFL.status(type, entity)
-        rescue Tfl::InvalidLineException
-          m.edit("**#{entity}**: invalid line")
-          return
-        rescue Songkick::Transport::TimeoutError
-          m.edit("#{DiscordUtils::Emoji::SCREAM} Request timed out (blame TfL)")
-          return
+        DiscordUtils::PendingResponse.for(event) do
+          format_response(type, entity)
         end
 
-        m.edit(format_status_list!(entity, response))
+        nil
       end
 
       def valid_query?(args)
@@ -82,6 +68,18 @@ module Bot
         end
 
         [type, entity]
+      end
+
+      def format_response(type, entity)
+        begin
+          response = TFL.status(type, entity)
+        rescue Tfl::InvalidLineException
+          return "**#{entity}**: invalid line"
+        rescue Songkick::Transport::TimeoutError
+          return "#{DiscordUtils::Emoji::SCREAM} Request timed out (blame TfL)"
+        end
+
+        format_status_list!(entity, response)
       end
 
       def format_status_list!(original_query, line_statuses)

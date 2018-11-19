@@ -27,6 +27,17 @@ module Bot
       end
     end
 
+    class PendingResponse
+      # Shows a temporary placeholder until the block given returns a value to
+      # be displayed.
+      def self.for(event,
+                   placeholder: "I'm thinking #{Emoji::THINKING}")
+        message_holder = event.respond(placeholder)
+        final_msg = yield
+        message_holder.edit(final_msg)
+      end
+    end
+
     # Filter mentions out of list of words.
     def self.filter_mentions(*args, mentions:)
       encoded_mentions = mentions.flat_map { |mention| possible_mentions(mention.id) }
