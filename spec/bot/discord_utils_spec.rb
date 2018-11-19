@@ -107,4 +107,21 @@ RSpec.describe Bot::DiscordUtils do
       end
     end
   end
+
+  describe "PendingResponse" do
+    let(:event) { double }
+    let(:placeholder_text) { "pending text" }
+
+    it "updates the placeholder with the resulting text" do
+      holder = double
+
+      expect(event).to receive(:respond).with(placeholder_text).once.and_return(holder)
+      expect(holder).to receive(:edit).with("YOLO").once
+
+      described_class::PendingResponse.for(event,
+                                           placeholder: placeholder_text) do
+        "YOLO"
+      end
+    end
+  end
 end
