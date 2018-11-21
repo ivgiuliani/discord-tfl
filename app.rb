@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "sentry-raven-without-integrations"
+require "optparse"
 require "./app/tflbot"
 
 module RufusRavenSupport
@@ -18,8 +19,25 @@ module Rufus
   end
 end
 
+def parse_opts!
+  options = {}
+  OptionParser.new do |opts|
+    opts.banner = "Usage: app.rb [options]"
+
+    opts.on("-cCONFIG_PATH", "--config=CONFIG_PATH", "Specify a config file") do |v|
+      options[:config] = v
+    end
+  end.parse!
+
+  options
+end
+
 def run
-  bot = Bot::LondonBot.new
+  cmd_opts = parse_opts!
+
+  bot = Bot::LondonBot.new(
+    config_path: cmd_opts[:config] || Bot::LondonBot::DEFAULT_CONFIG_PATH,
+  )
 
   begin
     bot.run!

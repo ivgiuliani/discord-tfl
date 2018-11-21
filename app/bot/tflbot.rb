@@ -21,10 +21,10 @@ module Bot
 
     DEFAULT_CONFIG_PATH = ".tflconfig.yml"
 
-    def initialize
-      if File.exist? DEFAULT_CONFIG_PATH
-        info("Loading config file #{DEFAULT_CONFIG_PATH}")
-        CONFIG.load_config(DEFAULT_CONFIG_PATH)
+    def initialize(config_path: DEFAULT_CONFIG_PATH)
+      if File.exist?(config_path)
+        info("Loading config file #{config_path}")
+        CONFIG.load_config(config_path)
       end
 
       @scheduler = Rufus::Scheduler.new
