@@ -30,6 +30,8 @@ module Bot
       @scheduler = Rufus::Scheduler.new
       @task_handlers = {}
 
+      debug "Initializing bot - Discord client id #{Prius.get(:discord_client_id)}"
+
       @bot = Discordrb::Commands::CommandBot.new token: Prius.get(:discord_token),
                                                  client_id: Prius.get(:discord_client_id),
                                                  prefix: CONFIG.prefix
