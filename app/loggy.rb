@@ -1,20 +1,33 @@
 # frozen_string_literal: true
 
 require "logger"
+require "prius"
 
+Prius.load(:tflbot_logging_level, required: false)
+
+# rubocop:disable Style/ClassVars
 module Loggy
-  def logger
-    if @logger.nil?
-      $stdout.sync = true
-      @logger = Logger.new(STDOUT)
-      @logger.level = Logger::INFO
+  LOG_MAP = {
+    error: Logger::ERROR,
+    warn: Logger::WARN,
+    info: Logger::INFO,
+    debug: Logger::DEBUG,
+  }.freeze
 
-      @logger.formatter = proc do |severity, datetime, _progname, msg|
-        "#{severity} | #{datetime}: #{msg}\n"
-      end
+  @@logger = nil
+
+  def logger
+    if @@logger.nil?
+      $stdout.sync = true
+      @@logger = Logger.new(STDOUT)
+
+      @@logger.level = log_status
+      @@logger.formatter = formatter
+
+      debug "WARNING: Debug logging is enabled!"
     end
 
-    @logger
+    @@logger
   end
 
   def info(message)
@@ -38,4 +51,17 @@ module Loggy
   end
 
   alias_method :log, :info
+
+  private
+
+  def formatter
+    proc do |severity, datetime, _progname, msg|
+      "#{severity} | #{datetime}: #{msg}\n"
+    end
+  end
+
+  def log_status
+    LOG_MAP[(Prius.get(:tflbot_logging_level) || "info").downcase.to_sym]
+  end
 end
+# rubocop:enable Style/ClassVars
