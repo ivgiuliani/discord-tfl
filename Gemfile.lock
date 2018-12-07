@@ -60,7 +60,7 @@ GEM
     opus-ruby (1.0.1)
       ffi
     parallel (1.12.1)
-    parser (2.5.1.2)
+    parser (2.5.3.0)
       ast (~> 2.4.0)
     powerpack (0.1.2)
     prius (2.0.0)
@@ -96,7 +96,7 @@ GEM
     rspec-support (3.8.0)
     rspec_junit_formatter (0.4.1)
       rspec-core (>= 2, < 4, != 2.12.0)
-    rubocop (0.60.0)
+    rubocop (0.61.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.5, != 2.5.1.1)
@@ -144,7 +144,7 @@ DEPENDENCIES
   rake
   rspec (~> 3.8.0)
   rspec_junit_formatter (= 0.4.1)
-  rubocop (~> 0.60.0)
+  rubocop (~> 0.61.1)
   rufus-scheduler (~> 3.5.2)
   sentry-raven (~> 2.7.4)
   songkick-transport (~> 1.11.0)
