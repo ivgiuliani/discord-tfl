@@ -73,7 +73,7 @@ GEM
     public_suffix (3.0.2)
     raabro (1.1.6)
     rainbow (3.0.0)
-    rake (12.3.1)
+    rake (12.3.2)
     rbnacl (3.4.0)
       ffi
     rest-client (2.1.0.rc1)
