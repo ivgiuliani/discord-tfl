@@ -70,7 +70,7 @@ GEM
     pry-byebug (3.6.0)
       byebug (~> 10.0)
       pry (~> 0.10)
-    public_suffix (3.0.2)
+    public_suffix (3.0.3)
     raabro (1.1.6)
     rainbow (3.0.0)
     rake (12.3.2)
@@ -120,7 +120,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.5)
     unicode-display_width (1.4.0)
-    webmock (3.4.2)
+    webmock (3.5.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
@@ -148,7 +148,7 @@ DEPENDENCIES
   rufus-scheduler (~> 3.5.2)
   sentry-raven (~> 2.7.4)
   songkick-transport (~> 1.11.0)
-  webmock (~> 3.4.2)
+  webmock (~> 3.5.1)
 
 BUNDLED WITH
    1.16.2
