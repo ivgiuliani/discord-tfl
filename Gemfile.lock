@@ -108,7 +108,7 @@ GEM
     rufus-scheduler (3.5.2)
       fugit (~> 1.1, >= 1.1.5)
     safe_yaml (1.0.4)
-    sentry-raven (2.8.0)
+    sentry-raven (2.9.0)
       faraday (>= 0.7.6, < 1.0)
     songkick-transport (1.11.0)
       multipart-post (>= 1.1.0)
@@ -146,7 +146,7 @@ DEPENDENCIES
   rspec_junit_formatter (= 0.4.1)
   rubocop (~> 0.62.0)
   rufus-scheduler (~> 3.5.2)
-  sentry-raven (~> 2.8.0)
+  sentry-raven (~> 2.9.0)
   songkick-transport (~> 1.11.0)
   webmock (~> 3.5.1)
 
