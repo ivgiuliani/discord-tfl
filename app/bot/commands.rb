@@ -4,7 +4,6 @@ require_relative "commands/bus"
 require_relative "commands/situation"
 require_relative "commands/status"
 require_relative "commands/station"
-require_relative "commands/toilet"
 
 module Bot
   module Commands
@@ -29,11 +28,6 @@ module Bot
     command(Commands::StationCommand::COMMAND,
             description: "What do we know about a given station?") do |event|
       Commands::StationCommand.execute(event)
-    end
-
-    command(Commands::ToiletCommand::COMMAND,
-            description: "Does this station have a toilet?") do |event|
-      Commands::ToiletCommand.execute(event)
     end
 
     def self.split_args(command, event)
