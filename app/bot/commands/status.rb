@@ -74,17 +74,17 @@ module Bot
         begin
           response = TFL.status(type, entity)
         rescue Tfl::InvalidLineException
-          return "**#{entity}**: invalid line"
+          return "Woops, that is not a line I recognise"
         rescue Songkick::Transport::TimeoutError
           return "#{DiscordUtils::Emoji::SCREAM} Request timed out (blame TfL)"
         end
 
-        format_status_list!(entity, response)
+        format_status_list!(response)
       end
 
-      def format_status_list!(original_query, line_statuses)
+      def format_status_list!(line_statuses)
         if line_statuses.empty?
-          "TfL did not return any data for #{original_query}"
+          "TfL did not return any data for that query. That's weird!"
         elsif line_statuses.count > MAX_LIST_RESPONSE_COUNT
           "Wow. Much data. Not show."
         else
