@@ -19,6 +19,19 @@ DOWNLOADS = [
 ].freeze
 # rubocop:enable Metrics/LineLength
 
+def strip_json(json)
+  # Removes `created` and `modified` timestamps from the JSON entities as they
+  # end up cluttering the diffs and serve no practical purpose.
+  if json.instance_of?(Hash)
+    json.reject { |k, _| %w[created modified].include?(k) }.
+      transform_values(&method(:strip_json))
+  elsif json.instance_of?(Array)
+    json.map(&method(:strip_json))
+  else
+    json
+  end
+end
+
 DOWNLOADS.each do |url, output, type|
   $stdout.puts "Downloading #{url} => #{output}"
 
@@ -26,7 +39,7 @@ DOWNLOADS.each do |url, output, type|
   when :json
     File.open(output, "w") do |file|
       content = Net::HTTP.get(URI(url))
-      file << JSON.pretty_generate(JSON.parse(content)) << "\n"
+      file << JSON.pretty_generate(strip_json(JSON.parse(content))) << "\n"
     end
   when :xml
     content = Net::HTTP.get(URI(url))
