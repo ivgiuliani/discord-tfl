@@ -36,8 +36,8 @@ module Tfl
         client.get("/line/mode/#{mode}/status", app_key_args).data.map do |line|
           Tfl::Line.from_api(line)
         end
-      rescue Songkick::Transport::HttpError => exception
-        if [400, 404].include? exception.status
+      rescue Songkick::Transport::HttpError => e
+        if [400, 404].include? e.status
           raise Tfl::InvalidLineException
         else
           raise
