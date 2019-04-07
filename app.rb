@@ -51,8 +51,8 @@ def run
     $stdout.puts "So long and thanks for all the fish."
     exit! true
   # rubocop:disable Lint/RescueException
-  rescue Exception => exception
-    Raven.capture_exception(exception)
+  rescue Exception => e
+    Raven.capture_exception(e)
   end
   # rubocop:enable Lint/RescueException
 end
