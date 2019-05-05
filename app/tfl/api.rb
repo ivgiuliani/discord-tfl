@@ -62,8 +62,8 @@ module Tfl
         raise Tfl::InvalidLineException if json.length > 1
 
         [Tfl::Line.from_api(json.first)]
-      rescue Songkick::Transport::HttpError => exception
-        if [400, 404].include? exception.status
+      rescue Songkick::Transport::HttpError => e
+        if [400, 404].include?(e.status)
           raise Tfl::InvalidLineException
         else
           raise
@@ -74,8 +74,8 @@ module Tfl
         json = client.get("/line/#{bus.upcase}/route/sequence/#{direction}",
                           app_key_args).data
         Tfl::RouteSequence.from_api(json)
-      rescue Songkick::Transport::HttpError => exception
-        if [400, 404].include? exception.status
+      rescue Songkick::Transport::HttpError => e
+        if [400, 404].include?(e.status)
           raise Tfl::InvalidRouteException
         else
           raise
