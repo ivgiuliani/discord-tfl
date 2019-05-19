@@ -9,6 +9,10 @@ module Bot
 
       COMMAND = :situation
 
+      def initialize(tfl_api_client: Bot.default_tfl_api_client)
+        @tfl_api_client = tfl_api_client
+      end
+
       def self.execute(event)
         SituationCommand.new.execute(event)
       end
@@ -17,7 +21,7 @@ module Bot
         log "[command/situation(from:#{event.user.name})]"
 
         begin
-          lines = TFL.status(:by_mode, Tfl::Const::Mode::METROPOLITAN_TRAINS)
+          lines = tfl_api_client.status(:by_mode, Tfl::Const::Mode::METROPOLITAN_TRAINS)
         rescue Songkick::Transport::TimeoutError
           event << "#{DiscordUtils::Emoji::SCREAM} Request timed out (blame TfL)"
           return
@@ -31,6 +35,8 @@ module Bot
       end
 
       private
+
+      attr_reader :tfl_api_client
 
       def severity_string(severity)
         if severity >= 1.0
