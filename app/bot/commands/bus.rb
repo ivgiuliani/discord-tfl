@@ -9,6 +9,10 @@ module Bot
 
       COMMAND = :bus
 
+      def initialize(tfl_api_client: Bot.default_tfl_api_client)
+        @tfl_api_client = tfl_api_client
+      end
+
       def self.execute(event)
         BusCommand.new.execute(event)
       end
@@ -25,7 +29,7 @@ module Bot
         log "[command/bus(from:#{event.user.name})] #{bus_line}"
 
         begin
-          bus = TFL.bus_route(bus_line.strip)
+          bus = tfl_api_client.bus_route(bus_line.strip)
 
           # \u2192 is a unicode right arrow. The double-ended arrow which would arguably
           # be more correct in this case is displayed as an emoji in Discord for reasons
@@ -45,6 +49,10 @@ module Bot
       def valid_query?(args)
         args.count == 1 && Tfl::Const::Bus::ALL.include?(args.first.strip.downcase)
       end
+
+      private
+
+      attr_reader :tfl_api_client
     end
   end
 end

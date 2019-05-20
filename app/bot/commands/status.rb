@@ -12,6 +12,10 @@ module Bot
       MAX_LIST_RESPONSE_COUNT = 30
       MAX_QUERY_LENGTH = 42
 
+      def initialize(tfl_api_client: Bot.default_tfl_api_client)
+        @tfl_api_client = tfl_api_client
+      end
+
       def self.execute(event, mention: false)
         StatusCommand.new.execute(event, mention: mention)
       end
@@ -70,9 +74,13 @@ module Bot
         [type, entity]
       end
 
+      private
+
+      attr_reader :tfl_api_client
+
       def format_response(type, entity)
         begin
-          response = TFL.status(type, entity)
+          response = tfl_api_client.status(type, entity)
         rescue Tfl::InvalidLineException
           return "Woops, that is not a line I recognise"
         rescue Songkick::Transport::TimeoutError

@@ -14,7 +14,10 @@ Prius.load(:discord_token)
 
 module Bot
   CONFIG = Config.new
-  TFL = Tfl::Api::Client.new
+
+  def self.default_tfl_api_client
+    @default_tfl_api_client ||= Tfl::Api::Client.new
+  end
 
   class LondonBot
     include Loggy
