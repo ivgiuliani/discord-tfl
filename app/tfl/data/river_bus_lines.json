@@ -151,8 +151,8 @@
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "thames-river-services",
-    "name": "Thames River Services",
+    "id": "rb6a",
+    "name": "RB6A",
     "modeName": "river-bus",
     "disruptions": [
 
@@ -167,7 +167,7 @@
       {
         "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
         "name": "Regular",
-        "uri": "/Line/Route?ids=Thames River Services&serviceTypes=Regular"
+        "uri": "/Line/Route?ids=RB6A&serviceTypes=Regular"
       }
     ],
     "crowding": {
