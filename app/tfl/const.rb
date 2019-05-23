@@ -27,7 +27,7 @@ module Tfl
 
       # Special mode that includes the common means of transportation.
       METROPOLITAN_TRAINS = [
-        DLR, OVERGROUND, TUBE
+        DLR, OVERGROUND, TUBE, TFLRAIL
       ].join(",")
 
       ALL = [
