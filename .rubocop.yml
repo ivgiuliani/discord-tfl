@@ -67,7 +67,7 @@ Naming/FileName:
     - Gemfile
 
 Style/FrozenStringLiteralComment:
-  Enabled: always
+  Enabled: true
 
 Style/Lambda:
   EnforcedStyle: literal
