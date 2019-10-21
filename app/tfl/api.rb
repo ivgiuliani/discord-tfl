@@ -94,7 +94,7 @@ module Tfl
       end
 
       def transport
-        Songkick::Transport::Curb
+        Songkick::Transport::HttParty
       end
     end
   end
