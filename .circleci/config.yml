@@ -8,11 +8,11 @@ references:
 
   restore_bundle_cache: &restore_bundle_cache
     restore_cache:
-      key: discordtfl-{{ checksum "Gemfile.lock" }}
+      key: discordtfl-{{ checksum "Gemfile.lock" }}-2.6.5
 
   save_bundle_cache: &save_bundle_cache
     save_cache:
-      key: discordtfl-{{ checksum "Gemfile.lock" }}
+      key: discordtfl-{{ checksum "Gemfile.lock" }}-2.6.5
       paths:
         - vendor/bundle
 
