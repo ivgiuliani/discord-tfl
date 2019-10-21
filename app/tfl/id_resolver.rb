@@ -23,6 +23,7 @@ module Tfl
       "southwestern" => "south-west-trains",
       "victoria line" => Tfl::Const::Tube::VICTORIA,
       "waterloo" => Tfl::Const::Tube::WATERLOO,
+      "waterloo & city" => Tfl::Const::Tube::WATERLOO,
       "waterloo and city" => Tfl::Const::Tube::WATERLOO,
       "w&c" => Tfl::Const::Tube::WATERLOO,
     }.freeze
