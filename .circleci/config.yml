@@ -19,7 +19,7 @@ references:
 jobs:
   code_quality:
     docker:
-      - image: circleci/ruby:2.6.2
+      - image: circleci/ruby:2.6.5
     steps:
       - checkout
       - *restore_bundle_cache
@@ -31,7 +31,7 @@ jobs:
 
   tests:
     docker:
-      - image: circleci/ruby:2.6.2
+      - image: circleci/ruby:2.6.5
     steps:
       - checkout
       - *restore_bundle_cache
