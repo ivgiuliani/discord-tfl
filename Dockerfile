@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.10.3
 MAINTAINER Ivan Giuliani <giuliani.v@gmail.com>
 
 ENV APK_PACKAGES build-base \

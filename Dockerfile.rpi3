@@ -1,4 +1,4 @@
-FROM arm32v6/alpine:3.8
+FROM arm32v6/alpine:3.10.3
 MAINTAINER Ivan Giuliani <giuliani.v@gmail.com>
 COPY ./qemu-arm-static /usr/bin/qemu-arm-static
 
