@@ -13,6 +13,9 @@ gem "discordrb", "~> 3.3.0"
 gem "httparty", "~> 0.17.1" # HTTP transport library
 gem "songkick-transport", "~> 1.11.0"
 
+# Required by httparty
+gem "bigdecimal", "~> 1.4.4"
+
 group :development do
   gem "rake"
 

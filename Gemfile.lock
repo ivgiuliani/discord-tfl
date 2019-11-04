@@ -10,6 +10,7 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.0)
+    bigdecimal (1.4.4)
     byebug (11.0.0)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
@@ -139,6 +140,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bigdecimal (~> 1.4.4)
   discordrb (~> 3.3.0)
   factory_bot (~> 5.1.1)
   httparty (~> 0.17.1)
