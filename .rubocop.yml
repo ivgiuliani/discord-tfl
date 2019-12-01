@@ -113,5 +113,3 @@ Style/TrailingCommaInArguments:
 Naming/VariableNumber:
   Enabled: false
 
-Rails:
-  Enabled: false
