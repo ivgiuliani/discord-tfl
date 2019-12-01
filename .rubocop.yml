@@ -56,10 +56,10 @@ Style/FormatString:
 Style/GuardClause:
   Enabled: false
 
-Layout/IndentFirstArrayElement:
+Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
 
-Layout/IndentFirstHashElement:
+Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
 
 Naming/FileName:
@@ -113,5 +113,3 @@ Style/TrailingCommaInArguments:
 Naming/VariableNumber:
   Enabled: false
 
-Rails:
-  Enabled: false

@@ -39,10 +39,8 @@ module Bot
             "(#{bus.stop_points.count} stops)"
         rescue Tfl::InvalidRouteException, Tfl::InvalidStopPointException
           event << "#{bus_line}: invalid bus line"
-          return
         rescue Songkick::Transport::TimeoutError
           event << "#{DiscordUtils::Emoji::SCREAM} Request timed out (blame TfL)"
-          return
         end
       end
 
