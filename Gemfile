@@ -22,7 +22,7 @@ group :development do
   gem "factory_bot", "~> 5.1.1"
   gem "rspec", "~> 3.9.0"
   gem "rubocop", "~> 0.78.0"
-  gem "rubocop-rspec", "~> 1.37.0"
+  gem "rubocop-rspec", "~> 1.37.1"
   gem "webmock", "~> 3.7.6"
 
   gem "pry-byebug"
