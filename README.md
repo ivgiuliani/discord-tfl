@@ -1,6 +1,6 @@
 # TfL Discord bot
 
-A Discord bot to fetch TfL (Transport for London) data through their
+A Discord bot to query TfL (Transport for London) data through their
 public API (https://api.tfl.gov.uk).
 
 This program is not affiliated in any way with TfL.
@@ -8,11 +8,12 @@ This program is not affiliated in any way with TfL.
 ## Running the bot
 
 You need:
-* a client id and a bot token for discord itself, you can get them by
+
+* a client id and a bot token for Discord, you can get them by
   registering the application on Discord.
 * an application id and key by registering on the TfL API website
 
-Then the bot can be run with (assuming you've set it up it with `bundler`):
+Then the bot can be started with (assuming you've set it up it with `bundler`):
 
     env DISCORD_CLIENT_ID='<your client id>' \
         DISCORD_TOKEN='<your bot token>' \
@@ -47,6 +48,10 @@ There's two variants for `x86` and `arm32v6`:
   docker run --rm --privileged multiarch/qemu-user-static:register --reset
   docker build -f Dockerfile.rpi3 -t ivgiuliani/discord-tfl-rpi3 .
   ```
+
+  Note that due to this additional complexity, this variant is no longer
+  being maintained/supported.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub.
