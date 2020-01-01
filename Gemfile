@@ -14,7 +14,7 @@ gem "httparty", "~> 0.17.3" # HTTP transport library
 gem "songkick-transport", "~> 1.11.0"
 
 # Required by httparty
-gem "bigdecimal", "~> 1.4.4"
+gem "bigdecimal", "~> 2.0.0"
 
 group :development do
   gem "rake"
