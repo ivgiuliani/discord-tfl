@@ -43,7 +43,7 @@ RSpec.describe Tfl::Scraping::PressReleasesFeed do
   context "when the content has been downloaded" do
     before { instance.update!(raw_html: raw_html) }
 
-    # rubocop:disable Metrics/LineLength
+    # rubocop:disable Layout/LineLength
     it "returns a list of press releases" do
       expect(instance.releases).to match_array([
         Tfl::Scraping::PressRelease.new("Travel advice for customers during today's strike",
@@ -68,9 +68,9 @@ RSpec.describe Tfl::Scraping::PressReleasesFeed do
                                         "https://tfl.gov.uk/info-for/media/press-releases/2017/february/travel-advice-ahead-of-planned-tube-strike-action"),
       ])
     end
-    # rubocop:enable Metrics/LineLength
+    # rubocop:enable Layout/LineLength
 
-    # rubocop:disable Metrics/LineLength
+    # rubocop:disable Layout/LineLength
     it "returns a list of strike-related press releases" do
       expect(instance.strikes).to match_array([
         Tfl::Scraping::PressRelease.new("Travel advice for customers during today's strike",
@@ -81,7 +81,7 @@ RSpec.describe Tfl::Scraping::PressReleasesFeed do
                                         "https://tfl.gov.uk/info-for/media/press-releases/2017/february/travel-advice-ahead-of-planned-tube-strike-action"),
       ])
     end
-    # rubocop:enable Metrics/LineLength
+    # rubocop:enable Layout/LineLength
 
     context "when TfL returns an empty list" do
       it "doesn't update the current list" do

@@ -6,16 +6,13 @@ AllCops:
   DisplayStyleGuide: true
   ExtraDetails: true
 
-GlobalVars:
-  AllowedVariables: [$statsd]
-
 Metrics/AbcSize:
   Max: 30
 
 Metrics/ClassLength:
   Enabled: false
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 90
 
 # Avoid methods longer than 30 lines of code
