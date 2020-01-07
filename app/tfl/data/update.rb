@@ -4,7 +4,7 @@
 require "net/http"
 require "json"
 
-# rubocop:disable Metrics/LineLength
+# rubocop:disable Layout/LineLength
 DOWNLOADS = [
   # [url, output, type]
 
@@ -17,7 +17,7 @@ DOWNLOADS = [
   # Stations data
   ["https://data.tfl.gov.uk/tfl/syndication/feeds/stations-facilities.xml", "stations-facilities.xml", :xml],
 ].freeze
-# rubocop:enable Metrics/LineLength
+# rubocop:enable Layout/LineLength
 
 def strip_json(json)
   # Removes `created` and `modified` timestamps from the JSON entities as they
