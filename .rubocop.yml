@@ -6,9 +6,6 @@ AllCops:
   DisplayStyleGuide: true
   ExtraDetails: true
 
-GlobalVars:
-  AllowedVariables: [$statsd]
-
 Metrics/AbcSize:
   Max: 30
 
