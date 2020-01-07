@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "levenshtein"
+require "damerau-levenshtein"
 
 module Tfl
   # Resolves strings to valid TfL identifiers (lines, modes and alike).
@@ -30,7 +30,7 @@ module Tfl
 
     def self.similarity_list(string, list)
       list.map do |mode|
-        [Levenshtein.distance(mode, string), mode]
+        [DamerauLevenshtein.distance(mode, string), mode]
       end
     end
 

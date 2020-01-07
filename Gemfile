@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-gem "levenshtein-ffi", "~> 1.1.0", require: "levenshtein"
+gem "damerau-levenshtein", "~> 1.3.2"
 gem "nokogiri", "~> 1.10.7"
 gem "prius", "~> 2.0"
 gem "rufus-scheduler", "~> 3.6.0"
