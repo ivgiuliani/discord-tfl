@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "levenshtein"
+require "damerau-levenshtein"
 require "nokogiri"
 
 require_relative "./data_loader"
@@ -101,7 +101,7 @@ module Tfl
     def self.similarity_list(query)
       normalized_query = query.downcase
       NAME_MAP.map do |name, station|
-        [Levenshtein.distance(name, normalized_query), station]
+        [DamerauLevenshtein.distance(name, normalized_query), station]
       end
     end
 
