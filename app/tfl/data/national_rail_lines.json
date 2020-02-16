@@ -1,6 +1,31 @@
 [
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "avanti-west-coast",
+    "name": "Avanti West Coast",
+    "modeName": "national-rail",
+    "disruptions": [
+
+    ],
+    "lineStatuses": [
+
+    ],
+    "routeSections": [
+
+    ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Avanti West Coast&serviceTypes=Regular"
+      }
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
     "id": "c2c",
     "name": "c2c",
     "modeName": "national-rail",
@@ -76,8 +101,8 @@
   },
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "east-midlands-trains",
-    "name": "East Midlands Trains",
+    "id": "east-midlands-railway",
+    "name": "East Midlands Railway",
     "modeName": "national-rail",
     "disruptions": [
 
@@ -92,7 +117,7 @@
       {
         "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
         "name": "Regular",
-        "uri": "/Line/Route?ids=East Midlands Trains&serviceTypes=Regular"
+        "uri": "/Line/Route?ids=East Midlands Railway&serviceTypes=Regular"
       }
     ],
     "crowding": {
@@ -543,31 +568,6 @@
         "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
         "name": "Regular",
         "uri": "/Line/Route?ids=Transport for Wales&serviceTypes=Regular"
-      }
-    ],
-    "crowding": {
-      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
-    }
-  },
-  {
-    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "virgin-trains",
-    "name": "Virgin Trains",
-    "modeName": "national-rail",
-    "disruptions": [
-
-    ],
-    "lineStatuses": [
-
-    ],
-    "routeSections": [
-
-    ],
-    "serviceTypes": [
-      {
-        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
-        "name": "Regular",
-        "uri": "/Line/Route?ids=Virgin Trains&serviceTypes=Regular"
       }
     ],
     "crowding": {
