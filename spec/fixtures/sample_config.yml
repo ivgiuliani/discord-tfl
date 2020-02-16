@@ -1,6 +1,7 @@
 command_prefix: "@"
 username: "username123"
 game: "The Game"
+metrics_port: 1234
 pr_announce_channels_ids:
 - 1
 - 2

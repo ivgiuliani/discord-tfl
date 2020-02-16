@@ -3,6 +3,8 @@
 require "discordrb"
 require "prius"
 require "rufus-scheduler"
+require "rack"
+require "prometheus/middleware/exporter"
 
 require_relative "init"
 require_relative "config"
@@ -44,7 +46,14 @@ module Bot
 
     def run!
       @bot.run :async
-      setup_scheduled_tasks
+      setup_scheduled_tasks!
+
+      if CONFIG.metrics_port.nil?
+        info("Prometheus metrics are disabled")
+      else
+        info("Prometheus metrics enabled on port #{CONFIG.metrics_port}")
+        setup_metrics_server!
+      end
 
       loop do
         sleep 1
@@ -59,11 +68,39 @@ module Bot
 
     private
 
-    def setup_scheduled_tasks
+    def setup_scheduled_tasks!
       @scheduler.every "1h", first: :now do
         task "announce new strikes", Task::AnnounceNewStrikes do |instance|
           instance.run(@bot)
         end
+      end
+    end
+
+    def setup_metrics_server!
+      # Starts a WEBrick server in the background to serve metric requests for prometheus.
+      Thread.new do
+        health_check = ->(_) { [200, {}, ["healthy"]] }
+
+        # RubyMine gets fooled by `run` as it thinks we're invoking the bot's run method,
+        # whereas in practice we're invoking `run` on the Rack::URLMap's instance returned
+        # by `.new`.
+        # noinspection RubyArgCount
+        app = ::Rack::URLMap.new(
+          "/" => ::Rack::Builder.new do
+            use Prometheus::Middleware::Exporter,
+                registry: Prometheus::Client.registry
+
+            run health_check
+          end,
+        )
+
+        ::Rack::Handler::WEBrick.run(
+          app,
+          Host: "0.0.0.0",
+          Port: CONFIG.metrics_port,
+          Logger: WEBrick::Log.new("/dev/null"),
+          AccessLog: [],
+        )
       end
     end
 
