@@ -33,7 +33,7 @@ module Tfl
       end
 
       def status_by_mode(mode)
-        client.get("/line/mode/#{mode}/status", app_key_args).data.map do |line|
+        api_get("/line/mode/#{mode}/status").data.map do |line|
           Tfl::Line.from_api(line)
         end
       rescue Songkick::Transport::HttpError => e
@@ -45,7 +45,7 @@ module Tfl
       end
 
       def status_by_id(id)
-        json = client.get("/line/#{id}/status", app_key_args).data
+        json = api_get("/line/#{id}/status").data
         if json.empty?
           # TfL might return an empty list sometimes for uncommon ids such as
           # 'cycle-hire' or 'walking'.
@@ -71,8 +71,7 @@ module Tfl
       end
 
       def bus_route(bus, direction = "inbound")
-        json = client.get("/line/#{bus.upcase}/route/sequence/#{direction}",
-                          app_key_args).data
+        json = api_get("/line/#{bus.upcase}/route/sequence/#{direction}").data
         Tfl::RouteSequence.from_api(json)
       rescue Songkick::Transport::HttpError => e
         if [400, 404].include?(e.status)
@@ -85,6 +84,10 @@ module Tfl
       private
 
       attr_reader :client
+
+      def api_get(url)
+        client.get(url, app_key_args)
+      end
 
       def app_key_args
         {
