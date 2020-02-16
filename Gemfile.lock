@@ -67,6 +67,7 @@ GEM
     parser (2.7.0.2)
       ast (~> 2.4.0)
     prius (2.0.0)
+    prometheus-client (2.0.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -146,6 +147,7 @@ DEPENDENCIES
   httparty (~> 0.17.3)
   nokogiri (~> 1.10.8)
   prius (~> 2.0)
+  prometheus-client (~> 2.0.0)
   pry-byebug
   rake
   rspec (~> 3.9.0)
