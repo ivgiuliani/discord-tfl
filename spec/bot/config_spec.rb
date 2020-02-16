@@ -17,6 +17,7 @@ RSpec.describe Bot::Config do
         username: [Bot::DefaultConfig::USERNAME, "username123"],
         game: [Bot::DefaultConfig::GAME, "The Game"],
         pr_announce_channels_ids: [Bot::DefaultConfig::PR_ANNOUNCE_CHANNELS_IDS, [1, 2]],
+        metrics_port: [Bot::DefaultConfig::METRICS_PORT, 1234],
       }
 
       mappings.each do |method, values|

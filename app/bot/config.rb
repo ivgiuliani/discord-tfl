@@ -8,6 +8,7 @@ module Bot
     USERNAME = "TfLBot"
     GAME = nil
     PR_ANNOUNCE_CHANNELS_IDS = [].freeze
+    METRICS_PORT = nil
   end
 
   class Config
@@ -20,6 +21,9 @@ module Bot
       @username = config(cfg, "username", username)
       @game = config(cfg, "game", game)
       @pr_announce_channels_ids = config(cfg, "pr_announce_channels_ids", [])
+
+      @metrics_port = config(cfg, "metrics_port", nil)
+      @metrics_port = @metrics_port.to_i unless @metrics_port.nil?
 
       @config_loaded = true
     end
@@ -42,6 +46,10 @@ module Bot
 
     def pr_announce_channels_ids
       @pr_announce_channels_ids ||= DefaultConfig::PR_ANNOUNCE_CHANNELS_IDS
+    end
+
+    def metrics_port
+      @metrics_port ||= DefaultConfig::METRICS_PORT
     end
 
     private
