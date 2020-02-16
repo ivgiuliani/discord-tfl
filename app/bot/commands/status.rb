@@ -65,6 +65,7 @@ module Bot
         else
           entity = Tfl::IdResolver.resolve(args.join(" ").
               truncate(MAX_QUERY_LENGTH).
+              gsub(" ", "-").
               downcase)
 
           type = :by_id
