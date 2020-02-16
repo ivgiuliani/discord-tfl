@@ -10,25 +10,31 @@ module Bot
     extend Discordrb::EventContainer
     extend Discordrb::Commands::CommandContainer
 
-    command(Commands::BusCommand::COMMAND,
-            description: "The bus") do |event|
-      Commands::BusCommand.execute(event)
-    end
+    CommandRequests = Metrics.counter(
+      name: "command_requests",
+      desc: "A counter of command requests",
+      labels: [:command],
+    )
 
-    command(Commands::StatusCommand::COMMAND,
-            description: "How well is the tube doing?") do |event|
-      Commands::StatusCommand.execute(event)
+    def self.cmd(cmd, klass, description:)
+      command(cmd, description: description) do |event|
+        CommandRequests.increment(labels: { command: cmd })
+        klass.execute(event)
+      end
     end
+    private_class_method :cmd
 
-    command(Commands::SituationCommand::COMMAND,
-            description: "How are we doing today?") do |event|
-      Commands::SituationCommand.execute(event)
-    end
+    cmd(Commands::BusCommand::COMMAND, Commands::BusCommand,
+        description: "The bus")
 
-    command(Commands::StationCommand::COMMAND,
-            description: "What do we know about a given station?") do |event|
-      Commands::StationCommand.execute(event)
-    end
+    cmd(Commands::StatusCommand::COMMAND, Commands::StatusCommand,
+        description: "How well is the tube doing?")
+
+    cmd(Commands::SituationCommand::COMMAND, Commands::SituationCommand,
+        description: "How are we doing today?")
+
+    cmd(Commands::StationCommand::COMMAND, Commands::StationCommand,
+        description: "What do we know about a given station?")
 
     def self.split_args(command, event)
       args = event.message.text.split

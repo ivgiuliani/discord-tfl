@@ -3,6 +3,7 @@
 require_relative "ruby_overrides"
 
 require_relative "loggy"
+require_relative "metrics"
 require_relative "tfl/station"
 require_relative "tfl/stations"
 require_relative "tfl/const"
