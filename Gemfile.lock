@@ -40,7 +40,7 @@ GEM
     fugit (1.2.0)
       et-orbi (~> 1.1, >= 1.1.8)
       raabro (~> 1.1)
-    hashdiff (1.0.0)
+    hashdiff (1.0.1)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -128,7 +128,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.5)
     unicode-display_width (1.6.1)
-    webmock (3.8.2)
+    webmock (3.8.3)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
@@ -161,7 +161,7 @@ DEPENDENCIES
   rufus-scheduler (~> 3.6.0)
   sentry-raven (~> 3.0.0)
   songkick-transport (~> 1.11.0)
-  webmock (~> 3.8.2)
+  webmock (~> 3.8.3)
 
 BUNDLED WITH
    2.1.2
