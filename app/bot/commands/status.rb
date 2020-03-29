@@ -12,6 +12,9 @@ module Bot
       MAX_LIST_RESPONSE_COUNT = 30
       MAX_QUERY_LENGTH = 42
 
+      STAY_AT_HOME_PROLOGUE =
+        "**Stay at home. Do not travel unless it is absolutely essential**\n"
+
       def initialize(tfl_api_client: Bot.default_tfl_api_client)
         @tfl_api_client = tfl_api_client
       end
@@ -97,7 +100,7 @@ module Bot
         elsif line_statuses.count > MAX_LIST_RESPONSE_COUNT
           "Wow. Much data. Not show."
         else
-          line_statuses.map do |line|
+          STAY_AT_HOME_PROLOGUE + line_statuses.map do |line|
             format_status_line(line, detailed: line_statuses.count == 1)
           end.join("\n")
         end
