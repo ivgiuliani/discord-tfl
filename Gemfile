@@ -10,7 +10,7 @@ gem "sentry-raven", "~> 3.0.0", require: "sentry-raven-without-integrations"
 
 # Transport
 gem "discordrb", "~> 3.3.0"
-gem "httparty", "~> 0.18.0" # HTTP transport library
+gem "httparty", "~> 0.18.1" # HTTP transport library
 gem "songkick-transport", "~> 1.11.0"
 
 # Required by httparty
