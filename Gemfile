@@ -22,7 +22,7 @@ gem "rack", "~> 2.2"
 group :development do
   gem "rake"
 
-  gem "factory_bot", "~> 5.2.0"
+  gem "factory_bot", "~> 6.0.2"
   gem "rspec", "~> 3.9.0"
   gem "rubocop", "~> 0.85.1"
   gem "rubocop-rspec", "~> 1.40.0"
