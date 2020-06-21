@@ -17,7 +17,7 @@ gem "songkick-transport", "~> 1.11.0"
 gem "bigdecimal", "~> 2.0.0"
 
 gem "prometheus-client", "~> 2.0.0"
-gem "rack", "~> 2.0"
+gem "rack", "~> 2.2"
 
 group :development do
   gem "rake"
