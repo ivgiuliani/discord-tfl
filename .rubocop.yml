@@ -6,14 +6,14 @@ AllCops:
   DisplayStyleGuide: true
   ExtraDetails: true
 
+Layout/LineLength:
+  Max: 90
+
 Metrics/AbcSize:
   Max: 30
 
 Metrics/ClassLength:
   Enabled: false
-
-Layout/LineLength:
-  Max: 90
 
 # Avoid methods longer than 30 lines of code
 Metrics/MethodLength:
@@ -28,6 +28,9 @@ Metrics/ModuleLength:
 
 Metrics/ParameterLists:
   CountKeywordArgs: false
+
+Metrics/CyclomaticComplexity:
+  Max: 8
 
 # Allow non-ASCII characters (e.g. £) in comments
 Style/AsciiComments:
