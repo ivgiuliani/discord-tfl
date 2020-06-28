@@ -3,7 +3,7 @@
 require "spec_helper"
 
 def tfl_api_path(path)
-  %r{^https:\/\/api.tfl.gov.uk#{path}\?app_id=[\S]+app_key=[\S]+}
+  %r{^https:\/\/api.tfl.gov.uk#{path}\?app_id=\S+app_key=\S+}
 end
 
 def stub_tfl_response(path, fixture, status = 200)
