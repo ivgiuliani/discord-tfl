@@ -23,7 +23,7 @@ module Bot
       TOILET = ":toilet:"
 
       def self.emoji?(word)
-        !(/:[a-z0-9\-\+_]+:/ =~ word).nil?
+        !(/:[a-z0-9\-+_]+:/ =~ word).nil?
       end
     end
 
