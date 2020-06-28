@@ -40,7 +40,7 @@ module Bot
 
         invalid_checks = [
           # Contains valid characters?
-          -> { args.map { |arg| (/^[A-Za-z0-9\-'\. ]+$/ =~ arg).nil? }.all? },
+          -> { args.map { |arg| (/^[A-Za-z0-9\-'. ]+$/ =~ arg).nil? }.all? },
 
           # Contains at least a letter?
           -> { args.map { |arg| (/[A-z]+/ =~ arg).nil? }.all? },
