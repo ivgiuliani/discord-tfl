@@ -15,7 +15,16 @@ WORKDIR /app
 
 COPY Gemfile /app/
 COPY Gemfile.lock /app/
-RUN bundle install --deployment --jobs 4 --no-cache --without development test
+
+RUN set -x \
+      && gem install bundler -v 2.1.4 --no-document \
+      && bundle config --global set without 'development test' \
+      && bundle config --global set deployment 'true' \
+      && bundle config --global set clean 'true' \
+      && bundle config --global set no-cache 'true' \
+      && bundle install \
+      --jobs=4 \
+      --retry=3
 
 COPY . /app
 
