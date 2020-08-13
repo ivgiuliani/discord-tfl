@@ -19,7 +19,7 @@ module Loggy
   def logger
     if @@logger.nil?
       $stdout.sync = true
-      @@logger = Logger.new(STDOUT)
+      @@logger = Logger.new($stdout)
 
       @@logger.level = log_status
       @@logger.formatter = formatter
