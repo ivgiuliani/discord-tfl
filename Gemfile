@@ -6,7 +6,7 @@ gem "damerau-levenshtein", "~> 1.3.3"
 gem "nokogiri", "~> 1.10.10"
 gem "prius", "~> 2.0"
 gem "rufus-scheduler", "~> 3.6.0"
-gem "sentry-raven", "~> 3.0.0", require: "sentry-raven-without-integrations"
+gem "sentry-raven", "~> 3.0.4", require: "sentry-raven-without-integrations"
 
 # Transport
 gem "discordrb", "~> 3.3.0"
