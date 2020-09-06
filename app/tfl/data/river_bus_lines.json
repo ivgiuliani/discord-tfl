@@ -1,6 +1,31 @@
 [
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "city-cruises",
+    "name": "City Cruises",
+    "modeName": "river-bus",
+    "disruptions": [
+
+    ],
+    "lineStatuses": [
+
+    ],
+    "routeSections": [
+
+    ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=City Cruises&serviceTypes=Regular"
+      }
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
     "id": "rb1",
     "name": "RB1",
     "modeName": "river-bus",
@@ -18,6 +43,31 @@
         "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
         "name": "Regular",
         "uri": "/Line/Route?ids=RB1&serviceTypes=Regular"
+      }
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "rb1x",
+    "name": "RB1X",
+    "modeName": "river-bus",
+    "disruptions": [
+
+    ],
+    "lineStatuses": [
+
+    ],
+    "routeSections": [
+
+    ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=RB1X&serviceTypes=Regular"
       }
     ],
     "crowding": {
@@ -93,56 +143,6 @@
         "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
         "name": "Regular",
         "uri": "/Line/Route?ids=RB5&serviceTypes=Regular"
-      }
-    ],
-    "crowding": {
-      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
-    }
-  },
-  {
-    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "rb6",
-    "name": "RB6",
-    "modeName": "river-bus",
-    "disruptions": [
-
-    ],
-    "lineStatuses": [
-
-    ],
-    "routeSections": [
-
-    ],
-    "serviceTypes": [
-      {
-        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
-        "name": "Regular",
-        "uri": "/Line/Route?ids=RB6&serviceTypes=Regular"
-      }
-    ],
-    "crowding": {
-      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
-    }
-  },
-  {
-    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "rb6a",
-    "name": "RB6A",
-    "modeName": "river-bus",
-    "disruptions": [
-
-    ],
-    "lineStatuses": [
-
-    ],
-    "routeSections": [
-
-    ],
-    "serviceTypes": [
-      {
-        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
-        "name": "Regular",
-        "uri": "/Line/Route?ids=RB6A&serviceTypes=Regular"
       }
     ],
     "crowding": {
