@@ -97,6 +97,9 @@ Lint/RaiseException:
 Lint/StructNewOverride:
   Enabled: true
 
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
+
 Style/NumericPredicate:
   Exclude:
     - 'spec/**/*'
