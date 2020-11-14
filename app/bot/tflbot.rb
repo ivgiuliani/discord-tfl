@@ -112,9 +112,7 @@ module Bot
 
       info "running task: #{name}"
 
-      unless klass.nil?
-        @task_handlers[name] = klass.new unless @task_handlers.key?(name)
-      end
+      @task_handlers[name] = klass.new if !klass.nil? && !@task_handlers.key?(name)
 
       yield(@task_handlers.fetch(name, nil))
     end
