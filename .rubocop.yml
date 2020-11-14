@@ -5,6 +5,7 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: true
+  NewCops: disable
 
 Layout/LineLength:
   Max: 90
@@ -95,6 +96,9 @@ Lint/RaiseException:
 
 Lint/StructNewOverride:
   Enabled: true
+
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
 
 Style/NumericPredicate:
   Exclude:
