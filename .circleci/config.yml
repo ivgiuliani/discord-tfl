@@ -46,4 +46,6 @@ workflows:
   tests:
     jobs:
       - code_quality
-      - tests
+      - tests:
+          requires:
+            - code_quality
