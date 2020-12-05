@@ -2,6 +2,7 @@
 
 module Tfl
   class InvalidStopPointException < StandardError; end
+
   class InvalidRouteException < StandardError; end
 
   class StopPoint
