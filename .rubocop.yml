@@ -1,7 +1,7 @@
 # For all options see https://github.com/bbatsov/rubocop/tree/master/config
 
 AllCops:
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.7
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: true
