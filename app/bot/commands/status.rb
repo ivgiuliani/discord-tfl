@@ -122,15 +122,15 @@ module Bot
         return disruption unless disruption.
           downcase.start_with?(line.display_name.downcase)
 
-        disruption = disruption[line.display_name.length..-1].strip
+        disruption = disruption[line.display_name.length..].strip
 
         # The line could be followed by a "line" word.
-        disruption = disruption[4..-1] if disruption.downcase.start_with?("line")
+        disruption = disruption[4..] if disruption.downcase.start_with?("line")
 
         # Advance to the first char in a..z skipping any colons or semi colons
         # the string might have.
         while disruption != "" && !("a".."z").cover?(disruption[0].downcase)
-          disruption = disruption[1..-1]
+          disruption = disruption[1..]
         end
 
         disruption
