@@ -1,0 +1,8 @@
+spec/
+
+*.sh
+.circleci/
+.git/
+.github/
+.idea/
+qemu-arm-static
