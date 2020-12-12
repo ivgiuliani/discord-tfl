@@ -6,6 +6,7 @@ AllCops:
   DisplayStyleGuide: true
   ExtraDetails: true
   NewCops: disable
+  SuggestExtensions: false
 
 Layout/LineLength:
   Max: 90

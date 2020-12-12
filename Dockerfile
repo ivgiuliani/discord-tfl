@@ -1,4 +1,4 @@
-FROM ruby:2.7.1-alpine3.11
+FROM ruby:2.7.2-alpine3.12
 MAINTAINER Ivan Giuliani <giuliani.v@gmail.com>
 
 ENV APK_PACKAGES build-base \
@@ -8,8 +8,6 @@ ENV APK_PACKAGES build-base \
 RUN set -x && apk update && \
     apk --no-cache add $APK_PACKAGES && \
     rm -rf /var/cache/apk/*
-
-RUN gem install bundler:2.0.2
 
 RUN mkdir /app
 WORKDIR /app
