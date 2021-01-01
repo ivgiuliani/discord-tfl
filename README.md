@@ -34,23 +34,8 @@ the bot into channels you administer.
 
 ### Building the docker container
 
-There's two variants for `x86` and `arm32v6`:
-
-- `x86`: this image is provided by `Dockerfile`. Running `docker build .` will
-  get it up and running.
-- `arm32v6`: this image is suitable to run on ARM32v6 (e.g. Raspberry Pi 3 Model B+).
-  Building this image is slightly more complicated. The `Dockerfile.rpi3` assumes
-  the image is being built within an `x86` host and as such it requires qemu.
-  On Ubuntu, install `qemu-arm-static` and copy `/usr/bin/qemu-arm-static` in the
-  root directory of the project. Afterwards run
-
-  ```
-  docker run --rm --privileged multiarch/qemu-user-static:register --reset
-  docker build -f Dockerfile.rpi3 -t ivgiuliani/discord-tfl-rpi3 .
-  ```
-
-  Note that due to this additional complexity, this variant is no longer
-  being maintained/supported.
+There's an x86 image provided by `Dockerfile`. Running
+`docker build . -t discord-tfl` will build the image.
 
 ## Contributing
 
