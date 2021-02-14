@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "sentry-raven-without-integrations"
+require "sentry_raven_without_integrations"
 require "optparse"
 require "./app/tflbot"
 
