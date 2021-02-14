@@ -37,9 +37,9 @@ module Bot
 
       debug "Initializing bot - Discord client id #{Prius.get(:discord_client_id)}"
 
-      @bot = Discordrb::Commands::CommandBot.new token: Prius.get(:discord_token),
+      @bot = Discordrb::Commands::CommandBot.new(token: Prius.get(:discord_token),
                                                  client_id: Prius.get(:discord_client_id),
-                                                 prefix: CONFIG.prefix
+                                                 prefix: CONFIG.prefix)
       @bot.include! Bot::Startup
       @bot.include! Bot::Commands
     end
