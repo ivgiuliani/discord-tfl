@@ -2,7 +2,7 @@ FROM ruby:3.0.0-alpine3.13
 MAINTAINER Ivan Giuliani <giuliani.v@gmail.com>
 
 ENV APK_PACKAGES build-base \
-                 tzdata curl-dev \
+                 tzdata curl-dev git \
                  ruby ruby-dev ruby-json
 
 RUN set -x && apk update && \
