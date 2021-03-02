@@ -33,7 +33,7 @@ group :development do
 
   gem "factory_bot", "~> 6.1.0"
   gem "rspec", "~> 3.10.0"
-  gem "rubocop", "~> 1.10.0"
+  gem "rubocop", "~> 1.11.0"
   gem "rubocop-rspec", "~> 2.2.0"
   gem "webmock", "~> 3.11.2"
 
