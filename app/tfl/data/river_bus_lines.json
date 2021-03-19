@@ -1,31 +1,6 @@
 [
   {
     "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
-    "id": "city-cruises",
-    "name": "City Cruises",
-    "modeName": "river-bus",
-    "disruptions": [
-
-    ],
-    "lineStatuses": [
-
-    ],
-    "routeSections": [
-
-    ],
-    "serviceTypes": [
-      {
-        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
-        "name": "Regular",
-        "uri": "/Line/Route?ids=City Cruises&serviceTypes=Regular"
-      }
-    ],
-    "crowding": {
-      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
-    }
-  },
-  {
-    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
     "id": "rb1",
     "name": "RB1",
     "modeName": "river-bus",
@@ -143,6 +118,56 @@
         "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
         "name": "Regular",
         "uri": "/Line/Route?ids=RB5&serviceTypes=Regular"
+      }
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "rb6b",
+    "name": "RB6B",
+    "modeName": "river-bus",
+    "disruptions": [
+
+    ],
+    "lineStatuses": [
+
+    ],
+    "routeSections": [
+
+    ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=RB6B&serviceTypes=Regular"
+      }
+    ],
+    "crowding": {
+      "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+    }
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "thames-river-services",
+    "name": "Thames River Services",
+    "modeName": "river-bus",
+    "disruptions": [
+
+    ],
+    "lineStatuses": [
+
+    ],
+    "routeSections": [
+
+    ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Thames River Services&serviceTypes=Regular"
       }
     ],
     "crowding": {
