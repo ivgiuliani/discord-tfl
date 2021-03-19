@@ -9,11 +9,7 @@ gem "rufus-scheduler", "~> 3.7.0"
 gem "sentry-raven", "~> 3.1.1", require: "sentry-raven-without-integrations"
 
 # Transport
-
-# Temporary fix:
-# this branch includes a fix against accessing an unpopulated field when
-# accessing uncached users, it can be removed once that fix gets released.
-gem "discordrb", "~> 3.4.2"
+gem "discordrb", "~> 3.4.0"
 
 gem "httparty", "~> 0.18.1" # HTTP transport library
 gem "songkick-transport", "~> 1.11.0"

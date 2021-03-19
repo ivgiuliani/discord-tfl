@@ -148,7 +148,7 @@ PLATFORMS
 DEPENDENCIES
   bigdecimal (~> 3.0.0)
   damerau-levenshtein (~> 1.3.3)
-  discordrb (~> 3.4.2)
+  discordrb (~> 3.4.0)
   factory_bot (~> 6.1.0)
   httparty (~> 0.18.1)
   nokogiri (~> 1.11.2)
