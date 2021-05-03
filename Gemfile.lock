@@ -10,7 +10,7 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.2)
-    bigdecimal (3.0.1)
+    bigdecimal (3.0.2)
     byebug (11.1.1)
     coderay (1.1.2)
     concurrent-ruby (1.1.8)
@@ -172,4 +172,4 @@ DEPENDENCIES
   webrick (~> 1.7.0)
 
 BUNDLED WITH
-   2.2.3
+   2.2.15
