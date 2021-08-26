@@ -1,4 +1,4 @@
-FROM ruby:3.0.1-alpine3.13
+FROM ruby:3.0.2-alpine
 MAINTAINER Ivan Giuliani <giuliani.v@gmail.com>
 
 ENV APK_PACKAGES build-base \
@@ -16,7 +16,7 @@ COPY Gemfile /app/
 COPY Gemfile.lock /app/
 
 RUN set -x \
-      && gem install bundler -v 2.1.4 --no-document \
+      && gem install bundler -v 2.2.26 --no-document \
       && bundle config --global set without 'development test' \
       && bundle config --global set deployment 'true' \
       && bundle config --global set clean 'true' \
