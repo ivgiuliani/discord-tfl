@@ -16,7 +16,7 @@ COPY Gemfile /app/
 COPY Gemfile.lock /app/
 
 RUN set -x \
-      && gem install bundler -v 2.2.26 --no-document \
+      && gem install bundler -v 2.3.3 --no-document \
       && bundle config --global set without 'development test' \
       && bundle config --global set deployment 'true' \
       && bundle config --global set clean 'true' \
