@@ -24,7 +24,7 @@ gem "webrick", "~> 1.7.0"
 group :development do
   gem "rake"
 
-  gem "factory_bot", "~> 6.2.0"
+  gem "factory_bot", "~> 6.2.1"
   gem "rspec", "~> 3.11.0"
   gem "rubocop", "~> 1.26.0"
   gem "rubocop-rspec", "~> 2.9.0"
