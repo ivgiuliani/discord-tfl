@@ -15,8 +15,8 @@ module Tfl
       CYCLE_HIRE = "cycle-hire"
       COACH = "coach"
       DLR = "dlr"
+      ELIZABETH = "elizabeth-line"
       OVERGROUND = "overground"
-      TFLRAIL = "tflrail"
       TRAM = "tram"
       TUBE = "tube"
       NATIONAL_RAIL = "national-rail"
@@ -27,7 +27,7 @@ module Tfl
 
       # Special mode that includes the common means of transportation.
       METROPOLITAN_TRAINS = [
-        DLR, OVERGROUND, TUBE, TFLRAIL
+        DLR, OVERGROUND, TUBE, ELIZABETH
       ].join(",")
 
       ALL = [
@@ -37,10 +37,10 @@ module Tfl
         CYCLE_HIRE,
         COACH,
         DLR,
+        ELIZABETH,
         NATIONAL_RAIL,
         OVERGROUND,
         TRAM,
-        TFLRAIL,
         TUBE,
         REPLACEMENT_BUS,
         RIVER_BUS,
@@ -54,8 +54,8 @@ module Tfl
     end
 
     module Tube
-      # "dlr" and "london-overground" are both ids and modes, but we only consider
-      # them as the latter to avoid confusion.
+      # "dlr", "london-overground" and "elizabeth-line" are both ids and modes, but we
+      # only consider them as the latter to avoid confusion.
       BAKERLOO = "bakerloo"
       CENTRAL = "central"
       CIRCLE = "circle"
