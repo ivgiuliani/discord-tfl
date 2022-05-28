@@ -13,6 +13,8 @@ module Tfl
       "central line" => Tfl::Const::Tube::CENTRAL,
       "district line" => Tfl::Const::Tube::DISTRICT,
       "dangleway" => Tfl::Const::Mode::CABLE_CAR,
+      "elizabeth" => Tfl::Const::Mode::ELIZABETH,
+      "lizzie" => Tfl::Const::Mode::ELIZABETH,
       "hammersmith" => Tfl::Const::Tube::HAMMERSMITH,
       "hammersmith and city" => Tfl::Const::Tube::HAMMERSMITH,
       "h&c" => Tfl::Const::Tube::HAMMERSMITH,
