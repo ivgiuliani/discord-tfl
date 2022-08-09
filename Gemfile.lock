@@ -133,7 +133,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.7)
     unicode-display_width (2.2.0)
-    webmock (3.16.0)
+    webmock (3.17.1)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
@@ -166,7 +166,7 @@ DEPENDENCIES
   rufus-scheduler (~> 3.8.2)
   sentry-raven (~> 3.1.2)
   songkick-transport (~> 1.11.0)
-  webmock (~> 3.16.0)
+  webmock (~> 3.17.1)
   webrick (~> 1.7.0)
 
 BUNDLED WITH
