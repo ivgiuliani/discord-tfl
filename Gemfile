@@ -35,5 +35,5 @@ end
 
 group :test do
   # Used by CircleCI to collect test data
-  gem "rspec_junit_formatter", "0.5.1"
+  gem "rspec_junit_formatter", "0.6.0"
 end
