@@ -19,6 +19,7 @@ gem "bigdecimal", "~> 3.1.2"
 
 gem "prometheus-client", "~> 4.0.0"
 gem "rack", "~> 3.0"
+gem 'rackup', "~> 0.2.2"
 gem "webrick", "~> 1.7.0"
 
 group :development do

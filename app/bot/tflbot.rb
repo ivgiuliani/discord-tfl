@@ -4,6 +4,7 @@ require "discordrb"
 require "prius"
 require "rufus-scheduler"
 require "rack"
+require "rackup"
 require "prometheus/middleware/exporter"
 
 require_relative "init"
@@ -94,7 +95,7 @@ module Bot
           end,
         )
 
-        ::Rack::Handler::WEBrick.run(
+        ::Rackup::Handler::WEBrick.run(
           app,
           Host: "0.0.0.0",
           Port: CONFIG.metrics_port,
