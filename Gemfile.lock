@@ -79,7 +79,7 @@ GEM
     public_suffix (5.0.0)
     raabro (1.4.0)
     racc (1.6.0)
-    rack (3.0.0)
+    rack (3.0.1)
     rackup (0.2.3)
       rack (>= 3.0.0.beta1)
       webrick
