@@ -81,9 +81,9 @@ GEM
     raabro (1.4.0)
     racc (1.6.2)
     rack (3.0.4.1)
-    rackup (2.0.0)
+    rackup (2.1.0)
       rack (>= 3)
-      webrick
+      webrick (~> 1.8)
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.6.2)
@@ -165,7 +165,7 @@ DEPENDENCIES
   prometheus-client (~> 4.0.0)
   pry-byebug
   rack (~> 3.0)
-  rackup (~> 2.0.0)
+  rackup (~> 2.1.0)
   rake
   rspec (~> 3.12.0)
   rspec_junit_formatter (= 0.6.0)
