@@ -8,18 +8,18 @@ references:
 
   restore_bundle_cache: &restore_bundle_cache
     restore_cache:
-      key: discordtfl-{{ checksum "Gemfile.lock" }}-3.1.0
+      key: discordtfl-{{ checksum "Gemfile.lock" }}-3.2.0
 
   save_bundle_cache: &save_bundle_cache
     save_cache:
-      key: discordtfl-{{ checksum "Gemfile.lock" }}-3.1.0
+      key: discordtfl-{{ checksum "Gemfile.lock" }}-3.2.0
       paths:
         - vendor/bundle
 
 jobs:
   code_quality:
     docker:
-      - image: cimg/ruby:3.1.0
+      - image: cimg/ruby:3.2.0
     steps:
       - checkout
       - *restore_bundle_cache
@@ -31,7 +31,7 @@ jobs:
 
   tests:
     docker:
-      - image: cimg/ruby:3.1.0
+      - image: cimg/ruby:3.2.0
     steps:
       - checkout
       - *restore_bundle_cache
