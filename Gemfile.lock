@@ -61,7 +61,7 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     netrc (0.11.0)
-    nokogiri (1.14.2)
+    nokogiri (1.14.3)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     opus-ruby (1.0.1)
@@ -160,7 +160,7 @@ DEPENDENCIES
   discordrb (~> 3.4)
   factory_bot (~> 6.2.1)
   httparty (~> 0.21.0)
-  nokogiri (~> 1.14.2)
+  nokogiri (~> 1.14.3)
   prius (~> 5.0)
   prometheus-client (~> 4.1.0)
   pry-byebug
