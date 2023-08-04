@@ -72,7 +72,7 @@ GEM
       ast (~> 2.4.1)
       racc
     prius (5.0.0)
-    prometheus-client (4.1.0)
+    prometheus-client (4.2.1)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -168,7 +168,7 @@ DEPENDENCIES
   httparty (~> 0.21.0)
   nokogiri (~> 1.15.3)
   prius (~> 5.0)
-  prometheus-client (~> 4.1.0)
+  prometheus-client (~> 4.2.1)
   pry-byebug
   rack (~> 3.0)
   rackup (~> 2.1.0)
