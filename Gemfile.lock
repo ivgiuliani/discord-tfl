@@ -81,7 +81,7 @@ GEM
     parser (3.3.0.4)
       ast (~> 2.4.1)
       racc
-    prius (5.0.0)
+    prius (6.0.0)
     prometheus-client (4.2.2)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -177,7 +177,7 @@ DEPENDENCIES
   factory_bot (~> 6.4.5)
   httparty (~> 0.21.0)
   nokogiri (~> 1.16.0)
-  prius (~> 5.0)
+  prius (~> 6.0)
   prometheus-client (~> 4.2.2)
   pry-byebug
   rack (~> 3.0)
