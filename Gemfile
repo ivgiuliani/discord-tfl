@@ -27,7 +27,7 @@ group :development do
 
   gem "factory_bot", "~> 6.4.5"
   gem "rspec", "~> 3.12.0"
-  gem "rubocop", "~> 1.60.1"
+  gem "rubocop", "~> 1.60.2"
   gem "rubocop-rspec", "~> 2.25.0"
   gem "webmock", "~> 3.19.1"
 
