@@ -18,7 +18,7 @@ gem "songkick-transport", "~> 1.11.0"
 gem "bigdecimal", "~> 3.1.8"
 
 gem "prometheus-client", "~> 4.2.2"
-gem "rack", "~> 3.0"
+gem "rack", "~> 3.1"
 gem "rackup", "~> 2.1.0"
 gem "webrick", "~> 1.8.1"
 
