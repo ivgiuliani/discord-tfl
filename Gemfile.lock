@@ -157,7 +157,7 @@ GEM
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
-    webrick (1.8.2)
+    webrick (1.9.0)
     websocket (1.2.9)
     websocket-client-simple (0.3.0)
       event_emitter
@@ -188,7 +188,7 @@ DEPENDENCIES
   sentry-raven (~> 3.1.2)
   songkick-transport (~> 1.11.0)
   webmock (~> 3.24.0)
-  webrick (~> 1.8.2)
+  webrick (~> 1.9.0)
 
 BUNDLED WITH
    2.3.3
