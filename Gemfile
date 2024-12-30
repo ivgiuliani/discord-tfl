@@ -20,7 +20,7 @@ gem "bigdecimal", "~> 3.1.9"
 gem "prometheus-client", "~> 4.2.3"
 gem "rack", "~> 3.1"
 gem "rackup", "~> 2.2.1"
-gem "webrick", "~> 1.9.0"
+gem "webrick", "~> 1.9.1"
 
 group :development do
   gem "rake"
