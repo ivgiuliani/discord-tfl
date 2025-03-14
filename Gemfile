@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 gem "damerau-levenshtein", "~> 1.3.3"
-gem "nokogiri", "~> 1.18.3"
+gem "nokogiri", "~> 1.18.4"
 gem "prius", "~> 6.0"
 gem "rufus-scheduler", "~> 3.9.2"
 gem "sentry-raven", "~> 3.1.2", require: "sentry-raven-without-integrations"
