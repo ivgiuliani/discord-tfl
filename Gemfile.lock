@@ -59,7 +59,7 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    httparty (0.23.0)
+    httparty (0.23.1)
       csv
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
@@ -184,7 +184,7 @@ DEPENDENCIES
   damerau-levenshtein (~> 1.3.3)
   discordrb (~> 3.4)
   factory_bot (~> 6.5.1)
-  httparty (~> 0.23.0)
+  httparty (~> 0.23.1)
   nokogiri (~> 1.18.6)
   prius (~> 6.0)
   prometheus-client (~> 4.2.4)
