@@ -102,7 +102,7 @@ GEM
     public_suffix (6.0.1)
     raabro (1.4.0)
     racc (1.8.1)
-    rack (3.1.16)
+    rack (3.2.1)
     rackup (2.2.1)
       rack (>= 3)
     rainbow (3.1.1)
@@ -189,7 +189,7 @@ DEPENDENCIES
   prius (~> 6.0)
   prometheus-client (~> 4.2.5)
   pry-byebug
-  rack (~> 3.1)
+  rack (~> 3.2)
   rackup (~> 2.2.1)
   rake
   rspec (~> 3.13.1)
