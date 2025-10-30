@@ -1,4 +1,4 @@
-FROM ruby:3.4.1-alpine
+FROM ruby:3.4.7-alpine
 MAINTAINER Ivan Giuliani <giuliani.v@gmail.com>
 
 ENV APK_PACKAGES build-base \
