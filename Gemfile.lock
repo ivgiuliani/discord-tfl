@@ -1,14 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (8.0.2.1)
+    activesupport (8.1.1)
       base64
-      benchmark (>= 0.3)
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.3.1)
       connection_pool (>= 2.2.5)
       drb
       i18n (>= 1.6, < 2)
+      json
       logger (>= 1.4.2)
       minitest (>= 5.1)
       securerandom (>= 0.3)
@@ -18,7 +18,6 @@ GEM
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.3)
     base64 (0.3.0)
-    benchmark (0.4.1)
     bigdecimal (3.3.1)
     byebug (12.0.0)
     coderay (1.1.3)
@@ -44,7 +43,7 @@ GEM
     et-orbi (1.2.11)
       tzinfo
     event_emitter (0.2.6)
-    factory_bot (6.5.5)
+    factory_bot (6.5.6)
       activesupport (>= 6.1.0)
     faraday (1.3.0)
       faraday-net_http (~> 1.0)
@@ -75,7 +74,7 @@ GEM
     mime-types-data (3.2022.0105)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
-    minitest (5.25.5)
+    minitest (5.26.0)
     multi_xml (0.7.2)
       bigdecimal (~> 3.1)
     multipart-post (2.1.1)
@@ -164,7 +163,7 @@ GEM
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
     unicode-emoji (4.1.0)
-    uri (1.0.3)
+    uri (1.0.4)
     webmock (3.26.1)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
@@ -183,7 +182,7 @@ DEPENDENCIES
   bigdecimal (~> 3.3.1)
   damerau-levenshtein (~> 1.3.3)
   discordrb (~> 3.4)
-  factory_bot (~> 6.5.5)
+  factory_bot (~> 6.5.6)
   httparty (~> 0.23.2)
   nokogiri (~> 1.18.10)
   prius (~> 6.0)
