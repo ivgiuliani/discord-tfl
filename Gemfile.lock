@@ -106,7 +106,7 @@ GEM
     rackup (2.2.1)
       rack (>= 3)
     rainbow (3.1.1)
-    rake (13.3.0)
+    rake (13.3.1)
     regexp_parser (2.11.3)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
