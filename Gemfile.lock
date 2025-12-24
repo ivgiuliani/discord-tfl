@@ -18,7 +18,7 @@ GEM
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.3)
     base64 (0.3.0)
-    bigdecimal (3.3.1)
+    bigdecimal (4.0.1)
     byebug (12.0.0)
     coderay (1.1.3)
     concurrent-ruby (1.3.5)
@@ -75,8 +75,8 @@ GEM
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
     minitest (5.26.0)
-    multi_xml (0.7.2)
-      bigdecimal (~> 3.1)
+    multi_xml (0.8.0)
+      bigdecimal (>= 3.1, < 5)
     multipart-post (2.1.1)
     netrc (0.11.0)
     nokogiri (1.18.10)
@@ -179,7 +179,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bigdecimal (~> 3.3.1)
+  bigdecimal (~> 4.0.1)
   damerau-levenshtein (~> 1.3.3)
   discordrb (~> 3.4)
   factory_bot (~> 6.5.6)
