@@ -15,7 +15,7 @@ gem "httparty", "~> 0.24.0" # HTTP transport library
 gem "songkick-transport", "~> 1.11.0"
 
 # Required by httparty
-gem "bigdecimal", "~> 3.3.1"
+gem "bigdecimal", "~> 4.0.1"
 
 gem "prometheus-client", "~> 4.2.5"
 gem "rack", "~> 3.2"
