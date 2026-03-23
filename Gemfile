@@ -29,7 +29,7 @@ group :development do
   gem "rspec", "~> 3.13.2"
   gem "rubocop", "~> 1.86.0"
   gem "rubocop-rspec", "~> 3.9.0"
-  gem "webmock", "~> 3.26.1"
+  gem "webmock", "~> 3.26.2"
 
   gem "pry-byebug"
 end
