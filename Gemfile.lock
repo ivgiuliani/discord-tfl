@@ -190,7 +190,7 @@ GEM
       unicode-emoji (~> 4.1)
     unicode-emoji (4.2.0)
     uri (1.1.1)
-    webmock (3.26.2)
+    webmock (3.26.3)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
@@ -224,7 +224,7 @@ DEPENDENCIES
   rufus-scheduler (~> 3.9.2)
   sentry-raven (~> 3.1.2)
   songkick-transport (~> 1.11.0)
-  webmock (~> 3.26.2)
+  webmock (~> 3.26.3)
   webrick (~> 1.9.2)
 
 BUNDLED WITH
